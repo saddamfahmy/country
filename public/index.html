@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Remotion TTS Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-900 text-slate-100 min-h-screen font-sans">
+    <div class="flex h-screen overflow-hidden">
+      <!-- Sidebar List File JSON -->
+      <aside class="w-80 bg-slate-800 border-r border-slate-700 flex flex-col">
+        <div class="p-4 border-b border-slate-700">
+          <h1 class="text-xl font-bold text-indigo-400">🎙️ TTS Controller</h1>
+          <p class="text-xs text-slate-400 mt-1">
+            Sistem Persiapan Data Remotion
+          </p>
+        </div>
+
+        <div
+          class="p-3 text-xs font-semibold text-slate-400 uppercase tracking-wider"
+        >
+          Daftar Konten Kata (Terbaru)
+        </div>
+
+        <div id="json-list" class="flex-1 overflow-y-auto p-2 space-y-2">
+          <!-- List file JSON di-render lewat JS -->
+          <div class="p-4 text-center text-slate-500 text-sm">
+            Memuat data...
+          </div>
+        </div>
+      </aside>
+
+      <!-- Content Utama -->
+      <main class="flex-1 flex flex-col overflow-hidden bg-slate-900">
+        <!-- Top Header -->
+        <header
+          id="main-header"
+          class="p-6 bg-slate-800/50 border-b border-slate-700 hidden"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="flex items-center gap-3">
+                <h2
+                  id="word-title"
+                  class="text-3xl font-extrabold text-white capitalize"
+                >
+                  ---
+                </h2>
+                <span
+                  id="word-origin"
+                  class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full border border-indigo-500/30"
+                  >---</span
+                >
+              </div>
+              <p id="word-etymology" class="text-sm text-slate-400 mt-1">---</p>
+            </div>
+
+            <!-- Tombol Global Generate -->
+            <div class="flex items-center gap-4">
+              <div
+                id="batch-progress"
+                class="text-right text-xs text-slate-400 hidden"
+              >
+                <span id="batch-status-text">Memproses 0/0</span>
+                <div
+                  class="w-32 bg-slate-700 h-2 rounded-full overflow-hidden mt-1"
+                >
+                  <div
+                    id="batch-bar"
+                    class="bg-indigo-500 h-full w-0 transition-all duration-300"
+                  ></div>
+                </div>
+              </div>
+
+              <button
+                id="btn-generate-all"
+                onclick="generateAllTTS()"
+                class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm rounded-lg shadow-lg shadow-indigo-600/30 transition flex items-center gap-2"
+              >
+                <span>⚡</span> Buat Semua Suara (Batch)
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Grid Cards Route -->
+        <section id="main-content" class="flex-1 overflow-y-auto p-6">
+          <div class="text-center py-20 text-slate-500">
+            <p class="text-lg">
+              Silakan pilih file kata di sidebar sebelah kiri.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      let activeFilename = null;
+      let activeData = null;
+
+      // Load Daftar File JSON saat halaman dibuka
+      async function loadFileList() {
+        try {
+          const res = await fetch("/api/kata");
+          const files = await res.json();
+          const container = document.getElementById("json-list");
+
+          if (files.length === 0) {
+            container.innerHTML = `<div class="p-4 text-center text-slate-500 text-sm">Tidak ada file JSON ditemukan.</div>`;
+            return;
+          }
+
+          container.innerHTML = files
+            .map(
+              (f) => `
+          <button onclick="selectFile('${f.filename}')" className="w-full text-left p-3 rounded-lg border border-slate-700/50 bg-slate-800/40 hover:bg-slate-700/60 transition group flex flex-col gap-1 ${activeFilename === f.filename ? "!bg-indigo-600/20 !border-indigo-500/50" : ""}">
+            <div class="flex justify-between items-center w-full">
+              <span class="font-bold text-slate-200 capitalize group-hover:text-indigo-300">${f.title}</span>
+              <span class="text-[10px] text-slate-400">${new Date(f.mtime).toLocaleDateString()}</span>
+            </div>
+            <span class="text-xs text-slate-400 truncate w-full">${f.etymology}</span>
+          </button>
+        `,
+            )
+            .join("");
+
+          if (!activeFilename && files.length > 0) {
+            selectFile(files[0].filename);
+          }
+        } catch (err) {
+          console.error("Error:", err);
+        }
+      }
+
+      // Pilih File & Tampilkan Detail Card Route
+      async function selectFile(filename) {
+        activeFilename = filename;
+        loadFileList(); // Refresh sidebar active state
+
+        try {
+          const res = await fetch(`/api/kata/${filename}`);
+          activeData = await res.json();
+
+          document.getElementById("main-header").classList.remove("hidden");
+          document.getElementById("word-title").innerText =
+            `Kata: "${activeData.global_word}"`;
+          document.getElementById("word-origin").innerText =
+            `Origin: ${activeData.route[0]?.country || "Unknown"}`;
+          document.getElementById("word-etymology").innerText =
+            activeData.etymology_origin || "";
+
+          renderCards();
+        } catch (err) {
+          alert("Gagal memuat detail kata");
+        }
+      }
+
+      // Render Semua Card Route
+      function renderCards() {
+        const container = document.getElementById("main-content");
+
+        container.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+          ${activeData.route
+            .map(
+              (item) => `
+            <div id="card-${item.order}" class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5 flex flex-col justify-between gap-4 relative overflow-hidden">
+              
+              <!-- Indicator Status Suara -->
+              <div class="flex items-center justify-between border-b border-slate-700/60 pb-3">
+                <div class="flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-full bg-slate-700 text-slate-300 text-xs font-bold flex items-center justify-center">${item.order}</span>
+                  <h3 class="font-bold text-lg text-white">${item.country}</h3>${item.is_origin ? `<span class="bg-amber-500/20 text-amber-300 text-[10px] px-2 py-0.5 rounded border border-amber-500/30">Origin</span>` : ""}
+                </div>
+                
+                <span id="badge-${item.order}" class="text-xs px-2.5 py-1 rounded-full font-medium ${item.sound_generated ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-slate-700 text-slate-400"}">
+                  ${item.sound_generated ? "✅ Audio Tersedia" : "❌ Belum Ada Audio"}
+                </span>
+              </div>
+
+              <!-- Main Info Kata -->
+              <div class="grid grid-cols-2 gap-3 bg-slate-900/50 p-3 rounded-lg border border-slate-700/30">
+                <div>
+                  <span class="text-[10px] uppercase text-slate-500 font-semibold">Local Word</span>
+                  <p class="text-xl font-bold text-indigo-300">${item.local_word}</p>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase text-slate-500 font-semibold">Ejaan Indo / IPA</span>
+                  <p class="text-sm font-semibold text-slate-200">${item.ejaan_palsu_indonesia} <span class="text-xs text-slate-400 font-normal">(${item.ejaan_umum_ipa})</span></p>
+                </div>
+              </div>
+
+              <!-- Extra Info -->
+              <div class="text-xs text-slate-400 space-y-1">
+                <p><strong>Note:</strong> ${item.phonetic_note}</p>
+                <div class="flex gap-4 pt-1 text-[11px] text-slate-500">
+                  <span>TTS Lang: <code class="text-slate-300">${item.edge_tts_lang}</code></span>
+                  <span>Kemiripan: <code class="text-slate-300">${item.similarity_percentage}%</code></span>
+                </div>
+              </div>
+
+              <!-- Footer Action Button & Audio Player -->
+              <div class="flex items-center justify-between pt-2 border-t border-slate-700/40">
+                <div id="player-container-${item.order}">
+                  ${
+                    item.sound_file
+                      ? `
+                    <audio controls class="h-8 w-48">
+                      <source src="/${item.sound_file}?t=${Date.now()}" type="audio/mpeg">
+                    </audio>
+                  `
+                      : `<span class="text-xs text-slate-500 italic">Audio belum dibuat</span>`
+                  }
+                </div>
+
+                <button id="btn-tts-${item.order}" onclick="generateSingleTTS(${item.order})" class="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs rounded font-medium transition flex items-center gap-1">
+                  <span>🔊</span> Generate TTS
+                </button>
+              </div>
+
+            </div>
+          `,
+            )
+            .join("")}
+        </div>
+      `;
+      }
+
+      // Process TTS Single Item
+      async function generateSingleTTS(order) {
+        const badge = document.getElementById(`badge-${order}`);
+        const btn = document.getElementById(`btn-tts-${order}`);
+
+        badge.className =
+          "text-xs px-2.5 py-1 rounded-full font-medium bg-amber-500/20 text-amber-300 border border-amber-500/30 animate-pulse";
+        badge.innerText = "⏳ Memproses...";
+        btn.disabled = true;
+
+        try {
+          const res = await fetch("/api/generate-tts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ filename: activeFilename, order }),
+          });
+
+          const data = await res.json();
+
+          if (data.success) {
+            badge.className =
+              "text-xs px-2.5 py-1 rounded-full font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+            badge.innerText = "✅ Selesai";
+
+            // Refresh Player Audio
+            document.getElementById(`player-container-${order}`).innerHTML = `
+            <audio controls class="h-8 w-48">
+              <source src="/${data.sound_file}?t=${Date.now()}" type="audio/mpeg">
+            </audio>
+          `;
+          } else {
+            throw new Error(data.error);
+          }
+        } catch (err) {
+          badge.className =
+            "text-xs px-2.5 py-1 rounded-full font-medium bg-rose-500/20 text-rose-400 border border-rose-500/30";
+          badge.innerText = "❌ Gagal";
+          alert(`Error: ${err.message}`);
+        } finally {
+          btn.disabled = false;
+        }
+      }
+
+      // Fungsi pembantu untuk membuat delay (jeda)
+      const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      // Batch Process Semua Item Berurutan dengan Jeda
+      async function generateAllTTS() {
+        if (!activeData || !activeData.route) return;
+
+        const btnAll = document.getElementById("btn-generate-all");
+        const progressContainer = document.getElementById("batch-progress");
+        const progressText = document.getElementById("batch-status-text");
+        const progressBar = document.getElementById("batch-bar");
+
+        btnAll.disabled = true;
+        btnAll.classList.add("opacity-50", "cursor-not-allowed");
+        progressContainer.classList.remove("hidden");
+
+        const total = activeData.route.length;
+        let successCount = 0;
+
+        for (let i = 0; i < total; i++) {
+          const item = activeData.route[i];
+
+          // Skip jika audio sudah ada (opsional, hapus if ini jika ingin dipaksa generate ulang semua)
+          if (item.sound_generated) {
+            successCount++;
+            progressText.innerText = `Melewati ${i + 1}/${total} (Sudah ada)`;
+            progressBar.style.width = `${((i + 1) / total) * 100}%`;
+            continue;
+          }
+
+          progressText.innerText = `Memproses ${i + 1}/${total} (${item.country})`;
+          progressBar.style.width = `${((i + 1) / total) * 100}%`;
+
+          await generateSingleTTS(item.order);
+          successCount++;
+
+          // JEDA 2 DETIK SEBELUM REQUEST BERIKUTNYA (Mencegah diblokir Microsoft)
+          if (i < total - 1) {
+            progressText.innerText = `Menunggu jeda... (${i + 1}/${total})`;
+            await sleep(2000);
+          }
+        }
+
+        progressText.innerText = `Selesai (${successCount}/${total})`;
+        btnAll.disabled = false;
+        btnAll.classList.remove("opacity-50", "cursor-not-allowed");
+
+        // Sembunyikan progress bar setelah 3 detik selesai
+        setTimeout(() => {
+          progressContainer.classList.add("hidden");
+        }, 8000);
+      }
+
+      // Inisialisasi awal
+      loadFileList();
+    </script>
+  </body>
+</html>

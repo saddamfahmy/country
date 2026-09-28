@@ -1,0 +1,366 @@
+{
+  "global_word": "You",
+  "etymology_origin": "United Kingdom (Old English 'eow', accusative/dative plural of 'ge', derived from Proto-Germanic *izwiz and Proto-Indo-European *yū̃s)",
+  "route": [
+    {
+      "order": 1,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": true,
+      "local_word": "You",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "yu",
+      "ejaan_umum_ipa": "/juː/",
+      "phonetic_note": "Titik asal kata 'you' dalam Bahasa Inggris, berevolusi dari Bahasa Inggris Kuno 'eow'.",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_You.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Ireland",
+      "coords": [
+        -6.2603,
+        53.3498
+      ],
+      "is_origin": false,
+      "local_word": "You",
+      "edge_tts_lang": "en-IE",
+      "fallback_used": false,
+      "similarity_percentage": 98,
+      "ejaan_palsu_indonesia": "yu",
+      "ejaan_umum_ipa": "/juː/",
+      "phonetic_note": "Variasi Hiberno-English yang mempertahankan pelafalan fonetik vokal panjang /juː/.",
+      "sound_generated": true,
+      "sound_file": "sound/Ireland_You.mp3"
+    },
+    {
+      "order": 3,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "You",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 95,
+      "ejaan_palsu_indonesia": "yu",
+      "ejaan_umum_ipa": "/juː/",
+      "phonetic_note": "Diwarisi dari Bahasa Inggris Britania melalui migrasi pemukim ke Amerika Utara.",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_You.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Canada",
+      "coords": [
+        -75.6972,
+        45.4215
+      ],
+      "is_origin": false,
+      "local_word": "You",
+      "edge_tts_lang": "en-CA",
+      "fallback_used": false,
+      "similarity_percentage": 94,
+      "ejaan_palsu_indonesia": "yu",
+      "ejaan_umum_ipa": "/juː/",
+      "phonetic_note": "Sangat identik dengan pelafalan dialek Amerika Utara modern.",
+      "sound_generated": true,
+      "sound_file": "sound/Canada_You.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Australia",
+      "coords": [
+        149.1287,
+        -35.2809
+      ],
+      "is_origin": false,
+      "local_word": "You",
+      "edge_tts_lang": "en-AU",
+      "fallback_used": false,
+      "similarity_percentage": 92,
+      "ejaan_palsu_indonesia": "yu",
+      "ejaan_umum_ipa": "/jʉː/",
+      "phonetic_note": "Dialek Australia mengalami sedikit pergeseran vokal pusat (centralization) pada konsonan /uː/.",
+      "sound_generated": true,
+      "sound_file": "sound/Australia_You.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Netherlands",
+      "coords": [
+        4.9041,
+        52.3676
+      ],
+      "is_origin": false,
+      "local_word": "Jij",
+      "edge_tts_lang": "nl-NL",
+      "fallback_used": false,
+      "similarity_percentage": 70,
+      "ejaan_palsu_indonesia": "yei",
+      "ejaan_umum_ipa": "/jɛi̯/",
+      "phonetic_note": "Rumpun Jermanik Barat; diawali dengan palatal approximant /j/ yang sekerabat secara etimologis.",
+      "sound_generated": true,
+      "sound_file": "sound/Netherlands_You.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Euch",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 65,
+      "ejaan_palsu_indonesia": "ois",
+      "ejaan_umum_ipa": "/ɔʏ̯ç/",
+      "phonetic_note": "Bentuk akusatif/datif jamak dari Proto-Jermanik *izwiz yang melahirkan 'eow' (asal kata 'you').",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_You.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Denmark",
+      "coords": [
+        12.5683,
+        55.6761
+      ],
+      "is_origin": false,
+      "local_word": "I",
+      "edge_tts_lang": "da-DK",
+      "fallback_used": false,
+      "similarity_percentage": 60,
+      "ejaan_palsu_indonesia": "i",
+      "ejaan_umum_ipa": "/iː/",
+      "phonetic_note": "Rumpun Jermanik Utara; bentuk jamak jamak persona kedua dari akar nominatif Proto-Jermanik.",
+      "sound_generated": true,
+      "sound_file": "sound/Denmark_You.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Norway",
+      "coords": [
+        10.7522,
+        59.9139
+      ],
+      "is_origin": false,
+      "local_word": "Dere",
+      "edge_tts_lang": "nb-NO",
+      "fallback_used": false,
+      "similarity_percentage": 58,
+      "ejaan_palsu_indonesia": "de-re",
+      "ejaan_umum_ipa": "/ˈdeːɾə/",
+      "phonetic_note": "Bentuk jamak jamak persona kedua dalam Bahasa Norwegia modern.",
+      "sound_generated": true,
+      "sound_file": "sound/Norway_You.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Sweden",
+      "coords": [
+        18.0686,
+        59.3293
+      ],
+      "is_origin": false,
+      "local_word": "Ni",
+      "edge_tts_lang": "sv-SE",
+      "fallback_used": false,
+      "similarity_percentage": 55,
+      "ejaan_palsu_indonesia": "ni",
+      "ejaan_umum_ipa": "/niː/",
+      "phonetic_note": "Bentuk jamak persona kedua Skandinavia yang berasal dari penggabungan kata kerja dan 'I'.",
+      "sound_generated": true,
+      "sound_file": "sound/Sweden_You.mp3"
+    },
+    {
+      "order": 11,
+      "country": "Iceland",
+      "coords": [
+        -21.8277,
+        64.1265
+      ],
+      "is_origin": false,
+      "local_word": "Þið",
+      "edge_tts_lang": "is-IS",
+      "fallback_used": false,
+      "similarity_percentage": 52,
+      "ejaan_palsu_indonesia": "thith",
+      "ejaan_umum_ipa": "/θɪːð/",
+      "phonetic_note": "Bentuk dual/jamak Norse Kuno yang mempertahankan tata bahasa jamak persona kedua kuno.",
+      "sound_generated": true,
+      "sound_file": "sound/Iceland_You.mp3"
+    },
+    {
+      "order": 12,
+      "country": "Lithuania",
+      "coords": [
+        25.2797,
+        54.6872
+      ],
+      "is_origin": false,
+      "local_word": "Jūs",
+      "edge_tts_lang": "lt-LT",
+      "fallback_used": false,
+      "similarity_percentage": 48,
+      "ejaan_palsu_indonesia": "yus",
+      "ejaan_umum_ipa": "/juːs/",
+      "phonetic_note": "Rumpun Balto-Slavia; turunan langsung dari Proto-Indo-Eropa *yū̃s yang memiliki bunyi sangat mirip dengan 'you'.",
+      "sound_generated": true,
+      "sound_file": "sound/Lithuania_You.mp3"
+    },
+    {
+      "order": 13,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "Vous",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 40,
+      "ejaan_palsu_indonesia": "vu",
+      "ejaan_umum_ipa": "/vu/",
+      "phonetic_note": "Rumpun Romance; berasal dari Latin 'vos' (PIE *wōs), kata ganti persona kedua jamak/sopan.",
+      "sound_generated": true,
+      "sound_file": "sound/France_You.mp3"
+    },
+    {
+      "order": 14,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "Vosotros",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "bo-so-tros",
+      "ejaan_umum_ipa": "/boˈsotɾos/",
+      "phonetic_note": "Penggabungan dari Latin 'vos' + 'otros' untuk menyatakan jamak persona kedua.",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_You.mp3"
+    },
+    {
+      "order": 15,
+      "country": "Italy",
+      "coords": [
+        12.4964,
+        41.9028
+      ],
+      "is_origin": false,
+      "local_word": "Voi",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 32,
+      "ejaan_palsu_indonesia": "voi",
+      "ejaan_umum_ipa": "/ˈvɔ.i/",
+      "phonetic_note": "Turunan langsung Bahasa Latin 'vos' dalam rumpun bahasa Romance Tengah.",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_You.mp3"
+    },
+    {
+      "order": 16,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "Вы",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 28,
+      "ejaan_palsu_indonesia": "vi",
+      "ejaan_umum_ipa": "/vɨ/",
+      "phonetic_note": "Rumpun Slavia; diturunkan dari Proto-Indo-Eropa *wōs.",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_You.mp3"
+    },
+    {
+      "order": 17,
+      "country": "Iran",
+      "coords": [
+        51.389,
+        35.6892
+      ],
+      "is_origin": false,
+      "local_word": "شما",
+      "edge_tts_lang": "fa-IR",
+      "fallback_used": true,
+      "similarity_percentage": 22,
+      "ejaan_palsu_indonesia": "sho-ma",
+      "ejaan_umum_ipa": "/ʃoˈmɒ/",
+      "phonetic_note": "Rumpun Indo-Iran; kata ganti persona kedua jamak/sopan.",
+      "sound_generated": true,
+      "sound_file": "sound/Iran_You.mp3"
+    },
+    {
+      "order": 18,
+      "country": "India",
+      "coords": [
+        77.209,
+        28.6139
+      ],
+      "is_origin": false,
+      "local_word": "आप",
+      "edge_tts_lang": "hi-IN",
+      "fallback_used": false,
+      "similarity_percentage": 18,
+      "ejaan_palsu_indonesia": "ap",
+      "ejaan_umum_ipa": "/aːp/",
+      "phonetic_note": "Rumpun Indo-Aria; kata ganti hormat persona kedua yang menggantikan bentuk kuno 'yūyam'.",
+      "sound_generated": true,
+      "sound_file": "sound/India_You.mp3"
+    },
+    {
+      "order": 19,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "Kamu",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 10,
+      "ejaan_palsu_indonesia": "ka-mu",
+      "ejaan_umum_ipa": "/kamu/",
+      "phonetic_note": "Rumpun Austronesia; berakar dari gabungan bentuk enklitik 'mu' dalam Melayu Kuno.",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_You.mp3"
+    },
+    {
+      "order": 20,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "あなた",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 5,
+      "ejaan_palsu_indonesia": "a-na-ta",
+      "ejaan_umum_ipa": "/anaːta/",
+      "phonetic_note": "Rumpun Japonik; secara historis bermakna 'arah sana' yang bergeser menjadi kata ganti orang kedua.",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_You.mp3"
+    }
+  ]
+}

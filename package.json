@@ -1,0 +1,27 @@
+{
+  "name": "ucapan_negara",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "remotion": "remotion studio --port 3001"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/cli": "^4.0.529",
+    "@remotion/media-utils": "^4.0.529",
+    "@remotion/player": "^4.0.529",
+    "cors": "^2.8.6",
+    "d3-geo": "^3.1.1",
+    "express": "^5.2.1",
+    "msedge-tts": "^2.0.8",
+    "nodemon": "^3.1.14",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-simple-maps": "^5.0.5",
+    "remotion": "^4.0.529"
+  }
+}
