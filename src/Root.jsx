@@ -4,7 +4,7 @@ import { getAudioDurationInSeconds } from "@remotion/media-utils";
 import { MultiCountryMapComposition } from "./MapComposition";
 
 // 1. IMPORT JSON LANGSUNG dari folder src/kata
-import YouData from "./kata/You.json";
+import YouData from "./kata/cokelat.json";
 
 // Helper untuk menghitung jarak sudut (Great-Circle Distance) antar dua koordinat [lng, lat]
 const getAngularDistance = (p1, p2) => {
@@ -25,7 +25,7 @@ const getAngularDistance = (p1, p2) => {
 export const RemotionRoot = () => {
   return (
     <Composition
-      id="MapAnimation-You"
+      id="MapAnimation-Cokelat"
       component={MultiCountryMapComposition}
       fps={60}
       width={1080}
@@ -50,8 +50,8 @@ export const RemotionRoot = () => {
           const BUFFER_DUR = 3;
 
           // MAX_DUR adalah acuan durasi titik terjauh (jarak 180 derajat / setengah bumi)
-          const MAX_DUR = 80; 
-          const MIN_DUR = 80;  // Durasi transisi minimal untuk lokasi yang dekat
+          const MAX_DUR = 50; 
+          const MIN_DUR = 50;  // Durasi transisi minimal untuk lokasi yang dekat
 
           // --- FASE 1: INTRO ---
           timelineSegments.push({

@@ -173,7 +173,7 @@ const InfoOverlay = ({ data, segment, frame, fps }) => {
         boxShadow: "0px 0px 30px rgba(56, 189, 248, 0.4)",
         backdropFilter: "blur(10px)",
       }}>
-        <h2 style={{ margin: 0, color: "#94a3b8", fontSize: "28px", textTransform: "uppercase", letterSpacing: "2px" }}>
+        <h2 style={{ margin: 0, color: "#94a3b8", fontSize: "40px", textTransform: "uppercase", letterSpacing: "2px" }}>
           {data.country}
         </h2>
         <h1 style={{ margin: "10px 0", color: "#fef08a", fontSize: "75px", fontWeight: "bold" }}>
