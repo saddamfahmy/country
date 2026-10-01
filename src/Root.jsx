@@ -47,7 +47,7 @@ export const RemotionRoot = () => {
           // ATURAN DURASI (FRAME)
           const INTRO_DUR = 90;
           const OUTRO_DUR = 120;
-          const BUFFER_DUR = 3;
+          const BUFFER_DUR = -53;
 
           // MAX_DUR adalah acuan durasi titik terjauh (jarak 180 derajat / setengah bumi)
           const MAX_DUR = 50; 
@@ -77,7 +77,12 @@ export const RemotionRoot = () => {
               );
             }
 
-            const stayDur = Math.ceil(audioDurationSec * fps) + BUFFER_DUR;
+            const audioDurationFrames = Math.ceil(audioDurationSec * fps);
+            const stayDur = Math.max(
+              1,
+              audioDurationFrames + BUFFER_DUR,
+              i === route.length - 1 ? audioDurationFrames : 0
+            );
             timelineSegments.push({
               type: "stay",
               start: currentFrame,
