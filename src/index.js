@@ -1,4 +1,4 @@
 import { registerRoot } from "remotion";
-import { RemotionRoot } from "./Root";
+import { DynamicRemotionRoot } from "./DynamicRoot";
 
-registerRoot(RemotionRoot);
+registerRoot(DynamicRemotionRoot);

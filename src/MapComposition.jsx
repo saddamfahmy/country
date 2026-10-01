@@ -8,6 +8,7 @@ import {
   continueRender,
   Easing,
   staticFile,
+  Img,
   Audio,
   Sequence,
 } from "remotion";
@@ -19,6 +20,22 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 import { geoBounds, geoContains } from "d3-geo";
+import reactionMapping from "./video/reaction-mapping.json";
+
+const styles = `
+  @keyframes pulse-highlight {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  .story-title-block {
+    animation: pulse-highlight 1.5s ease-in-out infinite;
+  }
+`;
+if (typeof document !== "undefined") {
+  const styleSheet = document.createElement("style");
+  styleSheet.textContent = styles;
+  document.head.appendChild(styleSheet);
+}
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 const circleFlagAssets = require.context("./circle", false, /\.svg$/);
@@ -184,57 +201,271 @@ const get2DBezierPoint = (p0, p1, p2, t) => {
   return [x, y];
 };
 
-const InfoOverlay = ({ data, segment, frame, fps }) => {
+const InfoOverlay = ({ data, segment, frame, fps, isLeaving }) => {
   if (!data) return null;
-  
   const progress = frame - segment.start;
-  const scaleIn = spring({ frame: progress, fps, config: { damping: 12 } });
+  const entrance = spring({ frame: progress, fps, config: { damping: 14 } });
   
-  const opacityOut = interpolate(segment.end - frame, [0, 15], [0, 1], {
+  // Calculate exit animation when isLeaving
+  const exitProgress = isLeaving ? Math.min((frame - (segment.end - 15)) / 15, 1) : 0;
+  
+  const flagUrl = getCircleFlagUrl(data.country);
+  
+  // Tada entrance: scale with overshoot
+  const flagScale = interpolate(entrance, [0, 0.65, 1], [0, 1.15, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
+  
+  // Exit animation: scale down
+  const exitScale = interpolate(exitProgress, [0, 1], [1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  
+  const opacity = interpolate(entrance, [0, 0.2, 1], [0, 0.75, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  }) * (1 - exitProgress);
 
   return (
-    <div style={{
-      position: "absolute",
-      top: "10%",
-      left: 0,
-      width: "100%",
-      display: "flex",
-      justifyContent: "center",
-      transform: `scale(${scaleIn})`,
-      opacity: opacityOut,
-      zIndex: 10,
-    }}>
+    <div
+      style={{
+        position: "absolute",
+        top: "-180px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: "280px",
+        minHeight: "160px",
+        boxSizing: "border-box",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "12px",
+        padding: "8px 12px",
+        opacity: opacity,
+        zIndex: 10,
+        pointerEvents: "none",
+      }}
+    >
+      {/* Flag with tada animation */}
       <div style={{
-        background: "rgba(15, 23, 42, 0.85)",
-        border: "2px solid #38bdf8",
-        padding: "30px 50px",
-        borderRadius: "20px",
-        textAlign: "center",
-        boxShadow: "0px 0px 30px rgba(56, 189, 248, 0.4)",
-        backdropFilter: "blur(10px)",
+        width: "136px",
+        height: "136px",
+        display: "grid",
+        placeItems: "center",
+        transform: `scale(${flagScale * exitScale})`,
+        transformOrigin: "center",
       }}>
-        <h2 style={{ margin: 0, color: "#94a3b8", fontSize: "50px", textTransform: "uppercase", letterSpacing: "2px" }}>
-          {data.country}
-        </h2>
-        <h1 style={{ margin: "10px 0", color: "#fef08a", fontSize: "75px", fontWeight: "bold" }}>
+        {flagUrl && (
+          <img
+            src={flagUrl}
+            alt=""
+            style={{
+              width: "128px",
+              height: "128px",
+              borderRadius: "50%",
+              border: "5px solid #fff",
+              boxSizing: "border-box",
+              objectFit: "cover",
+              filter: "drop-shadow(0 0 12px rgba(56, 189, 248, 0.75))",
+            }}
+          />
+        )}
+      </div>
+      
+      {/* Word and IPA text below flag */}
+      <div style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "4px",
+        textAlign: "center",
+      }}>
+        <div style={{
+          color: "#fef08a",
+          fontSize: "36px",
+          fontWeight: 800,
+          lineHeight: 1.05,
+          overflowWrap: "anywhere",
+          WebkitTextStroke: "1.2px #0f172a",
+          paintOrder: "stroke fill",
+          textShadow: "0 2px 8px #020617",
+        }}>
           {data.local_word}
-        </h1>
-        <p style={{ margin: 0, color: "#38bdf8", fontSize: "35px", fontFamily: "monospace" }}>
+        </div>
+        <div style={{
+          color: "#e0f2fe",
+          fontSize: "24px",
+          fontWeight: 700,
+          lineHeight: 1.15,
+          overflowWrap: "anywhere",
+          WebkitTextStroke: "0.8px #0f172a",
+          paintOrder: "stroke fill",
+          textShadow: "0 2px 7px #020617",
+        }}>
           {data.ejaan_umum_ipa}
-        </p>
+        </div>
       </div>
     </div>
   );
 };
 
-const GreenScreenVideo = ({ durationInFrames, fps }) => {
-  const frame = useCurrentFrame();
-  const videoDurationSeconds = 11.98;
-  const videoDurationFrames = Math.ceil(videoDurationSeconds * fps);
-  const videoFrame = frame % videoDurationFrames;
+const StoryTitle = () => (
+  <div style={{
+    position: "absolute",
+    top: "3.5%",
+    left: 0,
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "8px",
+    zIndex: 10,
+    pointerEvents: "none",
+  }}>
+    <div
+      className="story-title-block"
+      style={{
+        background: "rgba(15, 23, 42, 0.94)",
+        border: "2px solid rgba(56, 189, 248, 0.8)",
+        borderRadius: "12px",
+        padding: "12px 28px",
+        color: "#f8fafc",
+        fontSize: "48px",
+        fontWeight: 800,
+        letterSpacing: "1px",
+        lineHeight: 1.1,
+        textShadow: "0 2px 5px #020617",
+        boxShadow: "0 4px 18px rgba(2, 6, 23, 0.55)",
+      }}
+    >
+      Finally, you discover
+    </div>
+    <div
+      className="story-title-block"
+      style={{
+        background: "rgba(15, 23, 42, 0.94)",
+        border: "2px solid rgba(56, 189, 248, 0.8)",
+        borderRadius: "12px",
+        padding: "12px 28px",
+        color: "#fef08a",
+        fontSize: "48px",
+        fontWeight: 800,
+        letterSpacing: "1px",
+        lineHeight: 1.1,
+        textShadow: "0 2px 5px #020617",
+        boxShadow: "0 4px 18px rgba(2, 6, 23, 0.55)",
+      }}
+    >
+      how words evolve
+    </div>
+  </div>
+);
+
+const getReactionRange = (similarity) => {
+  if (typeof similarity !== "number" || !Number.isFinite(similarity)) {
+    return null;
+  }
+  return reactionMapping.similarityRanges.find(
+    (range) => similarity >= range.min && similarity <= range.max
+  );
+};
+
+const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+const getBouncedReactionFrame = (elapsedSourceFrames, startFrame, endFrame) => {
+  const rangeLength = endFrame - startFrame;
+  if (rangeLength <= 0) return startFrame;
+
+  const cycleLength = rangeLength * 2;
+  const cyclePosition = elapsedSourceFrames % cycleLength;
+  return cyclePosition <= rangeLength
+    ? startFrame + cyclePosition
+    : endFrame - (cyclePosition - rangeLength);
+};
+
+const getReactionFrameInPhase = (frame, phase, fps) => {
+  const sourceFps = reactionMapping.sourceFps;
+  const transitionFrames = reactionMapping.transitionSeconds * fps;
+
+  if (phase.type === "intro") {
+    const introEndFrame = reactionMapping.intro.endSecond * sourceFps;
+    return Math.min(
+      (frame / fps) * sourceFps,
+      introEndFrame - 1
+    );
+  }
+
+  const elapsedFrames = Math.max(0, frame - phase.start);
+  const targetStartFrame = phase.range.startSecond * sourceFps;
+  const targetEndFrame = phase.range.endSecond * sourceFps - 1;
+  if (elapsedFrames < transitionFrames) {
+    const progress = elapsedFrames / transitionFrames;
+    return phase.fromFrame + (targetStartFrame - phase.fromFrame) * progress;
+  }
+
+  const elapsedSourceFrames =
+    ((elapsedFrames - transitionFrames) / fps) * sourceFps;
+  return getBouncedReactionFrame(
+    elapsedSourceFrames,
+    targetStartFrame,
+    targetEndFrame
+  );
+};
+
+const getReactionFrame = (frame, timelineSegments, route, fps) => {
+  const phaseEvents = timelineSegments
+    .filter(
+      (segment) =>
+        segment.type === "stay" &&
+        segment.start <= frame &&
+        route[segment.fromIdx]?.sound_file
+    )
+    .map((segment) => ({
+      start: segment.audioStartFrame ?? segment.start,
+      range: getReactionRange(route[segment.fromIdx].similarity_percentage),
+    }))
+    .filter((event) => event.range)
+    .sort((a, b) => a.start - b.start);
+
+  let phase = { type: "intro" };
+  for (const event of phaseEvents) {
+    const fromFrame = getReactionFrameInPhase(event.start, phase, fps);
+    phase = {
+      type: "trigger",
+      start: event.start,
+      fromFrame,
+      range: event.range,
+    };
+  }
+
+  const outro = timelineSegments.find(
+    (segment) => segment.type === "outro" && frame >= segment.start
+  );
+  if (outro) {
+    const returnStartFrame = getReactionFrameInPhase(outro.start, phase, fps);
+    const progress = clamp(
+      (frame - outro.start) / (reactionMapping.outroSeconds * fps),
+      0,
+      1
+    );
+    return returnStartFrame * (1 - progress);
+  }
+
+  return getReactionFrameInPhase(frame, phase, fps);
+};
+
+const GreenScreenVideo = ({ frame, timelineSegments, route, fps }) => {
+  const reactionFrame = Math.floor(
+    clamp(
+      getReactionFrame(frame, timelineSegments, route, fps),
+      0,
+      reactionMapping.durationSeconds * reactionMapping.sourceFps - 1
+    )
+  );
+  const frameFile = `reaction-${String(reactionFrame).padStart(3, "0")}.webp`;
 
   return (
     <div style={{
@@ -246,24 +477,17 @@ const GreenScreenVideo = ({ durationInFrames, fps }) => {
       borderRadius: "16px",
       overflow: "hidden",
       boxShadow: "0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.3)",
-      border: "2px solid rgba(168, 85, 247, 0.5)",
+      border: "none",
       zIndex: 20,
       backdropFilter: "blur(5px)",
     }}>
-      <video
-        src="reaction1_converted.mp4"
+      <Img
+        src={staticFile(`reaction-frames/${frameFile}`)}
         style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",
           filter: "drop-shadow(0 0 15px rgba(168, 85, 247, 0.4))",
-        }}
-        autoPlay
-        muted
-        loop
-        playsInline
-        onError={(e) => {
-          console.error("Video playback error:", e);
         }}
       />
     </div>
@@ -275,7 +499,7 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
     return null; 
   }
   const frame = useCurrentFrame();
-  const { fps, width, height, durationInFrames } = useVideoConfig();
+  const { fps, width, height } = useVideoConfig();
   const route = jsonData.route;
 
   const [handle] = useState(() => delayRender("Loading Map TopoJSON..."));
@@ -458,7 +682,7 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
       const audioUrl = route[idx].sound_file;
       if (!audioUrl) return null;
       return (
-        <Sequence key={`audio-${idx}`} from={seg.audioStartFrame} durationInFrames={seg.end - seg.start}>
+        <Sequence key={`audio-${idx}`} from={seg.audioStartFrame} durationInFrames={seg.end - seg.audioStartFrame}>
           <Audio src={staticFile(audioUrl)} />
         </Sequence>
       );
@@ -468,11 +692,27 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
   return (
     <div style={{ width: "100%", height: "100%", backgroundColor: "#0f172a", display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden", fontFamily: "system-ui, sans-serif", position: "relative" }}>
       
-      {activeSegment.type === "stay" && (
-        <InfoOverlay data={route[activeSegment.fromIdx]} segment={activeSegment} frame={frame} fps={fps} />
-      )}
+      {activeSegment.type === "stay" && (() => {
+        const moveSeg = timelineSegments.find((s) => s.type === "move" && s.fromIdx === activeSegment.fromIdx);
+        const isLeaving = moveSeg && frame >= moveSeg.start;
+        return (
+          <InfoOverlay 
+            data={route[activeSegment.fromIdx]} 
+            segment={activeSegment} 
+            frame={frame} 
+            fps={fps}
+            isLeaving={isLeaving}
+          />
+        );
+      })()}
+      <StoryTitle />
 
-      <GreenScreenVideo durationInFrames={durationInFrames} fps={fps} />
+      <GreenScreenVideo
+        frame={frame}
+        timelineSegments={timelineSegments}
+        route={route}
+        fps={fps}
+      />
 
       {renderAudio()}
 
@@ -709,34 +949,6 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
               
               // Terapkan kalkulasi akhir lingkungan/scale
               const finalScale = baseScale * invScale;
-              const flagUrl = getCircleFlagUrl(wp.country);
-              const tada = spring({
-                frame: markerFrame - reachedFrame,
-                fps,
-                config: { damping: 7, stiffness: 180, mass: 0.6 },
-              });
-              const flagLeaveSegment =
-                moveSeg ||
-                timelineSegments.find(
-                  (segment) => segment.type === "outro" && segment.fromIdx === index
-                );
-              const flagFadeOut = flagLeaveSegment
-                ? interpolate(
-                    markerFrame - flagLeaveSegment.start,
-                    [0, 18],
-                    [1, 0],
-                    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
-                  )
-                : 1;
-              const flagScale = interpolate(tada, [0, 0.5, 1], [0, 1.15, 1], {
-                extrapolateLeft: "clamp",
-                extrapolateRight: "clamp",
-              });
-              const flagRotation = interpolate(tada, [0, 0.5, 1], [-12, 8, 0], {
-                extrapolateLeft: "clamp",
-                extrapolateRight: "clamp",
-              });
-
               // Optimasi: Jika marker sudah 100% tertanam & lenyap (skala <= 0.001), berhenti merender marker ini
               if (isLeaving && finalScale <= 0.001) return null;
 
@@ -764,28 +976,6 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
                     >
                       {wp.country}
                     </text>
-                    {flagUrl && !isIntroPreview && (
-                      <g
-                        transform={`translate(0 -40) rotate(${flagRotation}) scale(${flagScale * 0.2})`}
-                        opacity={Math.min(1, tada) * Math.max(0, 1 - scaleOut) * flagFadeOut}
-                        style={{ filter: "drop-shadow(0 2px 5px rgba(0, 0, 0, 0.75))" }}
-                      >
-                        <circle
-                          r={68}
-                          fill="#0f172a"
-                          stroke="#ffffff"
-                          strokeWidth={4}
-                        />
-                        <image
-                          href={flagUrl}
-                          x={-60}
-                          y={-60}
-                          width={120}
-                          height={120}
-                          preserveAspectRatio="xMidYMid meet"
-                        />
-                      </g>
-                    )}
                   </g>
                 </Marker>
               );

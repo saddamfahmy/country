@@ -1,0 +1,42 @@
+{
+  "sourceFps": 30,
+  "durationSeconds": 12,
+  "intro": {
+    "startSecond": 0,
+    "endSecond": 1
+  },
+  "transitionSeconds": 1,
+  "outroSeconds": 1,
+  "similarityRanges": [
+    {
+      "min": 100,
+      "max": 100,
+      "startSecond": 0,
+      "endSecond": 1
+    },
+    {
+      "min": 80,
+      "max": 99,
+      "startSecond": 2,
+      "endSecond": 3
+    },
+    {
+      "min": 60,
+      "max": 79,
+      "startSecond": 3,
+      "endSecond": 5
+    },
+    {
+      "min": 40,
+      "max": 59,
+      "startSecond": 5,
+      "endSecond": 9
+    },
+    {
+      "min": 0,
+      "max": 39,
+      "startSecond": 10,
+      "endSecond": 12
+    }
+  ]
+}
