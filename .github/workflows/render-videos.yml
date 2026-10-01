@@ -1,0 +1,93 @@
+name: Render kata videos
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/render-videos.yml"
+      - "package.json"
+      - "package-lock.json"
+      - "public/kata/**"
+      - "public/sound/**"
+      - "public/reaction-frames/**"
+      - "public/topo.js"
+      - "scripts/render-videos.js"
+      - "src/**"
+  workflow_dispatch:
+    inputs:
+      only:
+        description: Optional kata filename or composition ID to render alone
+        required: false
+        default: ""
+        type: string
+      force:
+        description: Re-render videos that already completed
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-videos-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Restore completed videos for this commit
+        uses: actions/cache/restore@v4
+        with:
+          path: renders/
+          key: render-videos-${{ runner.os }}-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            render-videos-${{ runner.os }}-${{ github.sha }}-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Remotion browser
+        run: npx remotion browser ensure
+
+      - name: Render compositions one by one
+        env:
+          ONLY_KATA: ${{ inputs.only }}
+          FORCE_RENDER: ${{ github.event_name == 'workflow_dispatch' && inputs.force }}
+        run: |
+          args=()
+          if [ -n "$ONLY_KATA" ]; then
+            args+=(--only "$ONLY_KATA")
+          fi
+          if [ "$FORCE_RENDER" = "true" ]; then
+            args+=(--force)
+          fi
+          npm run render:videos -- "${args[@]}"
+
+      - name: Save completed videos for retry
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: renders/
+          key: render-videos-${{ runner.os }}-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Upload rendered videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kata-videos-${{ github.run_id }}-${{ github.run_attempt }}
+          path: renders/*.mp4
+          if-no-files-found: warn
+          retention-days: 30

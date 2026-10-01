@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "remotion": "remotion studio --port 3001"
+    "remotion": "remotion studio --port 3001",
+    "render:videos": "node scripts/render-videos.js"
   },
   "keywords": [],
   "author": "",

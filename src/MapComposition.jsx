@@ -37,7 +37,7 @@ if (typeof document !== "undefined") {
   document.head.appendChild(styleSheet);
 }
 
-const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
+const geoUrl = staticFile("topo.js");
 const circleFlagAssets = require.context("./circle", false, /\.svg$/);
 const circleFlagUrls = new Map(
   circleFlagAssets.keys().map((filePath) => {
@@ -201,121 +201,125 @@ const get2DBezierPoint = (p0, p1, p2, t) => {
   return [x, y];
 };
 
-const InfoOverlay = ({ data, segment, frame, fps, isLeaving }) => {
+const InfoOverlay = ({ data, frame, fps, reachedFrame, leaveFrame, cameraZoom }) => {
   if (!data) return null;
-  const progress = frame - segment.start;
-  const entrance = spring({ frame: progress, fps, config: { damping: 14 } });
-  
-  // Calculate exit animation when isLeaving
-  const exitProgress = isLeaving ? Math.min((frame - (segment.end - 15)) / 15, 1) : 0;
-  
+
+  const entrance = spring({
+    frame: frame - reachedFrame,
+    fps,
+    config: { damping: 10, stiffness: 180 },
+  });
+  const exit = Number.isFinite(leaveFrame) && frame >= leaveFrame
+    ? spring({
+        frame: frame - leaveFrame,
+        fps,
+        config: { damping: 18, stiffness: 180 },
+      })
+    : 0;
+  if (exit >= 0.995) return null;
+
+  const scaleIn = interpolate(entrance, [0, 0.55, 1], [0, 1.12, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const rotateIn = interpolate(
+    entrance,
+    [0, 0.25, 0.5, 0.75, 1],
+    [-12, 8, -5, 3, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+  );
+  const scaleOut = 1 - interpolate(exit, [0, 1], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const opacity = interpolate(entrance, [0, 0.15, 1], [0, 1, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  }) * (1 - exit);
   const flagUrl = getCircleFlagUrl(data.country);
-  
-  // Tada entrance: scale with overshoot
-  const flagScale = interpolate(entrance, [0, 0.65, 1], [0, 1.15, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  
-  // Exit animation: scale down
-  const exitScale = interpolate(exitProgress, [0, 1], [1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  
-  const opacity = interpolate(entrance, [0, 0.2, 1], [0, 0.75, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  }) * (1 - exitProgress);
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: "-180px",
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: "280px",
-        minHeight: "160px",
-        boxSizing: "border-box",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "12px",
-        padding: "8px 12px",
-        opacity: opacity,
-        zIndex: 10,
-        pointerEvents: "none",
-      }}
-    >
-      {/* Flag with tada animation */}
-      <div style={{
-        width: "136px",
-        height: "136px",
-        display: "grid",
-        placeItems: "center",
-        transform: `scale(${flagScale * exitScale})`,
-        transformOrigin: "center",
-      }}>
-        {flagUrl && (
-          <img
-            src={flagUrl}
-            alt=""
-            style={{
-              width: "128px",
-              height: "128px",
-              borderRadius: "50%",
-              border: "5px solid #fff",
-              boxSizing: "border-box",
-              objectFit: "cover",
-              filter: "drop-shadow(0 0 12px rgba(56, 189, 248, 0.75))",
-            }}
-          />
-        )}
-      </div>
-      
-      {/* Word and IPA text below flag */}
-      <div style={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "4px",
-        textAlign: "center",
-      }}>
-        <div style={{
-          color: "#fef08a",
-          fontSize: "36px",
-          fontWeight: 800,
-          lineHeight: 1.05,
-          overflowWrap: "anywhere",
-          WebkitTextStroke: "1.2px #0f172a",
-          paintOrder: "stroke fill",
-          textShadow: "0 2px 8px #020617",
-        }}>
-          {data.local_word}
+    <g transform={`scale(${1 / cameraZoom})`} pointerEvents="none">
+      <foreignObject x={-230} y={-220} width={460} height={145} overflow="visible">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            width: "460px",
+            height: "145px",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "18px",
+            boxSizing: "border-box",
+            opacity,
+            transform: `scale(${scaleIn * scaleOut}) rotate(${rotateIn * (1 - exit)}deg)`,
+            transformOrigin: "center bottom",
+          }}
+        >
+          {flagUrl && (
+            <img
+              src={flagUrl}
+              alt=""
+              style={{
+                width: "126px",
+                height: "126px",
+                flex: "0 0 126px",
+                borderRadius: "50%",
+                border: "3px solid #fff",
+                boxSizing: "border-box",
+                objectFit: "cover",
+                filter: "drop-shadow(0 0 12px rgba(56, 189, 248, 0.75))",
+              }}
+            />
+          )}
+          <div style={{
+            flex: "1 1 auto",
+            minWidth: 0,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            gap: "8px",
+            textAlign: "left",
+          }}>
+            <div style={{
+              maxWidth: "100%",
+              color: "#fef08a",
+              fontSize: "32px",
+              fontWeight: 800,
+              lineHeight: 1.05,
+              overflowWrap: "anywhere",
+              WebkitTextStroke: "1px #0f172a",
+              paintOrder: "stroke fill",
+              textShadow: "0 2px 8px #020617",
+            }}>
+              {data.local_word}
+            </div>
+            <div style={{
+              maxWidth: "100%",
+              color: "#e0f2fe",
+              fontSize: "22px",
+              fontWeight: 700,
+              lineHeight: 1.1,
+              overflowWrap: "anywhere",
+              WebkitTextStroke: "0.7px #0f172a",
+              paintOrder: "stroke fill",
+              textShadow: "0 2px 7px #020617",
+            }}>
+              {data.ejaan_umum_ipa}
+            </div>
+          </div>
         </div>
-        <div style={{
-          color: "#e0f2fe",
-          fontSize: "24px",
-          fontWeight: 700,
-          lineHeight: 1.15,
-          overflowWrap: "anywhere",
-          WebkitTextStroke: "0.8px #0f172a",
-          paintOrder: "stroke fill",
-          textShadow: "0 2px 7px #020617",
-        }}>
-          {data.ejaan_umum_ipa}
-        </div>
-      </div>
-    </div>
+      </foreignObject>
+    </g>
   );
 };
 
 const StoryTitle = () => (
   <div style={{
     position: "absolute",
-    top: "3.5%",
+    top: "5.5%",
     left: 0,
     width: "100%",
     display: "flex",
@@ -328,12 +332,12 @@ const StoryTitle = () => (
     <div
       className="story-title-block"
       style={{
-        background: "rgba(15, 23, 42, 0.94)",
+        background: "rgba(230, 236, 250, 0.94)",
         border: "2px solid rgba(56, 189, 248, 0.8)",
         borderRadius: "12px",
         padding: "12px 28px",
-        color: "#f8fafc",
-        fontSize: "48px",
+        color: "#0a0a0a",
+        fontSize: "68px",
         fontWeight: 800,
         letterSpacing: "1px",
         lineHeight: 1.1,
@@ -346,12 +350,12 @@ const StoryTitle = () => (
     <div
       className="story-title-block"
       style={{
-        background: "rgba(15, 23, 42, 0.94)",
+        background: "rgba(241, 241, 242, 0.94)",
         border: "2px solid rgba(56, 189, 248, 0.8)",
         borderRadius: "12px",
         padding: "12px 28px",
-        color: "#fef08a",
-        fontSize: "48px",
+        color: "#141414",
+        fontSize: "68px",
         fontWeight: 800,
         letterSpacing: "1px",
         lineHeight: 1.1,
@@ -483,6 +487,11 @@ const GreenScreenVideo = ({ frame, timelineSegments, route, fps }) => {
     }}>
       <Img
         src={staticFile(`reaction-frames/${frameFile}`)}
+        alt=""
+        maxRetries={0}
+        onImageError={(error) => {
+          console.warn(`Reaction frame ${frameFile} is unavailable; skipping that frame.`, error);
+        }}
         style={{
           width: "100%",
           height: "100%",
@@ -507,8 +516,16 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
 
   useEffect(() => {
     fetch(geoUrl)
-      .then(() => continueRender(handle))
-      .catch(() => continueRender(handle));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Map data request failed: ${response.status}`);
+        }
+        continueRender(handle);
+      })
+      .catch((error) => {
+        console.warn("Map data is unavailable; rendering without map geometry.", error);
+        continueRender(handle);
+      });
   }, [handle]);
 
   const activeSegment = useMemo(() => {
@@ -692,19 +709,6 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
   return (
     <div style={{ width: "100%", height: "100%", backgroundColor: "#0f172a", display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden", fontFamily: "system-ui, sans-serif", position: "relative" }}>
       
-      {activeSegment.type === "stay" && (() => {
-        const moveSeg = timelineSegments.find((s) => s.type === "move" && s.fromIdx === activeSegment.fromIdx);
-        const isLeaving = moveSeg && frame >= moveSeg.start;
-        return (
-          <InfoOverlay 
-            data={route[activeSegment.fromIdx]} 
-            segment={activeSegment} 
-            frame={frame} 
-            fps={fps}
-            isLeaving={isLeaving}
-          />
-        );
-      })()}
       <StoryTitle />
 
       <GreenScreenVideo
@@ -932,6 +936,18 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
               const moveSeg = timelineSegments.find((s) => s.type === "move" && s.fromIdx === index);
               const leaveFrame = moveSeg ? moveSeg.start : Infinity;
               const isLeaving = markerFrame >= leaveFrame;
+              const isCurrentInfo =
+                !isIntroPreview &&
+                activeSegment.fromIdx === index &&
+                ["stay", "move", "outro"].includes(activeSegment.type);
+              const outroSeg = timelineSegments.find(
+                (segment) => segment.type === "outro" && segment.fromIdx === index
+              );
+              const infoLeaveFrame = moveSeg
+                ? moveSeg.start
+                : outroSeg
+                  ? outroSeg.start
+                  : Infinity;
 
               // 1. Skala membesar (Scale In) saat titik tiba
               const scaleIn = Math.max(0, spring({ frame: markerFrame - reachedFrame, fps, config: { damping: 12 } }));
@@ -977,6 +993,16 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
                       {wp.country}
                     </text>
                   </g>
+                  {isCurrentInfo && (
+                    <InfoOverlay
+                      data={wp}
+                      frame={frame}
+                      fps={fps}
+                      reachedFrame={reachedFrame}
+                      leaveFrame={infoLeaveFrame}
+                      cameraZoom={cameraZoom}
+                    />
+                  )}
                 </Marker>
               );
             })}
