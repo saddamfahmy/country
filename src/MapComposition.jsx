@@ -16,12 +16,18 @@ import {
   Geographies,
   Geography,
   Marker,
-  Line,
   ZoomableGroup,
 } from "react-simple-maps";
 import { geoBounds, geoContains } from "d3-geo";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
+const circleFlagAssets = require.context("./circle", false, /\.svg$/);
+const circleFlagUrls = new Map(
+  circleFlagAssets.keys().map((filePath) => {
+    const asset = circleFlagAssets(filePath);
+    return [filePath, typeof asset === "string" ? asset : asset.default];
+  })
+);
 const BEND_FACTOR = 0.3;
 const mainlandCameraCountries = new Set([
   "United States",
@@ -38,6 +44,14 @@ const countryNameAliases = {
   "Viet Nam": "Vietnam",
   "Czechia": "Czech Republic",
   "Türkiye": "Turkey",
+};
+const flagNameAliases = {
+  "United States": ["United States of America"],
+  Russia: ["Russian Federation"],
+  "South Korea": ["Korea (South)"],
+  "North Korea": ["Korea (North)"],
+  "Czech Republic": ["Czechia"],
+  Turkey: ["Turkey"],
 };
 
 const modernPalette = [
@@ -68,7 +82,28 @@ const getLighterColor = (color) => {
 };
 
 const normalizeCountryName = (name) =>
-  name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+
+const getCircleFlagUrl = (countryName) => {
+  const names = [countryName, ...(flagNameAliases[countryName] || [])];
+  for (const name of names) {
+    const normalizedName = normalizeCountryName(name);
+    const match = circleFlagAssets.keys().find((filePath) => {
+      const fileName = filePath.split("/").pop().replace(/\.svg$/i, "");
+      const normalizedFileName = normalizeCountryName(fileName);
+      return (
+        normalizedFileName === normalizedName ||
+        normalizedFileName.startsWith(`${normalizedName}`)
+      );
+    });
+    if (match) return circleFlagUrls.get(match);
+  }
+  return null;
+};
 
 const getMainLandmassFeature = (geoFeature, targetCoords) => {
   if (!geoFeature || !geoFeature.geometry) return geoFeature;
@@ -195,12 +230,52 @@ const InfoOverlay = ({ data, segment, frame, fps }) => {
   );
 };
 
+const GreenScreenVideo = ({ durationInFrames, fps }) => {
+  const frame = useCurrentFrame();
+  const videoDurationSeconds = 11.98;
+  const videoDurationFrames = Math.ceil(videoDurationSeconds * fps);
+  const videoFrame = frame % videoDurationFrames;
+
+  return (
+    <div style={{
+      position: "absolute",
+      bottom: "40px",
+      right: "40px",
+      width: "280px",
+      height: "280px",
+      borderRadius: "16px",
+      overflow: "hidden",
+      boxShadow: "0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.3)",
+      border: "2px solid rgba(168, 85, 247, 0.5)",
+      zIndex: 20,
+      backdropFilter: "blur(5px)",
+    }}>
+      <video
+        src="reaction1_converted.mp4"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          filter: "drop-shadow(0 0 15px rgba(168, 85, 247, 0.4))",
+        }}
+        autoPlay
+        muted
+        loop
+        playsInline
+        onError={(e) => {
+          console.error("Video playback error:", e);
+        }}
+      />
+    </div>
+  );
+};
+
 export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
   if (!jsonData || !jsonData.route || !timelineSegments || timelineSegments.length === 0) {
     return null; 
   }
   const frame = useCurrentFrame();
-  const { fps, width, height } = useVideoConfig();
+  const { fps, width, height, durationInFrames } = useVideoConfig();
   const route = jsonData.route;
 
   const [handle] = useState(() => delayRender("Loading Map TopoJSON..."));
@@ -342,8 +417,8 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
     );
   }
 
-  const renderableSegments = useMemo(() => {
-    const segments = [];
+  const renderableRoutes = useMemo(() => {
+    const routes = [];
     for (let l = 0; l < route.length - 1; l++) {
       const moveSeg = timelineSegments.find(s => s.type === "move" && s.fromIdx === l);
       if (!moveSeg) continue;
@@ -362,25 +437,20 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
       }
 
       if (progressLimit > 0) {
-        const numSteps = Math.max(30, Math.floor(progressLimit * 100));
+        const numSteps = 240;
         const p0 = route[l].coords;
         const p2 = route[l+1].coords;
         const cp = get2DControlPoint(p0, p2, BEND_FACTOR);
+        const coordinates = [];
 
-        for (let i = 0; i < numSteps; i++) {
-          const t1 = (i / numSteps) * progressLimit;
-          const t2 = ((i + 1) / numSteps) * progressLimit;
-
-          segments.push({
-            key: `leg-${l}-step-${i}`,
-            from: get2DBezierPoint(p0, cp, p2, t1),
-            to: get2DBezierPoint(p0, cp, p2, t2),
-            progress: t1
-          });
+        for (let i = 0; i <= numSteps; i++) {
+          const t = (i / numSteps) * progressLimit;
+          coordinates.push(get2DBezierPoint(p0, cp, p2, t));
         }
+        routes.push({ key: `leg-${l}`, coordinates });
       }
     }
-    return segments;
+    return routes;
   }, [route, timelineSegments, frame, isIntroPreview]);
 
   const renderAudio = () => {
@@ -396,11 +466,13 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
   };
 
   return (
-    <div style={{ width: "100%", height: "100%", backgroundColor: "#0f172a", display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden", fontFamily: "system-ui, sans-serif" }}>
+    <div style={{ width: "100%", height: "100%", backgroundColor: "#0f172a", display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden", fontFamily: "system-ui, sans-serif", position: "relative" }}>
       
       {activeSegment.type === "stay" && (
         <InfoOverlay data={route[activeSegment.fromIdx]} segment={activeSegment} frame={frame} fps={fps} />
       )}
+
+      <GreenScreenVideo durationInFrames={durationInFrames} fps={fps} />
 
       {renderAudio()}
 
@@ -428,27 +500,33 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
                 </feMerge>
               </filter>
               <filter id="countryNeonGlow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="softGlow" />
-                <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="wideGlow" />
+                <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="softGlow" />
+                <feGaussianBlur in="SourceGraphic" stdDeviation="11" result="wideGlow" />
                 <feMerge>
                   <feMergeNode in="wideGlow" />
                   <feMergeNode in="softGlow" />
-                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <filter id="countryCoreGlow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="softCore" />
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="wideCore" />
+                <feMerge>
+                  <feMergeNode in="wideCore" />
+                  <feMergeNode in="softCore" />
                 </feMerge>
               </filter>
               <filter id="routeNeonGlow" x="-300%" y="-300%" width="700%" height="700%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="softGlow" />
-                <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="wideGlow" />
+                <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="softGlow" />
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="wideGlow" />
                 <feMerge>
                   <feMergeNode in="wideGlow" />
                   <feMergeNode in="softGlow" />
-                  <feMergeNode in="SourceGraphic" />
                 </feMerge>
               </filter>
             </defs>
 
             <Geographies geography={geoUrl}>
-              {({ geographies }) => {
+              {({ geographies, path }) => {
                 if (geographies && geographies.length > 0 && Object.keys(autoCamMap).length === 0) {
                   const calculatedMap = {};
                   route.forEach((target) => {
@@ -477,7 +555,9 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
                   return (isVisitedA ? indexA + 1 : 0) - (isVisitedB ? indexB + 1 : 0);
                 });
 
-                return sortedGeographies.map((geo) => {
+                return (
+                  <>
+                    {sortedGeographies.map((geo) => {
                   const countryKey = geo.properties.name || geo.rsmKey;
                   const wpIndex = getRouteIndex(countryKey);
                   const waypoint = wpIndex !== -1 ? route[wpIndex] : null;
@@ -534,10 +614,10 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
                         <Geography
                           geography={geo}
                           fill={getLighterColor(countryColor)}
-                          fillOpacity={neonOpacity * 0.2}
+                          fillOpacity={neonOpacity * 0.16}
                           stroke={getLighterColor(countryColor)}
-                          strokeWidth={1.8}
-                          strokeOpacity={neonOpacity}
+                          strokeWidth={2.2}
+                          strokeOpacity={neonOpacity * 0.8}
                           style={{
                             default: {
                               outline: "none",
@@ -553,13 +633,13 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
                         <Geography
                           geography={geo}
                           fill="none"
-                          stroke="#ffffff"
-                          strokeWidth={0.45}
-                          strokeOpacity={neonOpacity}
+                          stroke="#d9f8ff"
+                          strokeWidth={1.1}
+                          strokeOpacity={neonOpacity * 0.38}
                           style={{
                             default: {
                               outline: "none",
-                              filter: "url(#neonGlow)",
+                              filter: "url(#countryCoreGlow)",
                               pointerEvents: "none",
                             },
                             hover: { outline: "none" },
@@ -569,38 +649,38 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
                       )}
                     </React.Fragment>
                   );
-                });
+                    })}
+                    {renderableRoutes.map((routeLine) => {
+                      const d = path({
+                        type: "LineString",
+                        coordinates: routeLine.coordinates,
+                      });
+                      const haloWidth = 8 / (cameraZoom / 2);
+                      const coreWidth = 2 / (cameraZoom / 2);
+
+                      return (
+                        <g key={routeLine.key} fill="none" stroke="#fef08a">
+                          <path
+                            d={d}
+                            strokeWidth={haloWidth}
+                            strokeOpacity={0.72}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            style={{ filter: "url(#routeNeonGlow)" }}
+                          />
+                          <path
+                            d={d}
+                            strokeWidth={coreWidth}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </g>
+                      );
+                    })}
+                  </>
+                );
               }}
             </Geographies>
-
-            {/* Render Garis Rute */}
-            <g>
-              {renderableSegments.map((seg) => {
-                const baseStroke = 1.8;
-                const dynamicStrokeWidth = baseStroke + ((5 - baseStroke) * seg.progress);
-                const scaledStrokeWidth = dynamicStrokeWidth / (cameraZoom / 2);
-                return (
-                  <React.Fragment key={seg.key}>
-                    <Line
-                      from={seg.from}
-                      to={seg.to}
-                      stroke="#fef08a"
-                      strokeWidth={scaledStrokeWidth * 2.5}
-                      strokeOpacity={0.7}
-                      strokeLinecap="round"
-                      style={{ filter: "url(#routeNeonGlow)" }}
-                    />
-                    <Line
-                      from={seg.from}
-                      to={seg.to}
-                      stroke="#fef08a"
-                      strokeWidth={scaledStrokeWidth}
-                      strokeLinecap="round"
-                    />
-                  </React.Fragment>
-                );
-              })}
-            </g>
 
             {/* --- UPDATE: Marker Titik Negara & Animasi Tertanam --- */}
             {route.map((wp, index) => {
@@ -629,6 +709,33 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
               
               // Terapkan kalkulasi akhir lingkungan/scale
               const finalScale = baseScale * invScale;
+              const flagUrl = getCircleFlagUrl(wp.country);
+              const tada = spring({
+                frame: markerFrame - reachedFrame,
+                fps,
+                config: { damping: 7, stiffness: 180, mass: 0.6 },
+              });
+              const flagLeaveSegment =
+                moveSeg ||
+                timelineSegments.find(
+                  (segment) => segment.type === "outro" && segment.fromIdx === index
+                );
+              const flagFadeOut = flagLeaveSegment
+                ? interpolate(
+                    markerFrame - flagLeaveSegment.start,
+                    [0, 18],
+                    [1, 0],
+                    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+                  )
+                : 1;
+              const flagScale = interpolate(tada, [0, 0.5, 1], [0, 1.15, 1], {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              });
+              const flagRotation = interpolate(tada, [0, 0.5, 1], [-12, 8, 0], {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              });
 
               // Optimasi: Jika marker sudah 100% tertanam & lenyap (skala <= 0.001), berhenti merender marker ini
               if (isLeaving && finalScale <= 0.001) return null;
@@ -657,6 +764,28 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
                     >
                       {wp.country}
                     </text>
+                    {flagUrl && !isIntroPreview && (
+                      <g
+                        transform={`translate(0 -40) rotate(${flagRotation}) scale(${flagScale * 0.2})`}
+                        opacity={Math.min(1, tada) * Math.max(0, 1 - scaleOut) * flagFadeOut}
+                        style={{ filter: "drop-shadow(0 2px 5px rgba(0, 0, 0, 0.75))" }}
+                      >
+                        <circle
+                          r={68}
+                          fill="#0f172a"
+                          stroke="#ffffff"
+                          strokeWidth={4}
+                        />
+                        <image
+                          href={flagUrl}
+                          x={-60}
+                          y={-60}
+                          width={120}
+                          height={120}
+                          preserveAspectRatio="xMidYMid meet"
+                        />
+                      </g>
+                    )}
                   </g>
                 </Marker>
               );

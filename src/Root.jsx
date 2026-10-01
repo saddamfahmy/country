@@ -77,12 +77,7 @@ export const RemotionRoot = () => {
               );
             }
 
-            const audioDurationFrames = Math.ceil(audioDurationSec * fps);
-            const stayDur = Math.max(
-              1,
-              audioDurationFrames + BUFFER_DUR,
-              i === route.length - 1 ? audioDurationFrames : 0
-            );
+            const stayDur = Math.ceil(audioDurationSec * fps) + BUFFER_DUR;
             timelineSegments.push({
               type: "stay",
               start: currentFrame,
