@@ -22,21 +22,6 @@ import {
 import { geoBounds, geoContains } from "d3-geo";
 import reactionMapping from "./video/reaction-mapping.json";
 
-const styles = `
-  @keyframes pulse-highlight {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; }
-  }
-  .story-title-block {
-    animation: pulse-highlight 1.5s ease-in-out infinite;
-  }
-`;
-if (typeof document !== "undefined") {
-  const styleSheet = document.createElement("style");
-  styleSheet.textContent = styles;
-  document.head.appendChild(styleSheet);
-}
-
 const geoUrl = staticFile("topo.js");
 const circleFlagAssets = require.context("./circle", false, /\.svg$/);
 const circleFlagUrls = new Map(
@@ -46,6 +31,57 @@ const circleFlagUrls = new Map(
   })
 );
 const BEND_FACTOR = 0.3;
+const MUSIC_FILES = ["1.mp3", "2.mp3"];
+const MUSIC_CHOICE = null;
+const MUSIC_MAX_VOLUME = 0.2;
+const MUSIC_MIN_VOLUME = 0.2;
+const MUSIC_FADE_SECONDS = 0.3;
+const BACKGROUND_IMAGE_PATTERN = /\.(avif|bmp|gif|jpe?g|png|svg|webp)$/i;
+const BACKGROUND_MAPPING = {
+  bgchois: null,
+  backgrounds: [
+    {
+      bg: "bg/1.jpg",
+      color: "#ac30b7",
+      line: "#c4ae07",
+    },
+    {
+      bg: "bg/2.jpg",
+      color: "#4cf7fa",
+      line: "#ec0b0b",
+    },
+    {
+      bg: "#3263e9",
+      color: "#1e293b",
+      line: "#fef08a",
+    },
+    {
+      bg: "#0f172a",
+      color: "#1e293b",
+      line: "#fbbf24",
+    },
+    {
+      bg: "#082f49",
+      color: "#164e63",
+      line: "#67e8f9",
+    },
+    {
+      bg: "#f1f5f9",
+      color: "#cbd5e1",
+      line: "#ea580c",
+    },
+    {
+      bg: "bg/1.jpg",
+      color: "#334155",
+      line: "#fda4af",
+    },
+    {
+      bg: "bg/2.jpg",
+      color: "#3f3f46",
+      line: "#a7f3d0",
+    },
+  ],
+};
 const mainlandCameraCountries = new Set([
   "United States",
   "France",
@@ -262,14 +298,14 @@ const InfoOverlay = ({ data, frame, fps, reachedFrame, leaveFrame, cameraZoom })
               src={flagUrl}
               alt=""
               style={{
-                width: "126px",
-                height: "126px",
-                flex: "0 0 126px",
+                width: "160px",
+                height: "160px",
+                flex: "0 0 160px",
                 borderRadius: "50%",
-                border: "3px solid #fff",
+                border: "4px solid #fff",
                 boxSizing: "border-box",
                 objectFit: "cover",
-                filter: "drop-shadow(0 0 12px rgba(56, 189, 248, 0.75))",
+                filter: "drop-shadow(0 0 16px rgba(56, 189, 248, 0.85))",
               }}
             />
           )}
@@ -280,32 +316,32 @@ const InfoOverlay = ({ data, frame, fps, reachedFrame, leaveFrame, cameraZoom })
             flexDirection: "column",
             alignItems: "flex-start",
             justifyContent: "center",
-            gap: "8px",
+            gap: "20px",
             textAlign: "left",
           }}>
             <div style={{
               maxWidth: "100%",
               color: "#fef08a",
-              fontSize: "32px",
+              fontSize: "42px",
               fontWeight: 800,
               lineHeight: 1.05,
               overflowWrap: "anywhere",
-              WebkitTextStroke: "1px #0f172a",
+              WebkitTextStroke: "2px #0f172a",
               paintOrder: "stroke fill",
-              textShadow: "0 2px 8px #020617",
+              textShadow: "0 2px 10px #020617",
             }}>
               {data.local_word}
             </div>
             <div style={{
               maxWidth: "100%",
               color: "#e0f2fe",
-              fontSize: "22px",
+              fontSize: "28px",
               fontWeight: 700,
               lineHeight: 1.1,
               overflowWrap: "anywhere",
-              WebkitTextStroke: "0.7px #0f172a",
+              WebkitTextStroke: "1.2px #0f172a",
               paintOrder: "stroke fill",
-              textShadow: "0 2px 7px #020617",
+              textShadow: "0 2px 9px #020617",
             }}>
               {data.ejaan_umum_ipa}
             </div>
@@ -316,7 +352,7 @@ const InfoOverlay = ({ data, frame, fps, reachedFrame, leaveFrame, cameraZoom })
   );
 };
 
-const StoryTitle = () => (
+const StoryTitle = ({ globalWord }) => (
   <div style={{
     position: "absolute",
     top: "5.5%",
@@ -329,41 +365,40 @@ const StoryTitle = () => (
     zIndex: 10,
     pointerEvents: "none",
   }}>
-    <div
-      className="story-title-block"
-      style={{
+    <div style={{
+        maxWidth: "calc(100% - 64px)",
+        boxSizing: "border-box",
         background: "rgba(230, 236, 250, 0.94)",
         border: "2px solid rgba(56, 189, 248, 0.8)",
         borderRadius: "12px",
-        padding: "12px 28px",
+        padding: "12px 24px",
         color: "#0a0a0a",
-        fontSize: "68px",
+        fontSize: "min(68px, 5.4vw)",
         fontWeight: 800,
         letterSpacing: "1px",
         lineHeight: 1.1,
         textShadow: "0 2px 5px #020617",
         boxShadow: "0 4px 18px rgba(2, 6, 23, 0.55)",
-      }}
-    >
-      Finally, you discover
+      }}>
+      Finally, you discover how
     </div>
-    <div
-      className="story-title-block"
-      style={{
+    <div style={{
+        maxWidth: "calc(100% - 64px)",
+        boxSizing: "border-box",
         background: "rgba(241, 241, 242, 0.94)",
         border: "2px solid rgba(56, 189, 248, 0.8)",
         borderRadius: "12px",
-        padding: "12px 28px",
+        padding: "12px 24px",
+        whiteSpace: "nowrap",
         color: "#141414",
-        fontSize: "68px",
+        fontSize: "min(68px, 5.4vw)",
         fontWeight: 800,
         letterSpacing: "1px",
         lineHeight: 1.1,
         textShadow: "0 2px 5px #020617",
         boxShadow: "0 4px 18px rgba(2, 6, 23, 0.55)",
-      }}
-    >
-      how words evolve
+      }}>
+       the word '{globalWord}' evolves
     </div>
   </div>
 );
@@ -476,14 +511,12 @@ const GreenScreenVideo = ({ frame, timelineSegments, route, fps }) => {
       position: "absolute",
       bottom: "40px",
       right: "40px",
-      width: "280px",
-      height: "280px",
+      width: "480px",
+      height: "480px",
       borderRadius: "16px",
       overflow: "hidden",
-      boxShadow: "0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.3)",
       border: "none",
       zIndex: 20,
-      backdropFilter: "blur(5px)",
     }}>
       <Img
         src={staticFile(`reaction-frames/${frameFile}`)}
@@ -496,7 +529,7 @@ const GreenScreenVideo = ({ frame, timelineSegments, route, fps }) => {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          filter: "drop-shadow(0 0 15px rgba(168, 85, 247, 0.4))",
+         
         }}
       />
     </div>
@@ -510,6 +543,33 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const route = jsonData.route;
+  const [musicIndex] = useState(() =>
+    MUSIC_CHOICE == null
+      ? Math.floor(Math.random() * MUSIC_FILES.length)
+      : MUSIC_CHOICE - 1
+  );
+  const musicFile = MUSIC_FILES[musicIndex];
+  if (!musicFile) {
+    throw new Error(`Invalid MUSIC_CHOICE value "${MUSIC_CHOICE}".`);
+  }
+  const [backgroundIndex] = useState(() =>
+    BACKGROUND_MAPPING.bgchois == null
+      ? Math.floor(Math.random() * BACKGROUND_MAPPING.backgrounds.length)
+      : BACKGROUND_MAPPING.bgchois - 1
+  );
+  const backgroundChoice = BACKGROUND_MAPPING.backgrounds[backgroundIndex];
+  if (!backgroundChoice) {
+    throw new Error(
+      `Invalid bgchois value "${BACKGROUND_MAPPING.bgchois}" in BACKGROUND_MAPPING.`
+    );
+  }
+  const backgroundIsImage = BACKGROUND_IMAGE_PATTERN.test(backgroundChoice.bg);
+  const backgroundImage = backgroundIsImage
+    ? `url("${staticFile(backgroundChoice.bg)}")`
+    : "none";
+  const backgroundColor = backgroundIsImage
+    ? "#0f172a"
+    : backgroundChoice.bg;
 
   const [handle] = useState(() => delayRender("Loading Map TopoJSON..."));
   const [autoCamMap, setAutoCamMap] = useState({});
@@ -569,7 +629,7 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
   };
 
   // BASE_ZOOM diperkecil menjadi 0.7 agar tampilan zoom out/peta awal & akhir lebih luas
-  const BASE_ZOOM = 6;
+  const BASE_ZOOM = 3;
   const initialCameraCenter = [...route[0].coords];
   const initialCameraZoom = BASE_ZOOM;
   let cameraCenter = initialCameraCenter;
@@ -695,21 +755,104 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
   }, [route, timelineSegments, frame, isIntroPreview]);
 
   const renderAudio = () => {
-    return timelineSegments.filter(s => s.type === "stay").map((seg, idx) => {
+    const speechSegments = timelineSegments.filter(
+      (segment) =>
+        segment.type === "stay" && route[segment.fromIdx]?.sound_file
+    );
+    const musicVolume = (audioFrame) => {
+      const fadeFrames = Math.max(1, Math.round(MUSIC_FADE_SECONDS * fps));
+      let volume = MUSIC_MAX_VOLUME;
+
+      for (const segment of speechSegments) {
+        const start = segment.audioStartFrame ?? segment.start;
+        const end = segment.end;
+        let segmentVolume = MUSIC_MAX_VOLUME;
+
+        if (audioFrame < start && audioFrame >= start - fadeFrames) {
+          const progress = (audioFrame - (start - fadeFrames)) / fadeFrames;
+          segmentVolume =
+            MUSIC_MAX_VOLUME +
+            (MUSIC_MIN_VOLUME - MUSIC_MAX_VOLUME) * progress;
+        } else if (audioFrame >= start && audioFrame < end) {
+          segmentVolume = MUSIC_MIN_VOLUME;
+        } else if (audioFrame >= end && audioFrame < end + fadeFrames) {
+          const progress = (audioFrame - end) / fadeFrames;
+          segmentVolume =
+            MUSIC_MIN_VOLUME +
+            (MUSIC_MAX_VOLUME - MUSIC_MIN_VOLUME) * progress;
+        }
+
+        volume = Math.min(volume, segmentVolume);
+      }
+
+      return volume;
+    };
+    const backgroundMusic = (
+      <Audio
+        key="background-music"
+        src={staticFile(`musik/${musicFile}`)}
+        loop
+        volume={musicVolume}
+      />
+    );
+
+    const introSegment = timelineSegments.find((segment) => segment.type === "intro");
+    const introAudio = introSegment ? (
+      <Sequence
+        key="intro-zoom-audio"
+        from={introSegment.start}
+        durationInFrames={introSegment.end - introSegment.start}
+      >
+        <Audio src={staticFile("sound efek/zoom-in.mp3")} />
+      </Sequence>
+    ) : null;
+
+    const arrivalAudio = timelineSegments
+      .filter((segment) => segment.type === "stay")
+      .map((segment) => (
+        <Sequence
+          key={`arrival-click-${segment.fromIdx}`}
+          from={segment.start}
+          durationInFrames={segment.end - segment.start}
+        >
+          <Audio src={staticFile("sound efek/click.wav")} />
+        </Sequence>
+      ));
+
+    const stayAudio = timelineSegments.filter(s => s.type === "stay").map((seg, idx) => {
       const audioUrl = route[idx].sound_file;
       if (!audioUrl) return null;
       return (
-        <Sequence key={`audio-${idx}`} from={seg.audioStartFrame} durationInFrames={seg.end - seg.audioStartFrame}>
+        <Sequence
+          key={`audio-${idx}`}
+          from={seg.audioStartFrame}
+          durationInFrames={seg.end - seg.audioStartFrame}
+        >
           <Audio src={staticFile(audioUrl)} />
         </Sequence>
       );
     });
+
+    const outroSegment = timelineSegments.find((segment) => segment.type === "outro");
+    const outroAudio = outroSegment ? (
+      <Sequence
+        key="outro-zoom-audio"
+        from={outroSegment.start}
+        durationInFrames={outroSegment.end - outroSegment.start}
+      >
+        <Audio src={staticFile("sound efek/zoom-out.mp3")} />
+      </Sequence>
+    ) : null;
+
+    return [backgroundMusic, introAudio, ...arrivalAudio, ...stayAudio, outroAudio];
   };
 
+  
+
   return (
-    <div style={{ width: "100%", height: "100%", backgroundColor: "#0f172a", display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden", fontFamily: "system-ui, sans-serif", position: "relative" }}>
+    <div style={{ width: "100%", height: "100%", backgroundColor, backgroundImage, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden", fontFamily: "system-ui, sans-serif", position: "relative" }}>
       
-      <StoryTitle />
+      <StoryTitle globalWord={jsonData.global_word} />
 
       <GreenScreenVideo
         frame={frame}
@@ -725,7 +868,15 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
           projection="geoMercator"
           width={width}
           height={height}
-          style={{ width: "100%", height: "100%" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            backgroundColor,
+            backgroundImage,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
         >
           <ZoomableGroup 
             center={cameraCenter} 
@@ -842,8 +993,8 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
                     <React.Fragment key={geo.rsmKey}>
                       <Geography
                         geography={geo}
-                        fill={isVisited ? countryColor : "#1e293b"}
-                        stroke={isVisited ? countryColor : "#334155"}
+                        fill={isVisited ? countryColor : backgroundChoice.color}
+                        stroke={isVisited ? countryColor : backgroundChoice.color}
                         strokeWidth={isVisited ? 0.25 : 0.1}
                         style={{
                           default: {
@@ -903,7 +1054,11 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
                       const coreWidth = 2 / (cameraZoom / 2);
 
                       return (
-                        <g key={routeLine.key} fill="none" stroke="#fef08a">
+                        <g
+                          key={routeLine.key}
+                          fill="none"
+                          stroke={backgroundChoice.line}
+                        >
                           <path
                             d={d}
                             strokeWidth={haloWidth}
@@ -978,20 +1133,26 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
                       strokeWidth={0.5}
                       style={index !== 0 ? { filter: "url(#neonGlow)" } : {}}
                     />
-                    <text
-                      textAnchor="middle"
-                      y={-4}
-                      style={{
-                        fill: "#ffffff",
-                        fontSize: "9px",
-                        fontWeight: "bold",
-                        textShadow: "0px 0.5px 1px rgba(0,0,0,0.8)",
-                        // Teks perlahan memudar (fade-out) bersamaan dengan skala yang mengecil
-                        opacity: Math.max(0, 1 - scaleOut), 
-                      }}
-                    >
-                      {wp.country}
-                    </text>
+                  <text
+                    textAnchor="middle"
+                    y={-4}
+                    style={{
+                      fill: "#ffffff",
+                      fontSize: "9px",
+                      fontWeight: "bold",
+                      textShadow: "0px 0px 10px rgba(0,0,0,0.8)",
+                      // Teks perlahan memudar (fade-out) bersamaan dengan skala yang mengecil
+                      opacity: Math.max(0, 1 - scaleOut), 
+                      
+                      // --- TAMBAHAN UNTUK STROKE TEBAL ---
+                      stroke: "#000000",       // Warna garis pinggir (misal: hitam)
+                      strokeWidth: "2.5px",    // Ketebalan garis pinggir (atur sesuai selera, misal 2px - 3px)
+                      strokeLinejoin: "round", // Membuat sudut garis melengkung agar rapi
+                      paintOrder: "stroke fill", // Memastikan stroke ada di belakang warna utama teks
+                    }}
+                  >
+                    {wp.country}
+                  </text>
                   </g>
                   {isCurrentInfo && (
                     <InfoOverlay

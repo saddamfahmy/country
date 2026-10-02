@@ -3,8 +3,9 @@ import { Composition, staticFile } from "remotion";
 import { getAudioDurationInSeconds } from "@remotion/media-utils";
 import { MultiCountryMapComposition } from "./MapComposition";
 
-// 1. IMPORT JSON LANGSUNG dari folder src/kata
-import YouData from "./kata/cokelat.json";
+const kataFiles = require.context("../public/kata", false, /\.json$/);
+const cokelatModule = kataFiles("./cokelat.json");
+const YouData = cokelatModule.default || cokelatModule;
 
 // Helper untuk menghitung jarak sudut (Great-Circle Distance) antar dua koordinat [lng, lat]
 const getAngularDistance = (p1, p2) => {
@@ -46,7 +47,7 @@ export const RemotionRoot = () => {
 
           // ATURAN DURASI (FRAME)
           const INTRO_DUR = 90;
-          const OUTRO_DUR = 120;
+          const OUTRO_DUR = -20;
           const BUFFER_DUR = -53;
 
           // MAX_DUR adalah acuan durasi titik terjauh (jarak 180 derajat / setengah bumi)

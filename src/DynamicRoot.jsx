@@ -46,7 +46,7 @@ const getTimelineSegments = async (jsonData, fps) => {
   let currentFrame = 0;
   const timelineSegments = [];
   const INTRO_DUR = 90;
-  const OUTRO_DUR = 120;
+  const OUTRO_DUR = 60;
   const BUFFER_DUR = -53;
   const PRE_AUDIO_DUR = Math.round(0.5 * fps);
   const MIN_DUR = 50;
