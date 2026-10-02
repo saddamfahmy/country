@@ -1,0 +1,185 @@
+{
+  "global_word": "Internet",
+  "route": [
+    {
+      "order": 1,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": true,
+      "local_word": "Internet",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Inter-net",
+      "ejaan_umum_ipa": "/ˈɪntɚˌnɛt/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_Internet.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Mexico",
+      "coords": [
+        -99.1332,
+        19.4326
+      ],
+      "is_origin": false,
+      "local_word": "internet",
+      "edge_tts_lang": "es-MX",
+      "fallback_used": false,
+      "similarity_percentage": 96,
+      "ejaan_palsu_indonesia": "Inter-net",
+      "ejaan_umum_ipa": "/inteɾˈnet/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Mexico_Internet.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Brazil",
+      "coords": [
+        -47.8825,
+        -15.7942
+      ],
+      "is_origin": false,
+      "local_word": "internet",
+      "edge_tts_lang": "pt-BR",
+      "fallback_used": false,
+      "similarity_percentage": 91,
+      "ejaan_palsu_indonesia": "In-teher-neci",
+      "ejaan_umum_ipa": "/ĩteʁˈnɛtʃi/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Brazil_Internet.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Portugal",
+      "coords": [
+        -9.1393,
+        38.7223
+      ],
+      "is_origin": false,
+      "local_word": "internet",
+      "edge_tts_lang": "pt-PT",
+      "fallback_used": false,
+      "similarity_percentage": 87,
+      "ejaan_palsu_indonesia": "In-ter-net",
+      "ejaan_umum_ipa": "/ĩtɨɾˈnɛt/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Portugal_Internet.mp3"
+    },
+    {
+      "order": 5,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "Internet",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 82,
+      "ejaan_palsu_indonesia": "Ang-ter-net",
+      "ejaan_umum_ipa": "/ɛ̃tɛʁnɛt/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/France_Internet.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Internet",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 78,
+      "ejaan_palsu_indonesia": "In-ter-net",
+      "ejaan_umum_ipa": "/ˈɪntɐnɛt/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Internet.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Turkey",
+      "coords": [
+        32.8597,
+        39.9334
+      ],
+      "is_origin": false,
+      "local_word": "internet",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 74,
+      "ejaan_palsu_indonesia": "In-ter-net",
+      "ejaan_umum_ipa": "/inteɾˈnet/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_Internet.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Egypt",
+      "coords": [
+        31.2357,
+        30.0444
+      ],
+      "is_origin": false,
+      "local_word": "إنترنت",
+      "edge_tts_lang": "ar-EG",
+      "fallback_used": true,
+      "similarity_percentage": 69,
+      "ejaan_palsu_indonesia": "Internet",
+      "ejaan_umum_ipa": "/ʔinternet/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Egypt_Internet.mp3"
+    },
+    {
+      "order": 9,
+      "country": "India",
+      "coords": [
+        77.209,
+        28.6139
+      ],
+      "is_origin": false,
+      "local_word": "इंटरनेट",
+      "edge_tts_lang": "hi-IN",
+      "fallback_used": false,
+      "similarity_percentage": 64,
+      "ejaan_palsu_indonesia": "Intar-net",
+      "ejaan_umum_ipa": "/ɪnʈəɾneːʈ/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/India_Internet.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "internet",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 60,
+      "ejaan_palsu_indonesia": "In-ter-net",
+      "ejaan_umum_ipa": "/intərnɛt/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_Internet.mp3"
+    }
+  ]
+}

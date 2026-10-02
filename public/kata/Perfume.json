@@ -1,0 +1,185 @@
+{
+  "global_word": "Perfume",
+  "route": [
+    {
+      "order": 1,
+      "country": "Italy",
+      "coords": [
+        12.4964,
+        41.9028
+      ],
+      "is_origin": true,
+      "local_word": "Profumo",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "pro-foo-mo",
+      "ejaan_umum_ipa": "/proˈfu.mo/",
+      "phonetic_note": "Akar etimologi utama berasal dari frasa Latin 'per fumum' (melalui asap) yang berkembang dalam bahasa Italia menjadi 'profumo'.",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_Perfume.mp3"
+    },
+    {
+      "order": 2,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "Parfum",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 92,
+      "ejaan_palsu_indonesia": "par-fang",
+      "ejaan_umum_ipa": "/paʁ.fœ̃/",
+      "phonetic_note": "Diserap dari istilah Italia dengan pergeseran fonetik vokal nasal khas Prancis modern.",
+      "sound_generated": true,
+      "sound_file": "sound/France_Perfume.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "Perfume",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 88,
+      "ejaan_palsu_indonesia": "per-foo-me",
+      "ejaan_umum_ipa": "/peɾˈfume/",
+      "phonetic_note": "Mempertahankan prefiks Latin 'per-' dengan pelafalan vokal terbuka di akhir kata.",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Perfume.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Poland",
+      "coords": [
+        21.0122,
+        52.2297
+      ],
+      "is_origin": false,
+      "local_word": "Perfumy",
+      "edge_tts_lang": "pl-PL",
+      "fallback_used": true,
+      "similarity_percentage": 82,
+      "ejaan_palsu_indonesia": "per-foo-mi",
+      "ejaan_umum_ipa": "/pɛrˈfumɨ/",
+      "phonetic_note": "Penyerapan ke dalam rumpun bahasa Slavia Tengah yang digunakan secara umum dalam bentuk plural bertumpu pada akhiran /ɨ/.",
+      "sound_generated": true,
+      "sound_file": "sound/Poland_Perfume.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Turkey",
+      "coords": [
+        32.8597,
+        39.9334
+      ],
+      "is_origin": false,
+      "local_word": "Parfüm",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 78,
+      "ejaan_palsu_indonesia": "par-fium",
+      "ejaan_umum_ipa": "/paɾˈfym/",
+      "phonetic_note": "Pinjaman dari bahasa Prancis dengan penyesuaian keharmonisan vokal bulat depan /y/ Turki.",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_Perfume.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "Парфюм",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 73,
+      "ejaan_palsu_indonesia": "par-fiyum",
+      "ejaan_umum_ipa": "/pɐrˈfʲum/",
+      "phonetic_note": "Transkripsi kata serapan ke aksara Sirilik dengan fenomena palatalisasi pada konsonan /fʲ/.",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_Perfume.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "Parfum",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 68,
+      "ejaan_palsu_indonesia": "par-fum",
+      "ejaan_umum_ipa": "/par.fum/",
+      "phonetic_note": "Diserap melalui era kolonial Belanda/Prancis dan diucapkan lugas sesuai fonotaktik Melayu-Indonesia.",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_Perfume.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "パフューム",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 60,
+      "ejaan_palsu_indonesia": "pa-fyuu-mu",
+      "ejaan_umum_ipa": "/paɸjɯːmɯ/",
+      "phonetic_note": "Adaptasi silabis Katakana dari bahasa Inggris yang menambahkan vokal penjelas /ɯ/ pada akhir suku kata.",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Perfume.mp3"
+    },
+    {
+      "order": 9,
+      "country": "South Korea",
+      "coords": [
+        126.978,
+        37.5665
+      ],
+      "is_origin": false,
+      "local_word": "퍼퓸",
+      "edge_tts_lang": "ko-KR",
+      "fallback_used": false,
+      "similarity_percentage": 55,
+      "ejaan_palsu_indonesia": "peo-pyum",
+      "ejaan_umum_ipa": "/pʰʌ̹pʰjuːm/",
+      "phonetic_note": "Transkripsi ke dalam aksara Hangul yang mengadopsi konsonan aspirasi /pʰ/ untuk menggantikan bunyi /f/.",
+      "sound_generated": true,
+      "sound_file": "sound/South_Korea_Perfume.mp3"
+    },
+    {
+      "order": 10,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "Perfume",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 50,
+      "ejaan_palsu_indonesia": "per-fyoom",
+      "ejaan_umum_ipa": "/pərˈfjuːm/",
+      "phonetic_note": "Varian bahasa Inggris Amerika modern dengan aksen rotik kuat dan pergeseran tekanan suku kata.",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_Perfume.mp3"
+    }
+  ]
+}

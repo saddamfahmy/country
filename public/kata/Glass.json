@@ -1,0 +1,185 @@
+{
+  "global_word": "Glass",
+  "route": [
+    {
+      "order": 1,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": true,
+      "local_word": "glass",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Glaas",
+      "ejaan_umum_ipa": "/ɡlɑːs/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_Glass.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Netherlands",
+      "coords": [
+        4.9041,
+        52.3676
+      ],
+      "is_origin": false,
+      "local_word": "glas",
+      "edge_tts_lang": "nl-NL",
+      "fallback_used": false,
+      "similarity_percentage": 94,
+      "ejaan_palsu_indonesia": "Khlas",
+      "ejaan_umum_ipa": "/ɣlɑs/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Netherlands_Glass.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Glas",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 91,
+      "ejaan_palsu_indonesia": "Glaas",
+      "ejaan_umum_ipa": "/ɡlaːs/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Glass.mp3"
+    },
+    {
+      "order": 4,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "verre",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 58,
+      "ejaan_palsu_indonesia": "Ver",
+      "ejaan_umum_ipa": "/vɛʁ/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/France_Glass.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "vidrio",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 48,
+      "ejaan_palsu_indonesia": "Bid-rio",
+      "ejaan_umum_ipa": "/ˈbidɾjo/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Glass.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Italy",
+      "coords": [
+        12.4964,
+        41.9028
+      ],
+      "is_origin": false,
+      "local_word": "vetro",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 43,
+      "ejaan_palsu_indonesia": "Ve-tro",
+      "ejaan_umum_ipa": "/ˈvɛtro/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_Glass.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Turkey",
+      "coords": [
+        32.8597,
+        39.9334
+      ],
+      "is_origin": false,
+      "local_word": "cam",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 31,
+      "ejaan_palsu_indonesia": "Jam",
+      "ejaan_umum_ipa": "/dʒam/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_Glass.mp3"
+    },
+    {
+      "order": 8,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "glass",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 29,
+      "ejaan_palsu_indonesia": "Glaas",
+      "ejaan_umum_ipa": "/ɡlæs/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_Glass.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "kaca",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 14,
+      "ejaan_palsu_indonesia": "Ka-ca",
+      "ejaan_umum_ipa": "/katʃa/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_Glass.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "ガラス",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 12,
+      "ejaan_palsu_indonesia": "Ga-ra-su",
+      "ejaan_umum_ipa": "/ɡa̠ɾa̠sɯ̟ᵝ/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Glass.mp3"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "global_word": "Sugar",
+  "route": [
+    {
+      "order": 1,
+      "country": "India",
+      "coords": [
+        78.9629,
+        20.5937
+      ],
+      "is_origin": true,
+      "local_word": "शर्करा",
+      "edge_tts_lang": "hi-IN",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "syarkara",
+      "ejaan_umum_ipa": "/ʃɐr.kɐ.rɑː/",
+      "phonetic_note": "Akar etimologis paling tua dikaitkan dengan Sanskerta śarkarā, yang menjadi sumber historis bagi rumpun kata sugar melalui bentuk-bentuk perantara Asia Barat.",
+      "sound_generated": true,
+      "sound_file": "sound/India_Sugar.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Pakistan",
+      "coords": [
+        69.3451,
+        30.3753
+      ],
+      "is_origin": false,
+      "local_word": "شکر",
+      "edge_tts_lang": "ur",
+      "fallback_used": true,
+      "similarity_percentage": 91,
+      "ejaan_palsu_indonesia": "syakar",
+      "ejaan_umum_ipa": "/ʃəkər/",
+      "phonetic_note": "Bentuk Indo-Irania shakar/shakkar mempertahankan hubungan fonetik yang dekat dengan akar Sanskerta.",
+      "sound_generated": true,
+      "sound_file": "sound/Pakistan_Sugar.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Iran",
+      "coords": [
+        53.688,
+        32.4279
+      ],
+      "is_origin": false,
+      "local_word": "شکر",
+      "edge_tts_lang": "fa",
+      "fallback_used": true,
+      "similarity_percentage": 84,
+      "ejaan_palsu_indonesia": "syekar",
+      "ejaan_umum_ipa": "/ʃeːˈkær/",
+      "phonetic_note": "Bahasa Persia mempertahankan bentuk shakar yang kemudian berperan penting dalam penyebaran kata ke bahasa-bahasa lain.",
+      "sound_generated": true,
+      "sound_file": "sound/Iran_Sugar.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Turkey",
+      "coords": [
+        35.2433,
+        38.9637
+      ],
+      "is_origin": false,
+      "local_word": "şeker",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 76,
+      "ejaan_palsu_indonesia": "syeker",
+      "ejaan_umum_ipa": "/ʃeˈceɾ/",
+      "phonetic_note": "Bentuk Turki şeker menunjukkan perubahan fonetik khas dalam jalur penyebaran kata melalui Persia dan bahasa-bahasa kawasan.",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_Sugar.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Greece",
+      "coords": [
+        21.8243,
+        39.0742
+      ],
+      "is_origin": false,
+      "local_word": "ζάχαρη",
+      "edge_tts_lang": "el-GR",
+      "fallback_used": false,
+      "similarity_percentage": 67,
+      "ejaan_palsu_indonesia": "zakari",
+      "ejaan_umum_ipa": "/ˈza.xa.ri/",
+      "phonetic_note": "Bentuk Yunani modern berasal dari jalur historis istilah gula melalui bahasa-bahasa Mediterania dan mengalami perubahan fonetik tersendiri.",
+      "sound_generated": true,
+      "sound_file": "sound/Greece_Sugar.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "azúcar",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 58,
+      "ejaan_palsu_indonesia": "asukar",
+      "ejaan_umum_ipa": "/aˈθu.kaɾ/",
+      "phonetic_note": "Bahasa Spanyol mempertahankan unsur awal a- dari bentuk Arab as-sukkar.",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Sugar.mp3"
+    },
+    {
+      "order": 7,
+      "country": "France",
+      "coords": [
+        2.2137,
+        46.2276
+      ],
+      "is_origin": false,
+      "local_word": "sucre",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 49,
+      "ejaan_palsu_indonesia": "syukr",
+      "ejaan_umum_ipa": "/sykʁ/",
+      "phonetic_note": "Prancis sucre berasal melalui jalur Latin dan Prancis Kuno dari istilah yang berhubungan dengan bahasa Arab sukkar.",
+      "sound_generated": true,
+      "sound_file": "sound/France_Sugar.mp3"
+    },
+    {
+      "order": 8,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "sugar",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 40,
+      "ejaan_palsu_indonesia": "syuga",
+      "ejaan_umum_ipa": "/ˈʃʊɡə/",
+      "phonetic_note": "Bahasa Inggris menerima sugar melalui Prancis dan bentuk-bentuk Eropa kontinental; perubahan awal menjadi /ʃ/ merupakan ciri fonetik bahasa Inggris.",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_Sugar.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Germany",
+      "coords": [
+        10.4515,
+        51.1657
+      ],
+      "is_origin": false,
+      "local_word": "Zucker",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 31,
+      "ejaan_palsu_indonesia": "tsuka",
+      "ejaan_umum_ipa": "/ˈtsʊkɐ/",
+      "phonetic_note": "Jerman Zucker memperlihatkan perkembangan fonetik tersendiri dari rumpun bentuk Eropa untuk kata yang sama.",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Sugar.mp3"
+    },
+    {
+      "order": 10,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "sugar",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 24,
+      "ejaan_palsu_indonesia": "syugar",
+      "ejaan_umum_ipa": "/ˈʃʊɡɚ/",
+      "phonetic_note": "Pelafalan Amerika mempertahankan bentuk bahasa Inggris modern dengan perbedaan vokal akhir rhotik dibandingkan banyak varietas British English.",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_Sugar.mp3"
+    }
+  ]
+}

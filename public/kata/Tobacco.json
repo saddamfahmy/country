@@ -1,0 +1,185 @@
+{
+  "global_word": "Tobacco",
+  "route": [
+    {
+      "order": 1,
+      "country": "Dominican Republic",
+      "coords": [
+        -69.9312,
+        18.4861
+      ],
+      "is_origin": true,
+      "local_word": "tabaco",
+      "edge_tts_lang": "es-DO",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Ta-ba-ko",
+      "ejaan_umum_ipa": "/taˈβako/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Dominican_Republic_Tobacco.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Cuba",
+      "coords": [
+        -82.3666,
+        23.1136
+      ],
+      "is_origin": false,
+      "local_word": "tabaco",
+      "edge_tts_lang": "es-CU",
+      "fallback_used": false,
+      "similarity_percentage": 96,
+      "ejaan_palsu_indonesia": "Ta-ba-ko",
+      "ejaan_umum_ipa": "/taˈβako/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Cuba_Tobacco.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "tabaco",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 92,
+      "ejaan_palsu_indonesia": "Ta-ba-ko",
+      "ejaan_umum_ipa": "/taˈβako/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Tobacco.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Portugal",
+      "coords": [
+        -9.1393,
+        38.7223
+      ],
+      "is_origin": false,
+      "local_word": "tabaco",
+      "edge_tts_lang": "pt-PT",
+      "fallback_used": false,
+      "similarity_percentage": 87,
+      "ejaan_palsu_indonesia": "Ta-ba-ku",
+      "ejaan_umum_ipa": "/tɐˈβaku/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Portugal_Tobacco.mp3"
+    },
+    {
+      "order": 5,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "tabac",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 80,
+      "ejaan_palsu_indonesia": "Ta-bak",
+      "ejaan_umum_ipa": "/taba/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/France_Tobacco.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Tabak",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 74,
+      "ejaan_palsu_indonesia": "Ta-bak",
+      "ejaan_umum_ipa": "/taˈbak/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Tobacco.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Turkey",
+      "coords": [
+        32.8597,
+        39.9334
+      ],
+      "is_origin": false,
+      "local_word": "tütün",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 55,
+      "ejaan_palsu_indonesia": "Tu-tun",
+      "ejaan_umum_ipa": "/tyˈtyn/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_Tobacco.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "табак",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 50,
+      "ejaan_palsu_indonesia": "Ta-bak",
+      "ejaan_umum_ipa": "/tɐˈbak/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_Tobacco.mp3"
+    },
+    {
+      "order": 9,
+      "country": "China",
+      "coords": [
+        116.4074,
+        39.9042
+      ],
+      "is_origin": false,
+      "local_word": "烟草",
+      "edge_tts_lang": "zh-CN",
+      "fallback_used": false,
+      "similarity_percentage": 28,
+      "ejaan_palsu_indonesia": "Yen-tsao",
+      "ejaan_umum_ipa": "/jɛn.tsʰɑʊ̯/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/China_Tobacco.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "たばこ",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 24,
+      "ejaan_palsu_indonesia": "Ta-ba-ko",
+      "ejaan_umum_ipa": "/tabako/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Tobacco.mp3"
+    }
+  ]
+}

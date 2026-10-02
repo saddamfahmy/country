@@ -1,35 +1,32 @@
-
-Bertindaklah sebagai Linguist dan Pakar Etimologi Global. Tugasmu adalah menganalisis akar kata dan persebaran fonetik global untuk kata: "you".
+Bertindaklah sebagai Linguist dan Pakar Etimologi Global. Tugasmu adalah menganalisis akar kata dan persebaran fonetik global untuk kata: "Avocado".
 Kamu harus menghasilkan output HANYA DALAM FORMAT JSON murni tanpa teks pengantar atau penutup (Markdown code block ```json diperbolehkan).
 IKUTI ATURAN KETAT BERIKUT:
 1. PENENTUAN ASAL (ORIGIN - Index 0):
   - Jika etimologi/sejarah kata tersebut diketahui, letakkan negara asal di urutan pertama ("is_origin": true, "similarity_percentage": 100).
-  - Jika penelitian sejarah kata tersebut tidak diketahui pasti, pilih satu negara secara acak sebagai titik awal (asumsikan sebagai titik nol pengucapan) dan letakkan di urutan pertama.
+  - Jika penelitian sejarah kata tersebut tidak diketahui pasti, pilih satu negara secara akurat/paling berpotensi sebagai titik awal (asumsikan sebagai titik nol pengucapan) dan letakkan di urutan pertama.
 2. NAMA NEGARA (WAJIB BAHASA INGGRIS), JUMLAH & KOMPOSISI:
-  - Nama negara WAJIB ditulis dalam Bahasa Inggris standar secara global (contoh: "Japan" bukan "Jepang", "Spain" bukan "Spanyol", "South Korea" bukan "Korea Selatan", "United States" bukan "Amerika Serikat"). Ini mutlak agar tidak keliru saat sistem merender peta (map) dan bendera.
-  - Route/daftar negara WAJIB berjumlah tepat 20 negara.
-  - Di dalam 20 negara tersebut, WAJIB memasukkan "United States" dan MINIMAL 5 negara dari benua Eropa.
+  - Nama negara WAJIB ditulis dalam Bahasa Inggris standar secara global (contoh: "Japan", "Spain", "South Korea", "United States"). Ini mutlak agar tidak keliru saat sistem merender peta (map) dan bendera.
+  - Route/daftar negara WAJIB berjumlah tepat 10 negara (tidak boleh kurang atau lebih).
+  - Di dalam 10 negara tersebut, WAJIB memasukkan "United States" dan negara-negara lain yang mewakili pergeseran fonetik yang relevan.
 3. KOORDINAT GEOGRAFIS PENUTUR (coords):
-  - WAJIB menyertakan nilai koordinat geografis di mana bahasa/penutur kata tersebut terpusat pada key "coords".
-  - Format array WAJIB berupa [Longitude, Latitude] (Bujur, Lintang) presisi sesuai lokasi terpusat penutur di negara tersebut (contoh: Indonesia terpusat di Jakarta [106.8456, -6.2088], Inggris di London [-0.1276, 51.5074], China/Fujian [118.0894, 24.4798], dsb.).
-  - Urutan koordinat [Lng, Lat] ini mutlak agar sistem GIS / React Simple Maps dapat merender posisi marker dan garis rute dengan akurat.
-4. URUTAN & KEMIRIPAN FONETIK:
-  - Urutkan 19 negara berikutnya berdasarkan kedekatan geografis dan kemiripan pelafalan secara bertahap (gradual shift) dari titik asal.
-  - Nilai "similarity_percentage" (0-100) harus mengecil secara logis seiring bergesernya kata.
-  - Meskipun pelafalan di negara AS atau Eropa nanti sangat jauh berbeda atau tidak mirip sama sekali (similarity 0-10%), mereka tetap WAJIB dimasukkan ke dalam daftar sesuai urutan transisi fonetik yang paling masuk akal.
+  - WAJIB menyertakan nilai koordinat geografis pusat penutur/bahasa tersebut pada key "coords".
+  - Format array WAJIB berupa [Longitude, Latitude] (Bujur, Lintang) presisi sesuai lokasi terpusat penutur di negara tersebut (contoh: Indonesia [106.8456, -6.2088], United Kingdom [-0.1276, 51.5074], United States [-95.7129, 37.0902]).
+4. URUTAN, GEOGRAFI DEKAT, & KEMIRIPAN FONETIK (BERVARIASI):
+  - Urutkan 9 negara berikutnya berdasarkan kedekatan geografis terdekat dan kemiripan pelafalan secara bertahap (gradual shift) dari titik asal.
+  - HINDARI PENGUCAPAN / KATA YANG TERDENGAR SAMA PERSIS: Setiap langkah urutan harus menampilkan variasi bunyi atau bentuk kata lokal yang berbeda (hindari memasukkan negara berurutan yang menggunakan kata dan pelafalan yang identik).
+  - Nilai "similarity_percentage" (0–100) harus mengecil secara logis seiring bergesernya kata/bunyi.
 5. KODE EDGE TTS & FALLBACK:
-  - Gunakan kode bahasa Edge TTS yang tersedia (misal: "id-ID", "zh-CN", "tr-TR", "en-US", dll).
+  - Gunakan kode bahasa Edge TTS yang valid (misal: "id-ID", "zh-CN", "tr-TR", "en-US", "de-DE", dll).
   - Jika negara tertentu TIDAK MEMILIKI kode bahasa khusus di Edge TTS, WAJIB gunakan kode negara tetangga terdekat atau bahasa serumpun sebagai fallback, dan set key "fallback_used": true.
 6. PANDUAN EJAAN & PELAFALAN (PENTING & KETAT):
-  - "local_word": DILARANG KERAS memasukkan informasi, keterangan, Latinisasi/transliterasi, atau tanda kurung apa pun selain kata/frasa asli itu sendiri (contoh SALAH: 茶 (tê), Чай (Chay), Eímai (Είμαι). contoh BENAR: 茶, Чай, Είμαι). Teks ini akan dibaca langsung oleh sistem Text-to-Speech (TTS), sehingga hanya boleh berisi murni tulisan kata dalam aksara lokalnya.
-  - "ejaan_palsu_indonesia": Tuliskan bagaimana lidah orang Indonesia mengeja bunyi kata tersebut menggunakan huruf abjad Indonesia (contoh: "Tea" ditulis "Ti", "Çay" ditulis "Cay", "L'eau" ditulis "Lo").
-  - "ejaan_umum_ipa": Gunakan standar International Phonetic Alphabet (IPA) yang biasa ditemukan di kamus (contoh: /tiː/, /tʃaɪ/, /ˈwɔːtə/).
+  - "local_word": DILARANG KERAS memasukkan informasi, keterangan, Latinisasi/transliterasi, atau tanda kurung apa pun selain kata/frasa asli itu sendiri. Hanya berisi murni tulisan kata dalam aksara lokalnya.
+  - "ejaan_palsu_indonesia": Tuliskan bagaimana lidah orang Indonesia mengeja bunyi kata tersebut menggunakan huruf abjad Indonesia (contoh: "You" ditulis "Yuu", "Tu" ditulis "Tu").
+  - "ejaan_umum_ipa": Gunakan standar International Phonetic Alphabet (IPA) yang valid (contoh: /juː/, /duː/, /ti/).
 STRUKTUR JSON YANG HARUS DIHASILKAN:
 JSON
 
 {
-  "global_word": "",
-  "etymology_origin": "<Nama (Tulis / Asal Bahasa Etimologi Inggris) Sejarah Titik dalam>",
+  "global_word": "you",
   "route": [
     {
       "order": 1,
@@ -42,8 +39,8 @@ JSON
       "similarity_percentage": 100,
       "ejaan_palsu_indonesia": "cara_baca_ala_indonesia",
       "ejaan_umum_ipa": "/ejaan_fonetik_IPA/",
-      "phonetic_note": "Penjelasan singkat sejarah/transisi cara bacanya"
+      "phonetic_note": "kosongkan-saja"
     }
-    // ... Lanjutkan hingga tepat "order": 20
+    // ... Lanjutkan hingga tepat "order": 10
   ]
 }

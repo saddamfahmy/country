@@ -1,0 +1,185 @@
+{
+  "global_word": "Coffee",
+  "route": [
+    {
+      "order": 1,
+      "country": "Ethiopia",
+      "coords": [
+        40.4897,
+        9.145
+      ],
+      "is_origin": true,
+      "local_word": "ቡና",
+      "edge_tts_lang": "am",
+      "fallback_used": true,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "buna",
+      "ejaan_umum_ipa": "/buna/",
+      "phonetic_note": "Tanaman kopi berasal dari Ethiopia, tetapi kata coffee dalam banyak bahasa dunia bukan berasal dari kata Amharik ini; jalur etimologis istilah internasional terutama melalui nama tempat Kaffa dan bahasa Arab.",
+      "sound_generated": true,
+      "sound_file": "sound/Ethiopia_Coffee.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Yemen",
+      "coords": [
+        48.5164,
+        15.5527
+      ],
+      "is_origin": false,
+      "local_word": "قهوة",
+      "edge_tts_lang": "ar-YE",
+      "fallback_used": true,
+      "similarity_percentage": 91,
+      "ejaan_palsu_indonesia": "qahwa",
+      "ejaan_umum_ipa": "/ˈqahwaː/",
+      "phonetic_note": "Bahasa Arab qahwa menjadi sumber utama bentuk kata coffee dalam banyak bahasa melalui perdagangan kopi dari Arabia.",
+      "sound_generated": true,
+      "sound_file": "sound/Yemen_Coffee.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Turkey",
+      "coords": [
+        35.2433,
+        38.9637
+      ],
+      "is_origin": false,
+      "local_word": "kahve",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 82,
+      "ejaan_palsu_indonesia": "kahve",
+      "ejaan_umum_ipa": "/kahˈve/",
+      "phonetic_note": "Turki kahve berasal dari Arab qahwa dan menjadi salah satu jalur penting menuju bentuk Eropa.",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_Coffee.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Italy",
+      "coords": [
+        12.5674,
+        41.8719
+      ],
+      "is_origin": false,
+      "local_word": "caffè",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 74,
+      "ejaan_palsu_indonesia": "kafe",
+      "ejaan_umum_ipa": "/kafˈfɛ/",
+      "phonetic_note": "Italia caffè masuk melalui bentuk Turki kahve dan menjadi sumber bagi sejumlah bentuk Eropa Barat.",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_Coffee.mp3"
+    },
+    {
+      "order": 5,
+      "country": "France",
+      "coords": [
+        2.2137,
+        46.2276
+      ],
+      "is_origin": false,
+      "local_word": "café",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 66,
+      "ejaan_palsu_indonesia": "kafe",
+      "ejaan_umum_ipa": "/ka.fe/",
+      "phonetic_note": "Prancis café mempertahankan bentuk Eropa yang dekat dengan Italia, tetapi mengalami penyesuaian vokal dan tekanan khas Prancis.",
+      "sound_generated": true,
+      "sound_file": "sound/France_Coffee.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Portugal",
+      "coords": [
+        -8.2245,
+        39.3999
+      ],
+      "is_origin": false,
+      "local_word": "café",
+      "edge_tts_lang": "pt-PT",
+      "fallback_used": false,
+      "similarity_percentage": 58,
+      "ejaan_palsu_indonesia": "kafe",
+      "ejaan_umum_ipa": "/kɐˈfɛ/",
+      "phonetic_note": "Portugis café mempertahankan bentuk pinjaman Eropa dengan perbedaan kualitas vokal.",
+      "sound_generated": true,
+      "sound_file": "sound/Portugal_Coffee.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "café",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 50,
+      "ejaan_palsu_indonesia": "kafe",
+      "ejaan_umum_ipa": "/kaˈfe/",
+      "phonetic_note": "Spanyol café mempertahankan bentuk yang sangat dekat secara fonetik dengan bahasa-bahasa Roman lainnya.",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Coffee.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Germany",
+      "coords": [
+        10.4515,
+        51.1657
+      ],
+      "is_origin": false,
+      "local_word": "Kaffee",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 41,
+      "ejaan_palsu_indonesia": "kafe",
+      "ejaan_umum_ipa": "/kaˈfeː/",
+      "phonetic_note": "Jerman Kaffee mempertahankan akar k-f dengan vokal akhir panjang.",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Coffee.mp3"
+    },
+    {
+      "order": 9,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "coffee",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 32,
+      "ejaan_palsu_indonesia": "kofi",
+      "ejaan_umum_ipa": "/ˈkɒfi/",
+      "phonetic_note": "Bahasa Inggris mengembangkan bentuk coffee dari jalur Eropa, dengan perubahan vokal dan konsonan akhir menjadi bentuk modern.",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_Coffee.mp3"
+    },
+    {
+      "order": 10,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "coffee",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 27,
+      "ejaan_palsu_indonesia": "kofi",
+      "ejaan_umum_ipa": "/ˈkɔfi/",
+      "phonetic_note": "Pelafalan Amerika mempertahankan bentuk Inggris coffee dengan perbedaan kualitas vokal dibandingkan banyak varietas British English.",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_Coffee.mp3"
+    }
+  ]
+}

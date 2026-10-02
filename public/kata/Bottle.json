@@ -1,0 +1,185 @@
+{
+  "global_word": "Bottle",
+  "route": [
+    {
+      "order": 1,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": true,
+      "local_word": "bouteille",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Bu-tey",
+      "ejaan_umum_ipa": "/butɛj/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/France_Bottle.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Belgium",
+      "coords": [
+        4.3517,
+        50.8503
+      ],
+      "is_origin": false,
+      "local_word": "bouteille",
+      "edge_tts_lang": "fr-BE",
+      "fallback_used": false,
+      "similarity_percentage": 96,
+      "ejaan_palsu_indonesia": "Bu-tey",
+      "ejaan_umum_ipa": "/butɛj/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Belgium_Bottle.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "botella",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 89,
+      "ejaan_palsu_indonesia": "Bo-te-ya",
+      "ejaan_umum_ipa": "/boˈteʎa/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Bottle.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Portugal",
+      "coords": [
+        -9.1393,
+        38.7223
+      ],
+      "is_origin": false,
+      "local_word": "garrafa",
+      "edge_tts_lang": "pt-PT",
+      "fallback_used": false,
+      "similarity_percentage": 66,
+      "ejaan_palsu_indonesia": "Ga-ha-fa",
+      "ejaan_umum_ipa": "/ɡɐˈʁafɐ/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Portugal_Bottle.mp3"
+    },
+    {
+      "order": 5,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "bottle",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 61,
+      "ejaan_palsu_indonesia": "Bot-l",
+      "ejaan_umum_ipa": "/ˈbɒtəl/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_Bottle.mp3"
+    },
+    {
+      "order": 6,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "bottle",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 58,
+      "ejaan_palsu_indonesia": "Ba-del",
+      "ejaan_umum_ipa": "/ˈbɑːt̬əl/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_Bottle.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Flasche",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 34,
+      "ejaan_palsu_indonesia": "Fla-sye",
+      "ejaan_umum_ipa": "/ˈflaʃə/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Bottle.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Turkey",
+      "coords": [
+        32.8597,
+        39.9334
+      ],
+      "is_origin": false,
+      "local_word": "şişe",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 26,
+      "ejaan_palsu_indonesia": "Syi-sye",
+      "ejaan_umum_ipa": "/ʃiˈʃe/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_Bottle.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "ボトル",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 24,
+      "ejaan_palsu_indonesia": "Bo-to-ru",
+      "ejaan_umum_ipa": "/bo̞to̞ɾɯ̟/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Bottle.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "botol",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 20,
+      "ejaan_palsu_indonesia": "Bo-tol",
+      "ejaan_umum_ipa": "/botol/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_Bottle.mp3"
+    }
+  ]
+}

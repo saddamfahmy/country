@@ -1,0 +1,185 @@
+{
+  "global_word": "Avocado",
+  "route": [
+    {
+      "order": 1,
+      "country": "Mexico",
+      "coords": [
+        -99.1332,
+        19.4326
+      ],
+      "is_origin": true,
+      "local_word": "ahuacatl",
+      "edge_tts_lang": "es-MX",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "A-wa-katl",
+      "ejaan_umum_ipa": "/aˈwakaːt͡ɬ/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Mexico_Avocado.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Guatemala",
+      "coords": [
+        -90.5069,
+        14.6349
+      ],
+      "is_origin": false,
+      "local_word": "aguacate",
+      "edge_tts_lang": "es-GT",
+      "fallback_used": true,
+      "similarity_percentage": 93,
+      "ejaan_palsu_indonesia": "A-gua-ka-te",
+      "ejaan_umum_ipa": "/aɣwaˈkate/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Guatemala_Avocado.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Cuba",
+      "coords": [
+        -82.3666,
+        23.1136
+      ],
+      "is_origin": false,
+      "local_word": "aguacate",
+      "edge_tts_lang": "es-CU",
+      "fallback_used": false,
+      "similarity_percentage": 89,
+      "ejaan_palsu_indonesia": "A-gua-ka-te",
+      "ejaan_umum_ipa": "/aɣwaˈkate/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Cuba_Avocado.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "aguacate",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 84,
+      "ejaan_palsu_indonesia": "A-gua-ka-te",
+      "ejaan_umum_ipa": "/aɡwaˈkate/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Avocado.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Portugal",
+      "coords": [
+        -9.1393,
+        38.7223
+      ],
+      "is_origin": false,
+      "local_word": "abacate",
+      "edge_tts_lang": "pt-PT",
+      "fallback_used": false,
+      "similarity_percentage": 76,
+      "ejaan_palsu_indonesia": "A-ba-ka-te",
+      "ejaan_umum_ipa": "/ɐβɐˈkatɨ/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Portugal_Avocado.mp3"
+    },
+    {
+      "order": 6,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "avocat",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 69,
+      "ejaan_palsu_indonesia": "A-vo-ka",
+      "ejaan_umum_ipa": "/avɔka/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/France_Avocado.mp3"
+    },
+    {
+      "order": 7,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "avocado",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 63,
+      "ejaan_palsu_indonesia": "A-va-ka-do",
+      "ejaan_umum_ipa": "/ˌævəˈkɑːdəʊ/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_Avocado.mp3"
+    },
+    {
+      "order": 8,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "avocado",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 59,
+      "ejaan_palsu_indonesia": "A-va-ka-dou",
+      "ejaan_umum_ipa": "/ˌævəˈkɑːdoʊ/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_Avocado.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "アボカド",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 48,
+      "ejaan_palsu_indonesia": "A-bo-ka-do",
+      "ejaan_umum_ipa": "/abokado/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Avocado.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "alpukat",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 32,
+      "ejaan_palsu_indonesia": "Al-pu-kat",
+      "ejaan_umum_ipa": "/alpukat/",
+      "phonetic_note": "",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_Avocado.mp3"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "global_word": "Soap",
+  "route": [
+    {
+      "order": 1,
+      "country": "Germany",
+      "coords": [
+        10.4515,
+        51.1657
+      ],
+      "is_origin": true,
+      "local_word": "Seife",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "zai-feh",
+      "ejaan_umum_ipa": "/ˈzaɪ̯fə/",
+      "phonetic_note": "Akar etimologi Proto-Jermanik *saipō merujuk pada resin atau getah pohon yang menjadi asal-usul kata sabun di rumpun Jermanik.",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Soap.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Netherlands",
+      "coords": [
+        5.2913,
+        52.1326
+      ],
+      "is_origin": false,
+      "local_word": "Zeep",
+      "edge_tts_lang": "nl-NL",
+      "fallback_used": false,
+      "similarity_percentage": 90,
+      "ejaan_palsu_indonesia": "zep",
+      "ejaan_umum_ipa": "/zeːp/",
+      "phonetic_note": "Pergeseran vokal dari bentuk Jermanik Kuno menghasilkan bunyi vokal panjang /eː/ dengan akhiran konsonan plosif /p/.",
+      "sound_generated": true,
+      "sound_file": "sound/Netherlands_Soap.mp3"
+    },
+    {
+      "order": 3,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "Savon",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 82,
+      "ejaan_palsu_indonesia": "sa-vong",
+      "ejaan_umum_ipa": "/sa.vɔ̃/",
+      "phonetic_note": "Diserap dari bahasa Latin 'sapo' dengan konsonan labial bergeser menjadi frikatif /v/ serta vokal nasal khas Prancis.",
+      "sound_generated": true,
+      "sound_file": "sound/France_Soap.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "Jabón",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 75,
+      "ejaan_palsu_indonesia": "kha-bon",
+      "ejaan_umum_ipa": "/xaˈbon/",
+      "phonetic_note": "Konsonan awal /s/ Latin bergeser menjadi frikatif velar /x/ (suara 'kh') khas Spanyol dengan penekanan pada suku kata akhir.",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Soap.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Portugal",
+      "coords": [
+        -8.2245,
+        39.3999
+      ],
+      "is_origin": false,
+      "local_word": "Sabão",
+      "edge_tts_lang": "pt-PT",
+      "fallback_used": false,
+      "similarity_percentage": 70,
+      "ejaan_palsu_indonesia": "sa-ba-ung",
+      "ejaan_umum_ipa": "/sɐˈβɐ̃w̃/",
+      "phonetic_note": "Mempertahankan bunyi sibilant /s/ awal tetapi mengubah akhiran suku kata menjadi diftong nasal /ɐ̃w̃/.",
+      "sound_generated": true,
+      "sound_file": "sound/Portugal_Soap.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Italy",
+      "coords": [
+        12.4964,
+        41.9028
+      ],
+      "is_origin": false,
+      "local_word": "Sapone",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 65,
+      "ejaan_palsu_indonesia": "sa-po-ne",
+      "ejaan_umum_ipa": "/saˈpo.ne/",
+      "phonetic_note": "Turunan langsung dari bentuk Latin Vulgar 'saponem' dengan mempertahankan akhiran vokal terbuka /e/.",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_Soap.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Turkey",
+      "coords": [
+        32.8597,
+        39.9334
+      ],
+      "is_origin": false,
+      "local_word": "Sabun",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 58,
+      "ejaan_palsu_indonesia": "sa-bun",
+      "ejaan_umum_ipa": "/saˈbun/",
+      "phonetic_note": "Pinjaman lewat bahasa Mediterania/Arab yang menyerap kata Latin 'sapo', diadaptasi sesuai fonotaktik bahasa Turki.",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_Soap.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Saudi Arabia",
+      "coords": [
+        45.0792,
+        23.8859
+      ],
+      "is_origin": false,
+      "local_word": "صابون",
+      "edge_tts_lang": "ar-SA",
+      "fallback_used": false,
+      "similarity_percentage": 52,
+      "ejaan_palsu_indonesia": "shaa-buun",
+      "ejaan_umum_ipa": "/sˤaː.buːn/",
+      "phonetic_note": "Konsonan sibilant awal diucapkan emfatik /sˤ/ (Sad) dengan pemanjangan vokal /uː/ di tengah kata.",
+      "sound_generated": true,
+      "sound_file": "sound/Saudi_Arabia_Soap.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "シャボン",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 46,
+      "ejaan_palsu_indonesia": "sha-bong",
+      "ejaan_umum_ipa": "/ʃa.boɴ/",
+      "phonetic_note": "Serapan Kuno dari bahasa Portugis 'sabão' pada era perdagangan abad ke-16, mengubah bunyi awal menjadi palatal /ʃ/.",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Soap.mp3"
+    },
+    {
+      "order": 10,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "Soap",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 40,
+      "ejaan_palsu_indonesia": "sohp",
+      "ejaan_umum_ipa": "/soʊp/",
+      "phonetic_note": "Evolusi dari Old English 'sāpe' yang mengalami diftongisasi vokal /oʊ/ pada pelafalan bahasa Inggris Amerika modern.",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_Soap.mp3"
+    }
+  ]
+}
