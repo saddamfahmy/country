@@ -1,0 +1,185 @@
+{
+  "global_word": "Shampoo",
+  "route": [
+    {
+      "order": 1,
+      "country": "India",
+      "coords": [
+        78.9629,
+        20.5937
+      ],
+      "is_origin": true,
+      "local_word": "चाँपो",
+      "edge_tts_lang": "hi-IN",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Cham-po",
+      "ejaan_umum_ipa": "/tʃãːpoː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/India_Shampoo.mp3"
+    },
+    {
+      "order": 2,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "shampoo",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 91,
+      "ejaan_palsu_indonesia": "Syam-puu",
+      "ejaan_umum_ipa": "/ʃæmˈpuː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_Shampoo.mp3"
+    },
+    {
+      "order": 3,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "shampooing",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 83,
+      "ejaan_palsu_indonesia": "Syam-pwing",
+      "ejaan_umum_ipa": "/ʃɑ̃pwɛ̃/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_Shampoo.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Schampoo",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 76,
+      "ejaan_palsu_indonesia": "Syam-pu",
+      "ejaan_umum_ipa": "/ˈʃampu/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Shampoo.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Turkey",
+      "coords": [
+        32.8597,
+        39.9334
+      ],
+      "is_origin": false,
+      "local_word": "şampuan",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 68,
+      "ejaan_palsu_indonesia": "Syam-pu-an",
+      "ejaan_umum_ipa": "/ʃampuan/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_Shampoo.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "шампунь",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 60,
+      "ejaan_palsu_indonesia": "Syam-pun",
+      "ejaan_umum_ipa": "/ʃɐmˈpunʲ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_Shampoo.mp3"
+    },
+    {
+      "order": 7,
+      "country": "China",
+      "coords": [
+        116.4074,
+        39.9042
+      ],
+      "is_origin": false,
+      "local_word": "香波",
+      "edge_tts_lang": "zh-CN",
+      "fallback_used": false,
+      "similarity_percentage": 52,
+      "ejaan_palsu_indonesia": "Siang-po",
+      "ejaan_umum_ipa": "/ɕi̯ɑŋ˥ pɔ˥/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/China_Shampoo.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "シャンプー",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 45,
+      "ejaan_palsu_indonesia": "Syam-puu",
+      "ejaan_umum_ipa": "/ɕampɯː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Shampoo.mp3"
+    },
+    {
+      "order": 9,
+      "country": "South Korea",
+      "coords": [
+        126.978,
+        37.5665
+      ],
+      "is_origin": false,
+      "local_word": "샴푸",
+      "edge_tts_lang": "ko-KR",
+      "fallback_used": false,
+      "similarity_percentage": 39,
+      "ejaan_palsu_indonesia": "Syam-phu",
+      "ejaan_umum_ipa": "/ɕampʰu/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/South_Korea_Shampoo.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "sampo",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "Sam-po",
+      "ejaan_umum_ipa": "/ˈsampo/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_Shampoo.mp3"
+    }
+  ]
+}

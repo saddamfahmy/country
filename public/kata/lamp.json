@@ -1,0 +1,185 @@
+{
+  "global_word": "lamp",
+  "route": [
+    {
+      "order": 1,
+      "country": "Greece",
+      "coords": [
+        23.7275,
+        37.9838
+      ],
+      "is_origin": true,
+      "local_word": "λάμπα",
+      "edge_tts_lang": "el-GR",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Lam-pa",
+      "ejaan_umum_ipa": "/ˈlampa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Greece_lamp.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Italy",
+      "coords": [
+        12.4964,
+        41.9028
+      ],
+      "is_origin": false,
+      "local_word": "lampada",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 92,
+      "ejaan_palsu_indonesia": "Lam-pa-da",
+      "ejaan_umum_ipa": "/ˈlampada/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_lamp.mp3"
+    },
+    {
+      "order": 3,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "lampe",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 84,
+      "ejaan_palsu_indonesia": "Lomp",
+      "ejaan_umum_ipa": "/lɑ̃p/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_lamp.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Lampe",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 78,
+      "ejaan_palsu_indonesia": "Lam-peh",
+      "ejaan_umum_ipa": "/ˈlampə/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_lamp.mp3"
+    },
+    {
+      "order": 5,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "lamp",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 72,
+      "ejaan_palsu_indonesia": "Lemp",
+      "ejaan_umum_ipa": "/læmp/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_lamp.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "лампа",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 65,
+      "ejaan_palsu_indonesia": "Lam-pa",
+      "ejaan_umum_ipa": "/ˈlampə/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_lamp.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Turkey",
+      "coords": [
+        32.8597,
+        39.9334
+      ],
+      "is_origin": false,
+      "local_word": "lamba",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 58,
+      "ejaan_palsu_indonesia": "Lam-ba",
+      "ejaan_umum_ipa": "/lam.ba/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_lamp.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Saudi Arabia",
+      "coords": [
+        46.7219,
+        24.6877
+      ],
+      "is_origin": false,
+      "local_word": "لمبة",
+      "edge_tts_lang": "ar-SA",
+      "fallback_used": false,
+      "similarity_percentage": 52,
+      "ejaan_palsu_indonesia": "Lam-bah",
+      "ejaan_umum_ipa": "/lam.ba/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Saudi_Arabia_lamp.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "lampu",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 44,
+      "ejaan_palsu_indonesia": "Lam-pu",
+      "ejaan_umum_ipa": "/lam.pu/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_lamp.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "ランプ",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 36,
+      "ejaan_palsu_indonesia": "Ram-pu",
+      "ejaan_umum_ipa": "/ɾam.pɯ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_lamp.mp3"
+    }
+  ]
+}

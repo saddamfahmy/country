@@ -1,0 +1,185 @@
+{
+  "global_word": "Ketchup",
+  "route": [
+    {
+      "order": 1,
+      "country": "China",
+      "coords": [
+        116.4074,
+        39.9042
+      ],
+      "is_origin": true,
+      "local_word": "鮭汁",
+      "edge_tts_lang": "zh-CN",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Ke-chiap",
+      "ejaan_umum_ipa": "/kɛː.tɕiap̚/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/China_Ketchup.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "kecap",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 92,
+      "ejaan_palsu_indonesia": "Ke-chap",
+      "ejaan_umum_ipa": "/kəˈtʃap/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_Ketchup.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Malaysia",
+      "coords": [
+        101.6869,
+        3.139
+      ],
+      "is_origin": false,
+      "local_word": "kicap",
+      "edge_tts_lang": "ms-MY",
+      "fallback_used": false,
+      "similarity_percentage": 85,
+      "ejaan_palsu_indonesia": "Ki-chap",
+      "ejaan_umum_ipa": "/kiˈtʃap/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Malaysia_Ketchup.mp3"
+    },
+    {
+      "order": 4,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "ketchup",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 78,
+      "ejaan_palsu_indonesia": "Ke-chəp",
+      "ejaan_umum_ipa": "/ˈkɛtʃəp/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_Ketchup.mp3"
+    },
+    {
+      "order": 5,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "catsup",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 71,
+      "ejaan_palsu_indonesia": "Ket-səp",
+      "ejaan_umum_ipa": "/ˈkæt.səp/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_Ketchup.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Ketchup",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 64,
+      "ejaan_palsu_indonesia": "Ke-chap",
+      "ejaan_umum_ipa": "/ˈkɛtʃap/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Ketchup.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Turkey",
+      "coords": [
+        32.8597,
+        39.9334
+      ],
+      "is_origin": false,
+      "local_word": "ketçap",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 57,
+      "ejaan_palsu_indonesia": "Ket-chap",
+      "ejaan_umum_ipa": "/ketˈtʃap/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_Ketchup.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "кетчуп",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 50,
+      "ejaan_palsu_indonesia": "Kyet-chup",
+      "ejaan_umum_ipa": "/ˈkʲettɕʊp/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_Ketchup.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "ケチャップ",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 43,
+      "ejaan_palsu_indonesia": "Ke-chyap-pu",
+      "ejaan_umum_ipa": "/ketɕappɯ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Ketchup.mp3"
+    },
+    {
+      "order": 10,
+      "country": "South Korea",
+      "coords": [
+        126.978,
+        37.5665
+      ],
+      "is_origin": false,
+      "local_word": "케첩",
+      "edge_tts_lang": "ko-KR",
+      "fallback_used": false,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "Khe-chəp",
+      "ejaan_umum_ipa": "/kʰetɕʰəp̚/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/South_Korea_Ketchup.mp3"
+    }
+  ]
+}

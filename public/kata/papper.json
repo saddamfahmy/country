@@ -1,0 +1,185 @@
+{
+  "global_word": "pepper",
+  "route": [
+    {
+      "order": 1,
+      "country": "India",
+      "coords": [
+        78.1198,
+        9.9252
+      ],
+      "is_origin": true,
+      "local_word": "पिप्पली",
+      "edge_tts_lang": "hi-IN",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Pip-pa-lii",
+      "ejaan_umum_ipa": "/pɪpːəliː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/India_pepper.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Greece",
+      "coords": [
+        23.7275,
+        37.9838
+      ],
+      "is_origin": false,
+      "local_word": "πέπερι",
+      "edge_tts_lang": "el-GR",
+      "fallback_used": false,
+      "similarity_percentage": 90,
+      "ejaan_palsu_indonesia": "Pe-pe-ri",
+      "ejaan_umum_ipa": "/ˈpepeɾi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Greece_pepper.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Italy",
+      "coords": [
+        12.4964,
+        41.9028
+      ],
+      "is_origin": false,
+      "local_word": "pepe",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 82,
+      "ejaan_palsu_indonesia": "Pe-pe",
+      "ejaan_umum_ipa": "/ˈpeːpe/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_pepper.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Pfeffer",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 74,
+      "ejaan_palsu_indonesia": "P-fe-fer",
+      "ejaan_umum_ipa": "/ˈp͡fɛfɐ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_pepper.mp3"
+    },
+    {
+      "order": 5,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "pepper",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 68,
+      "ejaan_palsu_indonesia": "Pe-per",
+      "ejaan_umum_ipa": "/ˈpɛpə/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_pepper.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Finland",
+      "coords": [
+        24.9384,
+        60.1699
+      ],
+      "is_origin": false,
+      "local_word": "pippuri",
+      "edge_tts_lang": "fi-FI",
+      "fallback_used": false,
+      "similarity_percentage": 60,
+      "ejaan_palsu_indonesia": "Pip-pu-ri",
+      "ejaan_umum_ipa": "/ˈpipːuri/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Finland_pepper.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "перец",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 52,
+      "ejaan_palsu_indonesia": "Pye-rets",
+      "ejaan_umum_ipa": "/ˈpʲerʲɪts/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_pepper.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Saudi Arabia",
+      "coords": [
+        46.7219,
+        24.6877
+      ],
+      "is_origin": false,
+      "local_word": "فلفل",
+      "edge_tts_lang": "ar-SA",
+      "fallback_used": false,
+      "similarity_percentage": 45,
+      "ejaan_palsu_indonesia": "Ful-ful",
+      "ejaan_umum_ipa": "/fulful/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Saudi_Arabia_pepper.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "ペッパー",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 38,
+      "ejaan_palsu_indonesia": "Pep-paa",
+      "ejaan_umum_ipa": "/pepːaː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_pepper.mp3"
+    },
+    {
+      "order": 10,
+      "country": "South Korea",
+      "coords": [
+        126.978,
+        37.5665
+      ],
+      "is_origin": false,
+      "local_word": "페퍼",
+      "edge_tts_lang": "ko-KR",
+      "fallback_used": false,
+      "similarity_percentage": 32,
+      "ejaan_palsu_indonesia": "Pe-peo",
+      "ejaan_umum_ipa": "/pʰepʰʌ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/South_Korea_pepper.mp3"
+    }
+  ]
+}

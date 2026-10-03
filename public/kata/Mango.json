@@ -1,0 +1,185 @@
+{
+  "global_word": "mango",
+  "route": [
+    {
+      "order": 1,
+      "country": "India",
+      "coords": [
+        78.1198,
+        9.9252
+      ],
+      "is_origin": true,
+      "local_word": "மாங்காய்",
+      "edge_tts_lang": "ta-IN",
+      "fallback_used": true,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Maang-gaai",
+      "ejaan_umum_ipa": "/maːŋɡaːi̯/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/India_mango.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Malaysia",
+      "coords": [
+        101.6869,
+        3.139
+      ],
+      "is_origin": false,
+      "local_word": "mangga",
+      "edge_tts_lang": "ms-MY",
+      "fallback_used": false,
+      "similarity_percentage": 92,
+      "ejaan_palsu_indonesia": "Mang-ga",
+      "ejaan_umum_ipa": "/maŋɡa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Malaysia_mango.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Saudi Arabia",
+      "coords": [
+        46.7219,
+        24.6877
+      ],
+      "is_origin": false,
+      "local_word": "مانجو",
+      "edge_tts_lang": "ar-SA",
+      "fallback_used": false,
+      "similarity_percentage": 84,
+      "ejaan_palsu_indonesia": "Maan-juu",
+      "ejaan_umum_ipa": "/ˈmaːndʒuː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Saudi_Arabia_mango.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Portugal",
+      "coords": [
+        -9.1393,
+        38.7223
+      ],
+      "is_origin": false,
+      "local_word": "manga",
+      "edge_tts_lang": "pt-PT",
+      "fallback_used": false,
+      "similarity_percentage": 78,
+      "ejaan_palsu_indonesia": "Mang-geng",
+      "ejaan_umum_ipa": "/ˈmɐ̃ɡɐ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Portugal_mango.mp3"
+    },
+    {
+      "order": 5,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "mangue",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 72,
+      "ejaan_palsu_indonesia": "Mongg",
+      "ejaan_umum_ipa": "/mɑ̃ɡ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_mango.mp3"
+    },
+    {
+      "order": 6,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "mango",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 66,
+      "ejaan_palsu_indonesia": "Meng-gow",
+      "ejaan_umum_ipa": "/ˈmæŋɡəʊ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_mango.mp3"
+    },
+    {
+      "order": 7,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "mango",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 62,
+      "ejaan_palsu_indonesia": "Meng-goh",
+      "ejaan_umum_ipa": "/ˈmæŋɡoʊ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_mango.mp3"
+    },
+    {
+      "order": 8,
+      "country": "China",
+      "coords": [
+        116.4074,
+        39.9042
+      ],
+      "is_origin": false,
+      "local_word": "芒果",
+      "edge_tts_lang": "zh-CN",
+      "fallback_used": false,
+      "similarity_percentage": 56,
+      "ejaan_palsu_indonesia": "Mang-kwo",
+      "ejaan_umum_ipa": "/mǎŋ.kwɔ̌/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/China_mango.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "マンゴー",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 50,
+      "ejaan_palsu_indonesia": "Mang-goo",
+      "ejaan_umum_ipa": "/maŋɡoː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_mango.mp3"
+    },
+    {
+      "order": 10,
+      "country": "South Korea",
+      "coords": [
+        126.978,
+        37.5665
+      ],
+      "is_origin": false,
+      "local_word": "망고",
+      "edge_tts_lang": "ko-KR",
+      "fallback_used": false,
+      "similarity_percentage": 46,
+      "ejaan_palsu_indonesia": "Mang-go",
+      "ejaan_umum_ipa": "/maŋɡo/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/South_Korea_mango.mp3"
+    }
+  ]
+}

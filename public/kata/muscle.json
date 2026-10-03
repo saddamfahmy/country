@@ -1,0 +1,185 @@
+{
+  "global_word": "Muscle",
+  "route": [
+    {
+      "order": 1,
+      "country": "Italy",
+      "coords": [
+        12.4964,
+        41.9028
+      ],
+      "is_origin": true,
+      "local_word": "muscolo",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Mus-ko-lo",
+      "ejaan_umum_ipa": "/ˈmuskolo/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_Muscle.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "músculo",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 92,
+      "ejaan_palsu_indonesia": "Mus-ku-lo",
+      "ejaan_umum_ipa": "/ˈmuskulo/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Muscle.mp3"
+    },
+    {
+      "order": 3,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "muscle",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 84,
+      "ejaan_palsu_indonesia": "Müsk-l",
+      "ejaan_umum_ipa": "/myskl/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_Muscle.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Muskel",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 76,
+      "ejaan_palsu_indonesia": "Mus-kəl",
+      "ejaan_umum_ipa": "/ˈmʊskəl/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Muscle.mp3"
+    },
+    {
+      "order": 5,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "muscle",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 69,
+      "ejaan_palsu_indonesia": "Ma-sl",
+      "ejaan_umum_ipa": "/ˈmʌs.əl/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_Muscle.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "мускул",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 61,
+      "ejaan_palsu_indonesia": "Mus-kul",
+      "ejaan_umum_ipa": "/ˈmuskʊl/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_Muscle.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Greece",
+      "coords": [
+        23.7275,
+        37.9838
+      ],
+      "is_origin": false,
+      "local_word": "μυς",
+      "edge_tts_lang": "el-GR",
+      "fallback_used": false,
+      "similarity_percentage": 53,
+      "ejaan_palsu_indonesia": "Mis",
+      "ejaan_umum_ipa": "/mis/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Greece_Muscle.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "マッスル",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 46,
+      "ejaan_palsu_indonesia": "Mas-su-ru",
+      "ejaan_umum_ipa": "/masːɯɾɯ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Muscle.mp3"
+    },
+    {
+      "order": 9,
+      "country": "South Korea",
+      "coords": [
+        126.978,
+        37.5665
+      ],
+      "is_origin": false,
+      "local_word": "머슬",
+      "edge_tts_lang": "ko-KR",
+      "fallback_used": false,
+      "similarity_percentage": 40,
+      "ejaan_palsu_indonesia": "Meo-seul",
+      "ejaan_umum_ipa": "/mʌsɯl/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/South_Korea_Muscle.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "muskulus",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "Mus-ku-lus",
+      "ejaan_umum_ipa": "/musˈkulus/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_Muscle.mp3"
+    }
+  ]
+}

@@ -63,7 +63,7 @@ const BACKGROUND_MAPPING = {
     },
     {
       bg: "bg/1.jpg",
-      color: "#f1eb36",
+      color: "#cbc85e",
       line: "#fda4af",
     },
     {
@@ -83,7 +83,7 @@ const BACKGROUND_MAPPING = {
     },
     {
       bg: "bg/5.jpg",
-      color: "#15191f",
+      color: "#9499a0",
       line: "#fda4af",
     },
     {
@@ -112,6 +112,7 @@ const mainlandCameraCountries = new Set([
   "Spain",
   "Denmark",
   "Netherlands",
+  "Russia",
 ]);
 const countryNameAliases = {
   "United States of America": "United States",

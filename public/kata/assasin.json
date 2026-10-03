@@ -1,0 +1,185 @@
+{
+  "global_word": "Assassin",
+  "route": [
+    {
+      "order": 1,
+      "country": "Syria",
+      "coords": [
+        36.2972,
+        33.5138
+      ],
+      "is_origin": true,
+      "local_word": "حشاشين",
+      "edge_tts_lang": "ar-SY",
+      "fallback_used": true,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Khas-sya-syin",
+      "ejaan_umum_ipa": "/ħaʃ.ʃaː.ʃiːn/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Syria_Assassin.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Italy",
+      "coords": [
+        12.4964,
+        41.9028
+      ],
+      "is_origin": false,
+      "local_word": "assassino",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 91,
+      "ejaan_palsu_indonesia": "A-sas-si-no",
+      "ejaan_umum_ipa": "/as.sasˈsi.no/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_Assassin.mp3"
+    },
+    {
+      "order": 3,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "assassin",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 83,
+      "ejaan_palsu_indonesia": "A-sa-seng",
+      "ejaan_umum_ipa": "/a.sa.sɛ̃/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_Assassin.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "asesino",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 75,
+      "ejaan_palsu_indonesia": "A-se-si-no",
+      "ejaan_umum_ipa": "/a.seˈsi.no/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Assassin.mp3"
+    },
+    {
+      "order": 5,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "assassin",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 68,
+      "ejaan_palsu_indonesia": "E-sæ-sin",
+      "ejaan_umum_ipa": "/əˈsæs.ɪn/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_Assassin.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Assassine",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 60,
+      "ejaan_palsu_indonesia": "A-sa-si-ne",
+      "ejaan_umum_ipa": "/asaˈsiːnə/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Assassin.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "ассасин",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 52,
+      "ejaan_palsu_indonesia": "A-sa-sin",
+      "ejaan_umum_ipa": "/əsɐˈsʲin/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_Assassin.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "アサシン",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 45,
+      "ejaan_palsu_indonesia": "A-sa-syin",
+      "ejaan_umum_ipa": "/asaɕiɴ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Assassin.mp3"
+    },
+    {
+      "order": 9,
+      "country": "South Korea",
+      "coords": [
+        126.978,
+        37.5665
+      ],
+      "is_origin": false,
+      "local_word": "어쌔신",
+      "edge_tts_lang": "ko-KR",
+      "fallback_used": false,
+      "similarity_percentage": 39,
+      "ejaan_palsu_indonesia": "E-ssae-sin",
+      "ejaan_umum_ipa": "/ʌsɛsʰin/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/South_Korea_Assassin.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "asasin",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "A-sa-sin",
+      "ejaan_umum_ipa": "/a.sa.sin/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_Assassin.mp3"
+    }
+  ]
+}

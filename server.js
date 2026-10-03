@@ -78,6 +78,7 @@ function getVoiceName(langCode) {
 app.get('/api/kata', (req, res) => {
   try {
     const files = fs.readdirSync(KATA_DIR).filter(file => file.endsWith('.json'));
+   console.log(files)
     const fileList = files.map(filename => {
       const filePath = path.join(KATA_DIR, filename);
       const stats = fs.statSync(filePath);

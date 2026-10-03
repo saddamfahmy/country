@@ -1,0 +1,185 @@
+{
+  "global_word": "balm",
+  "route": [
+    {
+      "order": 1,
+      "country": "Greece",
+      "coords": [
+        23.7275,
+        37.9838
+      ],
+      "is_origin": true,
+      "local_word": "βάλσαμον",
+      "edge_tts_lang": "el-GR",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Bal-sa-mon",
+      "ejaan_umum_ipa": "/ˈval.sa.mon/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Greece_balm.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Italy",
+      "coords": [
+        12.4964,
+        41.9028
+      ],
+      "is_origin": false,
+      "local_word": "balsamo",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 90,
+      "ejaan_palsu_indonesia": "Bal-sa-mo",
+      "ejaan_umum_ipa": "/ˈbalsamo/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_balm.mp3"
+    },
+    {
+      "order": 3,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "baume",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 82,
+      "ejaan_palsu_indonesia": "Bom",
+      "ejaan_umum_ipa": "/bom/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_balm.mp3"
+    },
+    {
+      "order": 4,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "balm",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 75,
+      "ejaan_palsu_indonesia": "Baam",
+      "ejaan_umum_ipa": "/bɑːm/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_balm.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Balsam",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 68,
+      "ejaan_palsu_indonesia": "Bal-sam",
+      "ejaan_umum_ipa": "/ˈbalzam/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_balm.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "бальзам",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 62,
+      "ejaan_palsu_indonesia": "Bal-zam",
+      "ejaan_umum_ipa": "/bɐlʲˈzam/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_balm.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Turkey",
+      "coords": [
+        32.8597,
+        39.9334
+      ],
+      "is_origin": false,
+      "local_word": "balsam",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 55,
+      "ejaan_palsu_indonesia": "Bal-sam",
+      "ejaan_umum_ipa": "/bal.sam/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_balm.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Saudi Arabia",
+      "coords": [
+        46.7219,
+        24.6877
+      ],
+      "is_origin": false,
+      "local_word": "بلسم",
+      "edge_tts_lang": "ar-SA",
+      "fallback_used": false,
+      "similarity_percentage": 48,
+      "ejaan_palsu_indonesia": "Bal-sam",
+      "ejaan_umum_ipa": "/bal.sam/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Saudi_Arabia_balm.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "balsem",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": true,
+      "similarity_percentage": 42,
+      "ejaan_palsu_indonesia": "Bal-sem",
+      "ejaan_umum_ipa": "/bal.səm/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_balm.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "バーム",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "Baa-mu",
+      "ejaan_umum_ipa": "/baːmɯ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_balm.mp3"
+    }
+  ]
+}

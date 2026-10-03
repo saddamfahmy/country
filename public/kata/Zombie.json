@@ -1,0 +1,185 @@
+{
+  "global_word": "Zombie",
+  "route": [
+    {
+      "order": 1,
+      "country": "Democratic Republic of the Congo",
+      "coords": [
+        15.3222,
+        -4.3224
+      ],
+      "is_origin": true,
+      "local_word": "nzumbi",
+      "edge_tts_lang": "fr-CD",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "N-zum-bi",
+      "ejaan_umum_ipa": "/nˈzuːmbi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Democratic_Republic_of_the_Congo_Zombie.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Haiti",
+      "coords": [
+        -72.2852,
+        18.9712
+      ],
+      "is_origin": false,
+      "local_word": "zonbi",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": true,
+      "similarity_percentage": 91,
+      "ejaan_palsu_indonesia": "Zom-bi",
+      "ejaan_umum_ipa": "/zɔ̃bi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Haiti_Zombie.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Spain",
+      "coords": [
+        -3.7038,
+        40.4168
+      ],
+      "is_origin": false,
+      "local_word": "zombi",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 83,
+      "ejaan_palsu_indonesia": "Thom-bi",
+      "ejaan_umum_ipa": "/ˈθombi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Zombie.mp3"
+    },
+    {
+      "order": 4,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "zombie",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 76,
+      "ejaan_palsu_indonesia": "Zom-bi",
+      "ejaan_umum_ipa": "/ˈzɒmbi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_Zombie.mp3"
+    },
+    {
+      "order": 5,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "zombie",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 70,
+      "ejaan_palsu_indonesia": "Zam-bi",
+      "ejaan_umum_ipa": "/ˈzɑːmbi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_Zombie.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Zombie",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 63,
+      "ejaan_palsu_indonesia": "Tsom-bi",
+      "ejaan_umum_ipa": "/ˈtsɔmbi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_Zombie.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "зомби",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 56,
+      "ejaan_palsu_indonesia": "Zom-bi",
+      "ejaan_umum_ipa": "/ˈzombʲi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_Zombie.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "ゾンビ",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 49,
+      "ejaan_palsu_indonesia": "Zon-bi",
+      "ejaan_umum_ipa": "/zombʲi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Zombie.mp3"
+    },
+    {
+      "order": 9,
+      "country": "South Korea",
+      "coords": [
+        126.978,
+        37.5665
+      ],
+      "is_origin": false,
+      "local_word": "좀비",
+      "edge_tts_lang": "ko-KR",
+      "fallback_used": false,
+      "similarity_percentage": 42,
+      "ejaan_palsu_indonesia": "Jom-bi",
+      "ejaan_umum_ipa": "/tɕombi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/South_Korea_Zombie.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "zombi",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "Zom-bi",
+      "ejaan_umum_ipa": "/ˈzombi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_Zombie.mp3"
+    }
+  ]
+}

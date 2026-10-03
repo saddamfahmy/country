@@ -31,14 +31,16 @@ def process_audio_files(directory):
         _, ext = os.path.splitext(item)
         
         if os.path.isfile(item_path) and ext.lower() in {'.mp3', '.wav'}:
-            print(f"🔊 Menormalkan volume: {item} ...")
+            print(f"🔊 Menormalkan & menguatkan suara pelan pada: {item} ...")
             temp_output = os.path.join(directory, f"temp_{item}")
             
-            # Menggunakan FFmpeg dengan filter loudnorm (Standar YouTube -14 LUFS)
+            # Kombinasi dynaudnorm (mengangkat suara pelan) & loudnorm (pembesar volume utama)
+            audio_filter = "dynaudnorm=f=150:g=15:m=100:s=12,loudnorm=I=-11:LRA=7:TP=-0.5"
+            
             command = [
                 "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
                 "-i", item_path,
-                "-af", "loudnorm=I=-14:LRA=11:TP=-1.0",
+                "-af", audio_filter,
                 temp_output
             ]
             

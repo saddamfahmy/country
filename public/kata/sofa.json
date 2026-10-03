@@ -1,0 +1,185 @@
+{
+  "global_word": "sofa",
+  "route": [
+    {
+      "order": 1,
+      "country": "Saudi Arabia",
+      "coords": [
+        46.7219,
+        24.6877
+      ],
+      "is_origin": true,
+      "local_word": "صفة",
+      "edge_tts_lang": "ar-SA",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "Shuf-fah",
+      "ejaan_umum_ipa": "/sˤuf.fah/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Saudi_Arabia_sofa.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Turkey",
+      "coords": [
+        32.8597,
+        39.9334
+      ],
+      "is_origin": false,
+      "local_word": "sofa",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 90,
+      "ejaan_palsu_indonesia": "So-fa",
+      "ejaan_umum_ipa": "/soˈfa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_sofa.mp3"
+    },
+    {
+      "order": 3,
+      "country": "France",
+      "coords": [
+        2.3522,
+        48.8566
+      ],
+      "is_origin": false,
+      "local_word": "sofa",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 83,
+      "ejaan_palsu_indonesia": "Soh-fa",
+      "ejaan_umum_ipa": "/sɔfa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_sofa.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Germany",
+      "coords": [
+        13.405,
+        52.52
+      ],
+      "is_origin": false,
+      "local_word": "Sofa",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 76,
+      "ejaan_palsu_indonesia": "Zo-fa",
+      "ejaan_umum_ipa": "/ˈzoːfa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_sofa.mp3"
+    },
+    {
+      "order": 5,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "sofa",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 70,
+      "ejaan_palsu_indonesia": "Sow-feh",
+      "ejaan_umum_ipa": "/ˈsəʊfə/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_sofa.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "софа",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 63,
+      "ejaan_palsu_indonesia": "Sa-fa",
+      "ejaan_umum_ipa": "/sɐˈfa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_sofa.mp3"
+    },
+    {
+      "order": 7,
+      "country": "China",
+      "coords": [
+        116.4074,
+        39.9042
+      ],
+      "is_origin": false,
+      "local_word": "沙发",
+      "edge_tts_lang": "zh-CN",
+      "fallback_used": false,
+      "similarity_percentage": 55,
+      "ejaan_palsu_indonesia": "Sya-fa",
+      "ejaan_umum_ipa": "/ʂáfä/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/China_sofa.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "ソファー",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 48,
+      "ejaan_palsu_indonesia": "So-faa",
+      "ejaan_umum_ipa": "/sofaː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_sofa.mp3"
+    },
+    {
+      "order": 9,
+      "country": "South Korea",
+      "coords": [
+        126.978,
+        37.5665
+      ],
+      "is_origin": false,
+      "local_word": "소파",
+      "edge_tts_lang": "ko-KR",
+      "fallback_used": false,
+      "similarity_percentage": 42,
+      "ejaan_palsu_indonesia": "So-pa",
+      "ejaan_umum_ipa": "/sopa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/South_Korea_sofa.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "sofa",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "So-fa",
+      "ejaan_umum_ipa": "/ˈsofa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_sofa.mp3"
+    }
+  ]
+}
