@@ -1,19 +1,6 @@
 name: Render kata videos
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/render-videos.yml"
-      - "package.json"
-      - "package-lock.json"
-      - "public/kata/**"
-      - "public/sound/**"
-      - "public/reaction-frames/**"
-      - "public/topo.js"
-      - "scripts/render-videos.js"
-      - "src/**"
   workflow_dispatch:
     inputs:
       only:
@@ -65,7 +52,7 @@ jobs:
       - name: Render compositions one by one
         env:
           ONLY_KATA: ${{ inputs.only }}
-          FORCE_RENDER: ${{ github.event_name == 'workflow_dispatch' && inputs.force }}
+          FORCE_RENDER: ${{ inputs.force }}
         run: |
           args=()
           if [ -n "$ONLY_KATA" ]; then

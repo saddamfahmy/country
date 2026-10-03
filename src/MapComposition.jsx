@@ -11,6 +11,7 @@ import {
   Img,
   Audio,
   Sequence,
+  random,
 } from "remotion";
 import {
   ComposableMap,
@@ -31,25 +32,15 @@ const circleFlagUrls = new Map(
   })
 );
 const BEND_FACTOR = 0.3;
-const MUSIC_FILES = ["1.mp3", "2.mp3"];
+const MUSIC_FILES = ["1.mp3", "2.mp3","3.mp3", "4.mp3","5.mp3", "6.mp3","7.mp3", "8.mp3"];
 const MUSIC_CHOICE = null;
-const MUSIC_MAX_VOLUME = 0.2;
-const MUSIC_MIN_VOLUME = 0.2;
+const MUSIC_MAX_VOLUME = 0.1;
+const MUSIC_MIN_VOLUME = 0.1;
 const MUSIC_FADE_SECONDS = 0.3;
 const BACKGROUND_IMAGE_PATTERN = /\.(avif|bmp|gif|jpe?g|png|svg|webp)$/i;
 const BACKGROUND_MAPPING = {
   bgchois: null,
   backgrounds: [
-    {
-      bg: "bg/1.jpg",
-      color: "#ac30b7",
-      line: "#c4ae07",
-    },
-    {
-      bg: "bg/2.jpg",
-      color: "#4cf7fa",
-      line: "#ec0b0b",
-    },
     {
       bg: "#3263e9",
       color: "#1e293b",
@@ -57,7 +48,7 @@ const BACKGROUND_MAPPING = {
     },
     {
       bg: "#0f172a",
-      color: "#1e293b",
+      color: "#3f5476",
       line: "#fbbf24",
     },
     {
@@ -72,14 +63,47 @@ const BACKGROUND_MAPPING = {
     },
     {
       bg: "bg/1.jpg",
-      color: "#334155",
+      color: "#f1eb36",
       line: "#fda4af",
     },
     {
       bg: "bg/2.jpg",
-      color: "#3f3f46",
+      color: "#770909",
       line: "#a7f3d0",
     },
+      {
+      bg: "bg/3.jpg",
+      color: "#6ba5f7",
+      line: "#fda4af",
+    },
+    {
+      bg: "bg/4.jpg",
+      color: "#605105",
+      line: "#a7f3d0",
+    },
+    {
+      bg: "bg/5.jpg",
+      color: "#15191f",
+      line: "#fda4af",
+    },
+    {
+      bg: "bg/6.jpg",
+      color: "#3f3f46",
+      line: "#a7f3d0",
+    },{
+      bg: "bg/7.jpg",
+      color: "#334155",
+      line: "#fda4af",
+    },
+    {
+      bg: "bg/8.jpg",
+      color: "#39deb8",
+      line: "#a7f3d0",
+    },{
+      bg: "bg/9.jpg",
+      color: "#795128",
+      line: "#fda4af",
+    }
   ],
 };
 const mainlandCameraCountries = new Set([
@@ -543,18 +567,19 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const route = jsonData.route;
-  const [musicIndex] = useState(() =>
-    MUSIC_CHOICE == null
-      ? Math.floor(Math.random() * MUSIC_FILES.length)
-      : MUSIC_CHOICE - 1
-  );
+
+const [musicIndex] = useState(() =>
+  MUSIC_CHOICE == null
+    ? Math.floor(random("musik-" + jsonData.global_word) * MUSIC_FILES.length)
+    : MUSIC_CHOICE - 1
+);
   const musicFile = MUSIC_FILES[musicIndex];
   if (!musicFile) {
     throw new Error(`Invalid MUSIC_CHOICE value "${MUSIC_CHOICE}".`);
   }
-  const [backgroundIndex] = useState(() =>
+const [backgroundIndex] = useState(() =>
     BACKGROUND_MAPPING.bgchois == null
-      ? Math.floor(Math.random() * BACKGROUND_MAPPING.backgrounds.length)
+      ? Math.floor(random("katar" + jsonData.global_word) * BACKGROUND_MAPPING.backgrounds.length)
       : BACKGROUND_MAPPING.bgchois - 1
   );
   const backgroundChoice = BACKGROUND_MAPPING.backgrounds[backgroundIndex];
@@ -803,9 +828,23 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
         from={introSegment.start}
         durationInFrames={introSegment.end - introSegment.start}
       >
-        <Audio src={staticFile("sound efek/zoom-in.mp3")} />
+        <Audio src={staticFile("sound efek/zoom-in.wav")} />
       </Sequence>
     ) : null;
+
+
+    // --- 1. TAMBAHKAN KODE EFEK SUARA GARIS MELENGKUNG DI SINI ---
+    const Audiomelengkung = timelineSegments
+      .filter((segment) => segment.type === "move")
+      .map((segment) => (
+        <Sequence
+          key={`garis-melengkung-audio-${segment.fromIdx}`}
+          from={segment.start}
+          durationInFrames={segment.end - segment.start}
+        >
+          <Audio src={staticFile("sound efek/move.wav")} />
+        </Sequence>
+      ));
 
     const arrivalAudio = timelineSegments
       .filter((segment) => segment.type === "stay")
@@ -844,7 +883,7 @@ export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
       </Sequence>
     ) : null;
 
-    return [backgroundMusic, introAudio, ...arrivalAudio, ...stayAudio, outroAudio];
+    return [backgroundMusic, introAudio, ...Audiomelengkung,...arrivalAudio, ...stayAudio, outroAudio];
   };
 
   

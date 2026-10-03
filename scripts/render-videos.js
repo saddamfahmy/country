@@ -6,12 +6,16 @@ const root = path.resolve(__dirname, "..");
 const inputDirectory = path.join(root, "public", "kata");
 const outputDirectory = path.join(root, "renders");
 const entryPoint = path.join("src", "index.js");
-const force = process.argv.includes("--force");
-const dryRun = process.argv.includes("--dry-run");
+
 const onlyArgIndex = process.argv.findIndex((arg) => arg === "--only");
 const onlyValue = onlyArgIndex >= 0
   ? process.argv[onlyArgIndex + 1]
   : process.argv.find((arg) => arg.startsWith("--only="))?.slice("--only=".length);
+
+// Logika Force: Jika --force dicentang ATAU jika ada input nama file tunggal (--only), 
+// maka otomatis paksa render ulang / timpa file.
+const force = process.argv.includes("--force") || !!onlyValue;
+const dryRun = process.argv.includes("--dry-run");
 
 const toCompositionId = (filename) => {
   const name = path.basename(filename, path.extname(filename));
@@ -81,7 +85,7 @@ for (const filename of selectedFiles) {
   } catch (error) {
     console.error(`Skipping ${filename}: invalid or incomplete JSON (${error.message}).`);
     results.push({ filename, status: "failed" });
-    continue;
+    continue; // Melanjutkan ke video berikutnya jika JSON rusak
   }
 
   if (!force && fs.existsSync(outputPath) && fs.statSync(outputPath).size > 0) {
@@ -136,6 +140,7 @@ for (const filename of selectedFiles) {
     fs.rmSync(temporaryOutputPath, { force: true });
     console.error(`Failed to render ${filename}: ${error.message}`);
     results.push({ filename, status: "failed" });
+    // Error ditangkap di sini, script tidak berhenti (melanjutkan ke video berikutnya)
   }
 }
 
@@ -146,5 +151,7 @@ console.log(`Render summary: ${rendered} rendered, ${skipped} already complete, 
 
 if (failed.length > 0) {
   console.error(`Failed inputs: ${failed.map((result) => result.filename).join(", ")}`);
+  // Memberikan sinyal failed ke GitHub Actions agar status job menjadi merah
+  // Namun karena ada `if: always()` di YML, artifacts tetap akan diunggah
   process.exitCode = 1;
 }
