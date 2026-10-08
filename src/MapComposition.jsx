@@ -380,7 +380,7 @@ const InfoOverlay = ({ data, frame, fps, reachedFrame, leaveFrame, cameraZoom })
 const StoryTitle = ({ globalWord }) => (
   <div style={{
     position: "absolute",
-    top: "5.5%",
+    top: "10.5%",
     left: 0,
     width: "100%",
     display: "flex",
@@ -560,6 +560,117 @@ const GreenScreenVideo = ({ frame, timelineSegments, route, fps }) => {
     </div>
   );
 };
+const CountryListOverlay = ({ route, frame, fps, getReachedFrame }) => {
+  return (
+    <div style={{
+      position: "absolute",
+      top: "500px",
+      left: "40px",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+      zIndex: 30,
+      pointerEvents: "none"
+    }}>
+      {route.map((wp, index) => {
+        const reachedFrame = getReachedFrame(index);
+        
+        // Cek status frame dan apakah ini elemen terakhir di dalam daftar
+        const isReached = frame >= reachedFrame;
+        const isLast = index === route.length - 1;
+
+        const entrance = isReached ? spring({
+          frame: frame - reachedFrame,
+          fps,
+          config: { damping: 12, stiffness: 150 }
+        }) : 0;
+
+        const flagUrl = getCircleFlagUrl(wp.country);
+
+        return (
+          // Bungkus utama sekarang transparan dan hanya mengatur jarak antara nomor dan konten
+          <div key={index} style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+            minHeight: "40px" // Menjaga jarak antar baris tetap stabil meski belum ada kotak
+          }}>
+            
+            {/* NOMOR URUT (Selalu Tampil) */}
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "28px",
+              height: "28px",
+              background: isReached ? "#38bdf8" : "#475569", 
+              color: isReached ? "#0f172a" : "#cbd5e1",
+              borderRadius: "50%",
+              fontSize: "20px",
+              fontWeight: "bold",
+              flexShrink: 0,
+              transition: "background 0.3s ease, color 0.3s ease"
+            }}>
+              {index + 1}
+            </div>
+
+            {/* KONTEN DINAMIS */}
+            {!isReached ? (
+              // JIKA BELUM SAMPAI: Tampilkan "???" HANYA jika ini adalah negara terakhir
+              isLast && (
+                <div style={{
+                  color: "#ef4444", 
+                  fontSize: "24px",
+                  fontWeight: "bold",
+                  letterSpacing: "4px",
+                  textShadow: "0 2px 4px rgba(0,0,0,0.8)",
+                  lineHeight: 1
+                }}>
+                  ???
+                </div>
+              )
+            ) : (
+              // JIKA SUDAH SAMPAI: Tampilkan Kotak Round beserta Bendera dan Nama
+              <div style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+                background: "rgba(15, 23, 42, 0.85)", // Style kotak dipindah ke sini
+                padding: "8px 16px",
+                borderRadius: "50px",
+                border: "2px solid #38bdf8",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
+                opacity: entrance,
+                transform: `translateX(${(1 - entrance) * -20}px)`, 
+              }}>
+                {flagUrl && (
+                  <img src={flagUrl} alt="" style={{
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    border: "2px solid #fff"
+                  }} />
+                )}
+                <span style={{
+                  color: "#fff",
+                  fontSize: "24px",
+                  fontWeight: "bold",
+                  textShadow: "0 2px 4px rgba(0,0,0,0.8)",
+                  lineHeight: 1,
+                  whiteSpace: "nowrap" 
+                }}>
+                  {wp.country}
+                </span>
+              </div>
+            )}
+
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export const MultiCountryMapComposition = ({ jsonData, timelineSegments }) => {
   if (!jsonData || !jsonData.route || !timelineSegments || timelineSegments.length === 0) {
@@ -645,6 +756,28 @@ const [backgroundIndex] = useState(() =>
     }
     return countryData.coords;
   };
+
+  const getOffsetCenter = (idx) => {
+    const baseCenter = getTargetCenter(idx);
+    const targetZoom = getTargetZoom(idx);
+
+    // --- VARIABEL PERSENTASE GESER KAMERA ---
+    // Positif = kamera geser ke Kanan (Marker jadi di Kiri layar)
+    // Negatif = kamera geser ke Kiri (Marker jadi di Kanan layar)
+    const OFFSET_X_PERCENT = -40; // Contoh: Geser 10%
+    const OFFSET_Y_PERCENT = 0;  // Geser atas/bawah (Vertikal)
+
+    // Konversi persentase layar ke derajat garis bujur/lintang peta.
+    // Harus dibagi 'targetZoom' agar pergeseran tetap konstan (10% layar) 
+    // terlepas dari seberapa dekat peta di-zoom.
+    const offsetLng = (OFFSET_X_PERCENT / 100) * (180 / targetZoom);
+    const offsetLat = (OFFSET_Y_PERCENT / 100) * (90 / targetZoom);
+
+    return [
+      baseCenter[0] + offsetLng,
+      baseCenter[1] - offsetLat // minus karena latitude peta membesar ke arah utara/atas
+    ];
+  };
   const getRouteIndex = (geoName) => {
     if (typeof geoName !== "string") return -1;
     const canonicalName = countryNameAliases[geoName] || geoName;
@@ -669,7 +802,7 @@ const [backgroundIndex] = useState(() =>
       [0, 1]
     );
     const startCenter = initialCameraCenter;
-    const endCenter = getTargetCenter(0);
+    const endCenter = getOffsetCenter(0);
     
     cameraCenter = [
       interpolate(progress, [0, 1], [startCenter[0], endCenter[0]]),
@@ -691,7 +824,7 @@ const [backgroundIndex] = useState(() =>
       { longitude: 0, latitude: 0.4, zoom: 0.5 },
       { longitude: 0, latitude: -0.4, zoom: 0.35 },
     ][activeSegment.fromIdx % 4];
-    const centerCoord = getTargetCenter(activeSegment.fromIdx);
+    const centerCoord = getOffsetCenter(activeSegment.fromIdx);
     cameraCenter = [
       centerCoord[0] + motionPattern.longitude * motion,
       centerCoord[1] + motionPattern.latitude * motion,
@@ -707,8 +840,8 @@ const [backgroundIndex] = useState(() =>
     );
     legProgress = Easing.inOut(Easing.quad)(progress);
 
-    const p0 = getTargetCenter(activeSegment.fromIdx);
-    const p2 = getTargetCenter(activeSegment.toIdx);
+    const p0 = getOffsetCenter(activeSegment.fromIdx);
+    const p2 = getOffsetCenter(activeSegment.toIdx);
     const cp = get2DControlPoint(p0, p2, BEND_FACTOR);
     
     cameraCenter = get2DBezierPoint(p0, cp, p2, legProgress);
@@ -725,7 +858,7 @@ const [backgroundIndex] = useState(() =>
     );
   } 
   else if (activeSegment.type === "outro") {
-    const startCenter = getTargetCenter(activeSegment.fromIdx);
+    const startCenter = getOffsetCenter(activeSegment.fromIdx);
     const startZoom = getTargetZoom(activeSegment.fromIdx);
     const endCenter = initialCameraCenter;
     const progress = Math.min(
@@ -827,7 +960,7 @@ const [backgroundIndex] = useState(() =>
       <Sequence
         key="intro-zoom-audio"
         from={introSegment.start}
-        durationInFrames={introSegment.end - introSegment.start}
+        durationInFrames={introSegment.end - introSegment.start+90}
       >
         <Audio src={staticFile("sound efek/zoom-in.wav")} />
       </Sequence>
@@ -843,7 +976,7 @@ const [backgroundIndex] = useState(() =>
           from={segment.start}
           durationInFrames={segment.end - segment.start}
         >
-          <Audio src={staticFile("sound efek/move.wav")} />
+          <Audio src={staticFile("sound efek/pindah.wav")} />
         </Sequence>
       ));
 
@@ -880,18 +1013,23 @@ const [backgroundIndex] = useState(() =>
         from={outroSegment.start}
         durationInFrames={outroSegment.end - outroSegment.start}
       >
-        <Audio src={staticFile("sound efek/zoom-out.mp3")} />
+        <Audio src={staticFile("sound efek/pindah.wav")} />
       </Sequence>
     ) : null;
 
-    return [backgroundMusic, introAudio, ...Audiomelengkung,...arrivalAudio, ...stayAudio, outroAudio];
+    return [backgroundMusic, ...Audiomelengkung,...arrivalAudio, ...stayAudio, outroAudio];
   };
 
   
 
   return (
     <div style={{ width: "100%", height: "100%", backgroundColor, backgroundImage, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden", fontFamily: "system-ui, sans-serif", position: "relative" }}>
-      
+      <CountryListOverlay 
+        route={route} 
+        frame={frame} 
+        fps={fps} 
+        getReachedFrame={getReachedFrame} 
+      />
       <StoryTitle globalWord={jsonData.global_word} />
 
       <GreenScreenVideo

@@ -45,3 +45,32 @@ JSON
     // ... Lanjutkan hingga tepat "order": 10
   ]
 }
+
+
+
+
+
+
+
+Wait until you hear how this country says <KATA>! 😱"
+
+
+
+
+
+
+
+Mapping the Spread of SHAMPOO: Animated Map Visualization
+
+
+
+Salin Prompt Ini:
+"Saya memiliki channel YouTube bertema animasi peta sejarah bahasa (etimologi) berdurasi 16 detik.
+
+Berikan saya 5 daftar kata benda/istilah sehari-hari yang sangat familiar bagi masyarakat global/Indonesia, tetapi memiliki faktor kejut (plot twist) tinggi (misalnya: orang mengira berasal dari Eropa/Barat/modern, padahal aslinya berakar dari India, Persia, Arab, atau bahasa kuno lainnya).
+
+Untuk setiap kata, buatkan dalam format siap eksekusi:
+
+Nama Kata Modern & Asumsi Orang: (Apa kata populernya dan orang kira dari mana asalnya)
+Asal Usul Sebenarnya (Titik 0): (Negara/bahasa asal dan kata aslinya)
+Rute 8–10 Perubahan Kata di Peta: Tuliskan urutan perpindahan negara beserta ejaan/bunyi katanya secara berurutan dari nomor 1 sampai 10 (contoh: 1. India: chāmpo ➔ 2. ... ➔ 10. Inggris: shampoo)."
