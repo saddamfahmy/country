@@ -1,0 +1,185 @@
+{
+  "global_word": "orange",
+  "route": [
+    {
+      "order": 1,
+      "country": "India",
+      "coords": [
+        78.9629,
+        20.5937
+      ],
+      "is_origin": true,
+      "local_word": "नारंग",
+      "edge_tts_lang": "hi-IN",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "na-rang",
+      "ejaan_umum_ipa": "/nɑː.ɾəŋɡ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/India_orange.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Iran",
+      "coords": [
+        53.688,
+        32.4279
+      ],
+      "is_origin": false,
+      "local_word": "نارنج",
+      "edge_tts_lang": "fa-IR",
+      "fallback_used": false,
+      "similarity_percentage": 88,
+      "ejaan_palsu_indonesia": "na-renj",
+      "ejaan_umum_ipa": "/nɒːˈɾend͡ʒ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Iran_orange.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Spain",
+      "coords": [
+        -3.7492,
+        40.4637
+      ],
+      "is_origin": false,
+      "local_word": "naranja",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 78,
+      "ejaan_palsu_indonesia": "na-ran-ha",
+      "ejaan_umum_ipa": "/naˈɾan.xa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_orange.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Portugal",
+      "coords": [
+        -8.2245,
+        39.3999
+      ],
+      "is_origin": false,
+      "local_word": "laranja",
+      "edge_tts_lang": "pt-PT",
+      "fallback_used": false,
+      "similarity_percentage": 70,
+      "ejaan_palsu_indonesia": "la-ran-zha",
+      "ejaan_umum_ipa": "/lɐˈɾɐ̃.ʒɐ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Portugal_orange.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Italy",
+      "coords": [
+        12.5674,
+        41.8719
+      ],
+      "is_origin": false,
+      "local_word": "arancia",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 62,
+      "ejaan_palsu_indonesia": "a-ran-cha",
+      "ejaan_umum_ipa": "/aˈran.t͡ʃa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_orange.mp3"
+    },
+    {
+      "order": 6,
+      "country": "France",
+      "coords": [
+        2.2137,
+        46.2276
+      ],
+      "is_origin": false,
+      "local_word": "orange",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 55,
+      "ejaan_palsu_indonesia": "o-ronzh",
+      "ejaan_umum_ipa": "/ɔ.ʁɑ̃ʒ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_orange.mp3"
+    },
+    {
+      "order": 7,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "orange",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 48,
+      "ejaan_palsu_indonesia": "o-rinj",
+      "ejaan_umum_ipa": "/ˈɒr.ɪnd͡ʒ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_orange.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Ireland",
+      "coords": [
+        -8.2439,
+        53.4129
+      ],
+      "is_origin": false,
+      "local_word": "oráiste",
+      "edge_tts_lang": "ga-IE",
+      "fallback_used": false,
+      "similarity_percentage": 40,
+      "ejaan_palsu_indonesia": "o-rash-te",
+      "ejaan_umum_ipa": "/ɔˈɾˠaːʃtʲə/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Ireland_orange.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Netherlands",
+      "coords": [
+        5.2913,
+        52.1326
+      ],
+      "is_origin": false,
+      "local_word": "oranje",
+      "edge_tts_lang": "nl-NL",
+      "fallback_used": false,
+      "similarity_percentage": 32,
+      "ejaan_palsu_indonesia": "o-ran-ye",
+      "ejaan_umum_ipa": "/oːˈrɑn.jə/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Netherlands_orange.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Germany",
+      "coords": [
+        10.4515,
+        51.1657
+      ],
+      "is_origin": false,
+      "local_word": "Orange",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 25,
+      "ejaan_palsu_indonesia": "o-rang-she",
+      "ejaan_umum_ipa": "/oˈʁɑ̃ːʒə/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_orange.mp3"
+    }
+  ]
+}

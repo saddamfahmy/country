@@ -1,0 +1,185 @@
+{
+  "global_word": "tattoo",
+  "route": [
+    {
+      "order": 1,
+      "country": "French Polynesia",
+      "coords": [
+        -149.4068,
+        -17.6797
+      ],
+      "is_origin": true,
+      "local_word": "tatau",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": true,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "ta-tau",
+      "ejaan_umum_ipa": "/taˈtau̯/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/French_Polynesia_tattoo.mp3"
+    },
+    {
+      "order": 2,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "tattoo",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 88,
+      "ejaan_palsu_indonesia": "ta-tu",
+      "ejaan_umum_ipa": "/təˈtuː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_tattoo.mp3"
+    },
+    {
+      "order": 3,
+      "country": "United States",
+      "coords": [
+        -95.7129,
+        37.0902
+      ],
+      "is_origin": false,
+      "local_word": "tattoo",
+      "edge_tts_lang": "en-US",
+      "fallback_used": false,
+      "similarity_percentage": 82,
+      "ejaan_palsu_indonesia": "ta-tu",
+      "ejaan_umum_ipa": "/tæˈtuː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_States_tattoo.mp3"
+    },
+    {
+      "order": 4,
+      "country": "France",
+      "coords": [
+        2.2137,
+        46.2276
+      ],
+      "is_origin": false,
+      "local_word": "tatouage",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 70,
+      "ejaan_palsu_indonesia": "ta-tu-azh",
+      "ejaan_umum_ipa": "/ta.twaʒ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_tattoo.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Spain",
+      "coords": [
+        -3.7492,
+        40.4637
+      ],
+      "is_origin": false,
+      "local_word": "tatuaje",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 62,
+      "ejaan_palsu_indonesia": "ta-tua-he",
+      "ejaan_umum_ipa": "/taˈtwa.xe/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_tattoo.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Italy",
+      "coords": [
+        12.5674,
+        41.8719
+      ],
+      "is_origin": false,
+      "local_word": "tatuaggio",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 54,
+      "ejaan_palsu_indonesia": "ta-tu-ad-yo",
+      "ejaan_umum_ipa": "/ta.tuˈad.dʒo/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_tattoo.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Germany",
+      "coords": [
+        10.4515,
+        51.1657
+      ],
+      "is_origin": false,
+      "local_word": "Tätowierung",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 42,
+      "ejaan_palsu_indonesia": "te-to-vi-rung",
+      "ejaan_umum_ipa": "/tɛtoˈviːʁʊŋ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_tattoo.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Turkey",
+      "coords": [
+        35.2433,
+        38.9637
+      ],
+      "is_origin": false,
+      "local_word": "dövme",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 32,
+      "ejaan_palsu_indonesia": "dyov-me",
+      "ejaan_umum_ipa": "/dœvˈme/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_tattoo.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "татуировка",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 22,
+      "ejaan_palsu_indonesia": "ta-tu-i-rov-ka",
+      "ejaan_umum_ipa": "/tətʊɪˈrof.kə/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_tattoo.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "タトゥー",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 15,
+      "ejaan_palsu_indonesia": "ta-tuu",
+      "ejaan_umum_ipa": "/ta.tuː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_tattoo.mp3"
+    }
+  ]
+}

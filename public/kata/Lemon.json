@@ -1,0 +1,185 @@
+{
+  "global_word": "lemon",
+  "route": [
+    {
+      "order": 1,
+      "country": "Iran",
+      "coords": [
+        53.688,
+        32.4279
+      ],
+      "is_origin": true,
+      "local_word": "لیمو",
+      "edge_tts_lang": "fa-IR",
+      "fallback_used": true,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "li-mu",
+      "ejaan_umum_ipa": "/liːˈmuː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Iran_lemon.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Egypt",
+      "coords": [
+        30.8025,
+        26.8206
+      ],
+      "is_origin": false,
+      "local_word": "ليمون",
+      "edge_tts_lang": "ar-EG",
+      "fallback_used": true,
+      "similarity_percentage": 90,
+      "ejaan_palsu_indonesia": "lai-mun",
+      "ejaan_umum_ipa": "/layˈmuːn/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Egypt_lemon.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Turkey",
+      "coords": [
+        35.2433,
+        38.9637
+      ],
+      "is_origin": false,
+      "local_word": "limon",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": true,
+      "similarity_percentage": 82,
+      "ejaan_palsu_indonesia": "li-mon",
+      "ejaan_umum_ipa": "/liˈmon/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_lemon.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Greece",
+      "coords": [
+        21.8243,
+        39.0742
+      ],
+      "is_origin": false,
+      "local_word": "λεμόνι",
+      "edge_tts_lang": "el-GR",
+      "fallback_used": true,
+      "similarity_percentage": 75,
+      "ejaan_palsu_indonesia": "le-mo-ni",
+      "ejaan_umum_ipa": "/leˈmo.ni/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Greece_lemon.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Italy",
+      "coords": [
+        12.5674,
+        41.8719
+      ],
+      "is_origin": false,
+      "local_word": "limone",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 68,
+      "ejaan_palsu_indonesia": "li-mo-ne",
+      "ejaan_umum_ipa": "/liˈmo.ne/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_lemon.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Spain",
+      "coords": [
+        -3.7492,
+        40.4637
+      ],
+      "is_origin": false,
+      "local_word": "limón",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 60,
+      "ejaan_palsu_indonesia": "li-mon",
+      "ejaan_umum_ipa": "/liˈmon/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_lemon.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Portugal",
+      "coords": [
+        -8.2245,
+        39.3999
+      ],
+      "is_origin": false,
+      "local_word": "limão",
+      "edge_tts_lang": "pt-PT",
+      "fallback_used": false,
+      "similarity_percentage": 52,
+      "ejaan_palsu_indonesia": "li-ma-ung",
+      "ejaan_umum_ipa": "/liˈmɐ̃w̃/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Portugal_lemon.mp3"
+    },
+    {
+      "order": 8,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "lemon",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 45,
+      "ejaan_palsu_indonesia": "le-men",
+      "ejaan_umum_ipa": "/ˈlem.ən/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_lemon.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "лимон",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": true,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "li-mon",
+      "ejaan_umum_ipa": "/lʲiˈmon/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_lemon.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Kenya",
+      "coords": [
+        37.9062,
+        -0.0236
+      ],
+      "is_origin": false,
+      "local_word": "limau",
+      "edge_tts_lang": "sw-KE",
+      "fallback_used": false,
+      "similarity_percentage": 25,
+      "ejaan_palsu_indonesia": "li-ma-u",
+      "ejaan_umum_ipa": "/liˈma.u/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Kenya_lemon.mp3"
+    }
+  ]
+}

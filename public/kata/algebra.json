@@ -1,0 +1,185 @@
+{
+  "global_word": "algebra",
+  "route": [
+    {
+      "order": 1,
+      "country": "Iraq",
+      "coords": [
+        43.6793,
+        33.2232
+      ],
+      "is_origin": true,
+      "local_word": "الجبر",
+      "edge_tts_lang": "ar-IQ",
+      "fallback_used": true,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "al-ja-bar",
+      "ejaan_umum_ipa": "/alˈd͡ʒabr/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Iraq_algebra.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Spain",
+      "coords": [
+        -3.7492,
+        40.4637
+      ],
+      "is_origin": false,
+      "local_word": "álgebra",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 88,
+      "ejaan_palsu_indonesia": "al-khe-bra",
+      "ejaan_umum_ipa": "/ˈal.xe.bɾa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_algebra.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Portugal",
+      "coords": [
+        -8.2245,
+        39.3999
+      ],
+      "is_origin": false,
+      "local_word": "álgebra",
+      "edge_tts_lang": "pt-PT",
+      "fallback_used": false,
+      "similarity_percentage": 82,
+      "ejaan_palsu_indonesia": "al-zhe-bra",
+      "ejaan_umum_ipa": "/ˈaɫ.ʒɨ.bɾɐ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Portugal_algebra.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Italy",
+      "coords": [
+        12.5674,
+        41.8719
+      ],
+      "is_origin": false,
+      "local_word": "algebra",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 76,
+      "ejaan_palsu_indonesia": "al-je-bra",
+      "ejaan_umum_ipa": "/ˈal.d͡ʒe.bra/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_algebra.mp3"
+    },
+    {
+      "order": 5,
+      "country": "France",
+      "coords": [
+        2.2137,
+        46.2276
+      ],
+      "is_origin": false,
+      "local_word": "algèbre",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 68,
+      "ejaan_palsu_indonesia": "al-zhebr",
+      "ejaan_umum_ipa": "/al.ʒɛbʁ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_algebra.mp3"
+    },
+    {
+      "order": 6,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "algebra",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 60,
+      "ejaan_palsu_indonesia": "el-ji-bre",
+      "ejaan_umum_ipa": "/ˈæl.d͡ʒɪ.brə/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_algebra.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Germany",
+      "coords": [
+        10.4515,
+        51.1657
+      ],
+      "is_origin": false,
+      "local_word": "Algebra",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 52,
+      "ejaan_palsu_indonesia": "al-ge-bra",
+      "ejaan_umum_ipa": "/ˈal.ɡe.bʁa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_algebra.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Greece",
+      "coords": [
+        21.8243,
+        39.0742
+      ],
+      "is_origin": false,
+      "local_word": "άλγεβρα",
+      "edge_tts_lang": "el-GR",
+      "fallback_used": true,
+      "similarity_percentage": 44,
+      "ejaan_palsu_indonesia": "al-ye-vra",
+      "ejaan_umum_ipa": "/ˈal.ʝe.vra/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Greece_algebra.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "алгебра",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": false,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "al-gye-bra",
+      "ejaan_umum_ipa": "/ˈal.ɡʲɪ.brə/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_algebra.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "アルジェブラ",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 20,
+      "ejaan_palsu_indonesia": "a-ru-je-bu-ra",
+      "ejaan_umum_ipa": "/a.ɾɯ.dʑe.bɯ.ɾa/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_algebra.mp3"
+    }
+  ]
+}

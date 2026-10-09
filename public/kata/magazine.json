@@ -1,0 +1,185 @@
+{
+  "global_word": "magazine",
+  "route": [
+    {
+      "order": 1,
+      "country": "Egypt",
+      "coords": [
+        30.8025,
+        26.8206
+      ],
+      "is_origin": true,
+      "local_word": "مخازن",
+      "edge_tts_lang": "ar-EG",
+      "fallback_used": true,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "ma-kha-zin",
+      "ejaan_umum_ipa": "/maˈxaːzin/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Egypt_magazine.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Turkey",
+      "coords": [
+        35.2433,
+        38.9637
+      ],
+      "is_origin": false,
+      "local_word": "magazin",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 90,
+      "ejaan_palsu_indonesia": "ma-ga-zin",
+      "ejaan_umum_ipa": "/ma.ɡaˈzin/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_magazine.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Italy",
+      "coords": [
+        12.5674,
+        41.8719
+      ],
+      "is_origin": false,
+      "local_word": "magazzino",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 82,
+      "ejaan_palsu_indonesia": "ma-gat-tsi-no",
+      "ejaan_umum_ipa": "/maɡatˈtsiːno/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_magazine.mp3"
+    },
+    {
+      "order": 4,
+      "country": "France",
+      "coords": [
+        2.2137,
+        46.2276
+      ],
+      "is_origin": false,
+      "local_word": "magasin",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 75,
+      "ejaan_palsu_indonesia": "ma-ga-zang",
+      "ejaan_umum_ipa": "/maɡazɛ̃/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_magazine.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Germany",
+      "coords": [
+        10.4515,
+        51.1657
+      ],
+      "is_origin": false,
+      "local_word": "Magazin",
+      "edge_tts_lang": "de-DE",
+      "fallback_used": false,
+      "similarity_percentage": 67,
+      "ejaan_palsu_indonesia": "ma-ga-tsin",
+      "ejaan_umum_ipa": "/maɡaˈtsiːn/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Germany_magazine.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Netherlands",
+      "coords": [
+        5.2913,
+        52.1326
+      ],
+      "is_origin": false,
+      "local_word": "magazijn",
+      "edge_tts_lang": "nl-NL",
+      "fallback_used": false,
+      "similarity_percentage": 58,
+      "ejaan_palsu_indonesia": "ma-ga-zain",
+      "ejaan_umum_ipa": "/maːɣaːˈzɛi̯n/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Netherlands_magazine.mp3"
+    },
+    {
+      "order": 7,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "magazine",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 48,
+      "ejaan_palsu_indonesia": "me-ge-zin",
+      "ejaan_umum_ipa": "/ˌmæɡəˈziːn/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_magazine.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Poland",
+      "coords": [
+        19.1451,
+        51.9194
+      ],
+      "is_origin": false,
+      "local_word": "magazyn",
+      "edge_tts_lang": "pl-PL",
+      "fallback_used": true,
+      "similarity_percentage": 38,
+      "ejaan_palsu_indonesia": "ma-ga-zin",
+      "ejaan_umum_ipa": "/maˈɡa.zɨn/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Poland_magazine.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "магазин",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": true,
+      "similarity_percentage": 28,
+      "ejaan_palsu_indonesia": "ma-ga-zyin",
+      "ejaan_umum_ipa": "/məɡɐˈzʲin/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_magazine.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Japan",
+      "coords": [
+        139.6917,
+        35.6895
+      ],
+      "is_origin": false,
+      "local_word": "マガジン",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 18,
+      "ejaan_palsu_indonesia": "ma-ga-jin",
+      "ejaan_umum_ipa": "/maɡaʑiɴ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_magazine.mp3"
+    }
+  ]
+}

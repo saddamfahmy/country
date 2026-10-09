@@ -1,0 +1,185 @@
+{
+  "global_word": "bazaar",
+  "route": [
+    {
+      "order": 1,
+      "country": "Iran",
+      "coords": [
+        53.688,
+        32.4279
+      ],
+      "is_origin": true,
+      "local_word": "بازار",
+      "edge_tts_lang": "fa-IR",
+      "fallback_used": true,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "ba-zar",
+      "ejaan_umum_ipa": "/bɒːˈzɒːɾ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Iran_bazaar.mp3"
+    },
+    {
+      "order": 2,
+      "country": "India",
+      "coords": [
+        78.9629,
+        20.5937
+      ],
+      "is_origin": false,
+      "local_word": "बाज़ार",
+      "edge_tts_lang": "hi-IN",
+      "fallback_used": false,
+      "similarity_percentage": 92,
+      "ejaan_palsu_indonesia": "ba-zaar",
+      "ejaan_umum_ipa": "/bɑːˈzɑːɾ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/India_bazaar.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Uzbekistan",
+      "coords": [
+        64.5853,
+        41.3775
+      ],
+      "is_origin": false,
+      "local_word": "bozor",
+      "edge_tts_lang": "uz-UZ",
+      "fallback_used": false,
+      "similarity_percentage": 85,
+      "ejaan_palsu_indonesia": "bo-zor",
+      "ejaan_umum_ipa": "/bɒˈzɒr/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Uzbekistan_bazaar.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Russia",
+      "coords": [
+        37.6173,
+        55.7558
+      ],
+      "is_origin": false,
+      "local_word": "базар",
+      "edge_tts_lang": "ru-RU",
+      "fallback_used": true,
+      "similarity_percentage": 78,
+      "ejaan_palsu_indonesia": "ba-zar",
+      "ejaan_umum_ipa": "/bɐˈzar/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Russia_bazaar.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Turkey",
+      "coords": [
+        35.2433,
+        38.9637
+      ],
+      "is_origin": false,
+      "local_word": "pazar",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 70,
+      "ejaan_palsu_indonesia": "pa-zar",
+      "ejaan_umum_ipa": "/paˈzaɾ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_bazaar.mp3"
+    },
+    {
+      "order": 6,
+      "country": "Greece",
+      "coords": [
+        21.8243,
+        39.0742
+      ],
+      "is_origin": false,
+      "local_word": "παζάρι",
+      "edge_tts_lang": "el-GR",
+      "fallback_used": false,
+      "similarity_percentage": 62,
+      "ejaan_palsu_indonesia": "pa-za-ri",
+      "ejaan_umum_ipa": "/paˈza.ɾi/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Greece_bazaar.mp3"
+    },
+    {
+      "order": 7,
+      "country": "Italy",
+      "coords": [
+        12.5674,
+        41.8719
+      ],
+      "is_origin": false,
+      "local_word": "bazar",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 55,
+      "ejaan_palsu_indonesia": "ba-dzar",
+      "ejaan_umum_ipa": "/baˈdzar/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_bazaar.mp3"
+    },
+    {
+      "order": 8,
+      "country": "France",
+      "coords": [
+        2.2137,
+        46.2276
+      ],
+      "is_origin": false,
+      "local_word": "bazar",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 45,
+      "ejaan_palsu_indonesia": "ba-zhar",
+      "ejaan_umum_ipa": "/baˈzaʁ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_bazaar.mp3"
+    },
+    {
+      "order": 9,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "bazaar",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "be-zaa",
+      "ejaan_umum_ipa": "/bəˈzɑː/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_bazaar.mp3"
+    },
+    {
+      "order": 10,
+      "country": "Indonesia",
+      "coords": [
+        106.8456,
+        -6.2088
+      ],
+      "is_origin": false,
+      "local_word": "pasar",
+      "edge_tts_lang": "id-ID",
+      "fallback_used": false,
+      "similarity_percentage": 20,
+      "ejaan_palsu_indonesia": "pa-sar",
+      "ejaan_umum_ipa": "/paˈsar/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Indonesia_bazaar.mp3"
+    }
+  ]
+}

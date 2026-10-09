@@ -1,0 +1,185 @@
+{
+  "global_word": "Zero",
+  "route": [
+    {
+      "order": 1,
+      "country": "Saudi Arabia",
+      "coords": [
+        45.0792,
+        23.8859
+      ],
+      "is_origin": true,
+      "local_word": "صفر",
+      "edge_tts_lang": "ar-SA",
+      "fallback_used": false,
+      "similarity_percentage": 100,
+      "ejaan_palsu_indonesia": "sif-r",
+      "ejaan_umum_ipa": "/ˈsˤifr/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Saudi_Arabia_Zero.mp3"
+    },
+    {
+      "order": 2,
+      "country": "Iran",
+      "coords": [
+        53.688,
+        32.4279
+      ],
+      "is_origin": false,
+      "local_word": "صفر",
+      "edge_tts_lang": "fa-IR",
+      "fallback_used": true,
+      "similarity_percentage": 92,
+      "ejaan_palsu_indonesia": "sef-er",
+      "ejaan_umum_ipa": "/ˈsefr/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Iran_Zero.mp3"
+    },
+    {
+      "order": 3,
+      "country": "Turkey",
+      "coords": [
+        35.2433,
+        38.9637
+      ],
+      "is_origin": false,
+      "local_word": "sıfır",
+      "edge_tts_lang": "tr-TR",
+      "fallback_used": false,
+      "similarity_percentage": 85,
+      "ejaan_palsu_indonesia": "se-fer",
+      "ejaan_umum_ipa": "/ˈsɯfɯɾ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Turkey_Zero.mp3"
+    },
+    {
+      "order": 4,
+      "country": "Italy",
+      "coords": [
+        12.5674,
+        41.8719
+      ],
+      "is_origin": false,
+      "local_word": "zero",
+      "edge_tts_lang": "it-IT",
+      "fallback_used": false,
+      "similarity_percentage": 60,
+      "ejaan_palsu_indonesia": "dze-ro",
+      "ejaan_umum_ipa": "/ˈd͡zɛ.ro/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Italy_Zero.mp3"
+    },
+    {
+      "order": 5,
+      "country": "Spain",
+      "coords": [
+        -3.7492,
+        40.4637
+      ],
+      "is_origin": false,
+      "local_word": "cero",
+      "edge_tts_lang": "es-ES",
+      "fallback_used": false,
+      "similarity_percentage": 55,
+      "ejaan_palsu_indonesia": "se-ro",
+      "ejaan_umum_ipa": "/ˈθe.ɾo/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Spain_Zero.mp3"
+    },
+    {
+      "order": 6,
+      "country": "France",
+      "coords": [
+        2.2137,
+        46.2276
+      ],
+      "is_origin": false,
+      "local_word": "zéro",
+      "edge_tts_lang": "fr-FR",
+      "fallback_used": false,
+      "similarity_percentage": 48,
+      "ejaan_palsu_indonesia": "ze-gho",
+      "ejaan_umum_ipa": "/ze.ʁo/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/France_Zero.mp3"
+    },
+    {
+      "order": 7,
+      "country": "United Kingdom",
+      "coords": [
+        -0.1276,
+        51.5074
+      ],
+      "is_origin": false,
+      "local_word": "zero",
+      "edge_tts_lang": "en-GB",
+      "fallback_used": false,
+      "similarity_percentage": 40,
+      "ejaan_palsu_indonesia": "zi-row",
+      "ejaan_umum_ipa": "/ˈzɪə.rəʊ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/United_Kingdom_Zero.mp3"
+    },
+    {
+      "order": 8,
+      "country": "Poland",
+      "coords": [
+        19.1451,
+        51.9194
+      ],
+      "is_origin": false,
+      "local_word": "zero",
+      "edge_tts_lang": "pl-PL",
+      "fallback_used": true,
+      "similarity_percentage": 35,
+      "ejaan_palsu_indonesia": "ze-ro",
+      "ejaan_umum_ipa": "/ˈzɛ.rɔ/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Poland_Zero.mp3"
+    },
+    {
+      "order": 9,
+      "country": "Japan",
+      "coords": [
+        138.2529,
+        36.2048
+      ],
+      "is_origin": false,
+      "local_word": "ゼロ",
+      "edge_tts_lang": "ja-JP",
+      "fallback_used": false,
+      "similarity_percentage": 25,
+      "ejaan_palsu_indonesia": "dze-ro",
+      "ejaan_umum_ipa": "/d͡ze.ɾo/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/Japan_Zero.mp3"
+    },
+    {
+      "order": 10,
+      "country": "South Korea",
+      "coords": [
+        127.7669,
+        35.9078
+      ],
+      "is_origin": false,
+      "local_word": "제로",
+      "edge_tts_lang": "ko-KR",
+      "fallback_used": false,
+      "similarity_percentage": 15,
+      "ejaan_palsu_indonesia": "je-ro",
+      "ejaan_umum_ipa": "/t͡ɕe.ɾo/",
+      "phonetic_note": "kosongkan-saja-!ingat jangan diisi",
+      "sound_generated": true,
+      "sound_file": "sound/South_Korea_Zero.mp3"
+    }
+  ]
+}

@@ -399,13 +399,14 @@ const StoryTitle = ({ globalWord }) => (
         padding: "12px 24px",
         color: "#0a0a0a",
         fontSize: "min(68px, 5.4vw)",
-        fontWeight: 800,
+        fontWeight: 750,
         letterSpacing: "1px",
         lineHeight: 1.1,
         textShadow: "0 2px 5px #020617",
         boxShadow: "0 4px 18px rgba(2, 6, 23, 0.55)",
+        textAlign: "center", // Tambahan agar rapi jika turun baris
       }}>
-      Finally, you discover how
+      Wait until you hear how this 
     </div>
     <div style={{
         maxWidth: "calc(100% - 64px)",
@@ -414,16 +415,29 @@ const StoryTitle = ({ globalWord }) => (
         border: "2px solid rgba(56, 189, 248, 0.8)",
         borderRadius: "12px",
         padding: "12px 24px",
-        whiteSpace: "nowrap",
+        // whiteSpace: "nowrap", <--- HAPUS BAGIAN INI
+        wordBreak: "break-word", // Tambahan agar teks panjang tidak menembus kotak
+        textAlign: "center", // Tambahan agar posisi teks seimbang
         color: "#141414",
         fontSize: "min(68px, 5.4vw)",
-        fontWeight: 800,
+        fontWeight: 750,
         letterSpacing: "1px",
-        lineHeight: 1.1,
+        lineHeight: 1.2, // Sedikit dilonggarkan agar enak dilihat jika 2 baris
         textShadow: "0 2px 5px #020617",
         boxShadow: "0 4px 18px rgba(2, 6, 23, 0.55)",
       }}>
-       the word '{globalWord}' evolves
+       country says{' '}
+      <span style={{
+        color: "#0284c7", 
+        backgroundColor: "rgba(56, 189, 248, 0.15)", 
+        padding: "2px 8px", 
+        borderRadius: "6px", 
+        textTransform: "uppercase",
+        display: "inline-block", // Membantu background kotak warna biru tetap rapi walau teks panjang
+        marginTop: "4px" // Memberi jarak sedikit jika harus turun baris
+      }}>
+        '{globalWord}'
+      </span>
     </div>
   </div>
 );
@@ -593,7 +607,7 @@ const CountryListOverlay = ({ route, frame, fps, getReachedFrame }) => {
             display: "flex",
             alignItems: "center",
             gap: "12px",
-            minHeight: "40px" // Menjaga jarak antar baris tetap stabil meski belum ada kotak
+            minHeight: "80px" // Menjaga jarak antar baris tetap stabil meski belum ada kotak
           }}>
             
             {/* NOMOR URUT (Selalu Tampil) */}
@@ -601,12 +615,12 @@ const CountryListOverlay = ({ route, frame, fps, getReachedFrame }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              width: "28px",
-              height: "28px",
+              width: "78px",
+              height: "78px",
               background: isReached ? "#38bdf8" : "#475569", 
               color: isReached ? "#0f172a" : "#cbd5e1",
               borderRadius: "50%",
-              fontSize: "20px",
+              fontSize: "60px",
               fontWeight: "bold",
               flexShrink: 0,
               transition: "background 0.3s ease, color 0.3s ease"
@@ -620,7 +634,7 @@ const CountryListOverlay = ({ route, frame, fps, getReachedFrame }) => {
               isLast && (
                 <div style={{
                   color: "#ef4444", 
-                  fontSize: "24px",
+                  fontSize: "64px",
                   fontWeight: "bold",
                   letterSpacing: "4px",
                   textShadow: "0 2px 4px rgba(0,0,0,0.8)",
@@ -636,7 +650,7 @@ const CountryListOverlay = ({ route, frame, fps, getReachedFrame }) => {
                 alignItems: "center",
                 gap: "12px",
                 background: "rgba(15, 23, 42, 0.85)", // Style kotak dipindah ke sini
-                padding: "8px 16px",
+                padding: "18px 18px",
                 borderRadius: "50px",
                 border: "2px solid #38bdf8",
                 boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
@@ -654,7 +668,7 @@ const CountryListOverlay = ({ route, frame, fps, getReachedFrame }) => {
                 )}
                 <span style={{
                   color: "#fff",
-                  fontSize: "24px",
+                  fontSize: "44px",
                   fontWeight: "bold",
                   textShadow: "0 2px 4px rgba(0,0,0,0.8)",
                   lineHeight: 1,
@@ -742,6 +756,9 @@ const [backgroundIndex] = useState(() =>
     const countryData = route[idx];
     if (!countryData) return 5;
     if (countryData.zoom !== undefined) return countryData.zoom;
+    if (countryData.country === "Russia") {
+      return 3.5; 
+    }
     if (autoCamMap[countryData.country]) {
       return autoCamMap[countryData.country].zoom;
     }
@@ -751,6 +768,9 @@ const [backgroundIndex] = useState(() =>
   const getTargetCenter = (idx) => {
     const countryData = route[idx];
     if (!countryData) return [0, 0];
+    if (countryData.country === "Russia") {
+      return countryData.coords; 
+    }
     if (autoCamMap[countryData.country]) {
       return autoCamMap[countryData.country].center;
     }
